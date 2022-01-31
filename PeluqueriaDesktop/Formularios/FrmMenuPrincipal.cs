@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PeluqueriaDesktop.AdminData;
+using PeluqueriaDesktop.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,5 +21,27 @@ namespace PeluqueriaDesktop
             BackgroundImage = HelperPeluqueria.RecuperarImagenDeArchivoDeRecursos("fondoSistema"); ;
         }
 
+        private void subMnuNuevoCliente_Click(object sender, EventArgs e)
+        {
+            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente());
+            frmCargarClientes.ShowDialog();
+        }
+
+        private void subMnuNuevoProducto_Click(object sender, EventArgs e)
+        {
+            var frmCargarProductos = new FrmBase(new DbAdminProductos(), new FrmCargarProducto());
+            frmCargarProductos.ShowDialog();
+
+        }
+
+        private void subMnuParametros_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subMnuNuevoUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

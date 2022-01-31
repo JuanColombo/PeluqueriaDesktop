@@ -5,11 +5,11 @@ using System.Text;
 
 namespace PeluqueriaDesktop.Modelos
 {
-    public class Producto
+    public class Producto : ModeloBase
     {
         public int Id { get; set; }
         [Required]
-        public string Cantidad { get; set; }
+        public double Cantidad { get; set; }
         [Required]
         public double Codigo { get; set; }
         [Required]
