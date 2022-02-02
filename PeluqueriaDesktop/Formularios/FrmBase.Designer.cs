@@ -38,12 +38,13 @@ namespace PeluqueriaDesktop
             this.Grid = new System.Windows.Forms.DataGridView();
             this.chkVerEliminados = new System.Windows.Forms.CheckBox();
             this.BtnStock = new System.Windows.Forms.Button();
+            this.BtnTrabajo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(102, 382);
+            this.TxtBusqueda.Location = new System.Drawing.Point(217, 415);
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(249, 23);
             this.TxtBusqueda.TabIndex = 14;
@@ -52,7 +53,7 @@ namespace PeluqueriaDesktop
             // LblBuscar
             // 
             this.LblBuscar.AutoSize = true;
-            this.LblBuscar.Location = new System.Drawing.Point(198, 364);
+            this.LblBuscar.Location = new System.Drawing.Point(313, 397);
             this.LblBuscar.Name = "LblBuscar";
             this.LblBuscar.Size = new System.Drawing.Size(45, 15);
             this.LblBuscar.TabIndex = 13;
@@ -61,9 +62,9 @@ namespace PeluqueriaDesktop
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnSalir.Location = new System.Drawing.Point(678, 317);
+            this.BtnSalir.Location = new System.Drawing.Point(678, 390);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(110, 35);
+            this.BtnSalir.Size = new System.Drawing.Size(110, 48);
             this.BtnSalir.TabIndex = 12;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
@@ -117,7 +118,7 @@ namespace PeluqueriaDesktop
             // chkVerEliminados
             // 
             this.chkVerEliminados.AutoSize = true;
-            this.chkVerEliminados.Location = new System.Drawing.Point(374, 382);
+            this.chkVerEliminados.Location = new System.Drawing.Point(489, 415);
             this.chkVerEliminados.Name = "chkVerEliminados";
             this.chkVerEliminados.Size = new System.Drawing.Size(103, 19);
             this.chkVerEliminados.TabIndex = 15;
@@ -136,12 +137,24 @@ namespace PeluqueriaDesktop
             this.BtnStock.UseVisualStyleBackColor = false;
             this.BtnStock.Click += new System.EventHandler(this.BtnStock_Click);
             // 
+            // BtnTrabajo
+            // 
+            this.BtnTrabajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnTrabajo.Location = new System.Drawing.Point(39, 358);
+            this.BtnTrabajo.Name = "BtnTrabajo";
+            this.BtnTrabajo.Size = new System.Drawing.Size(110, 35);
+            this.BtnTrabajo.TabIndex = 17;
+            this.BtnTrabajo.Text = "Registrar Trabajo";
+            this.BtnTrabajo.UseVisualStyleBackColor = false;
+            this.BtnTrabajo.Click += new System.EventHandler(this.BtnTrabajo_Click);
+            // 
             // FrmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnTrabajo);
             this.Controls.Add(this.BtnStock);
             this.Controls.Add(this.chkVerEliminados);
             this.Controls.Add(this.TxtBusqueda);
@@ -171,5 +184,6 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.DataGridView Grid;
         private System.Windows.Forms.CheckBox chkVerEliminados;
         private System.Windows.Forms.Button BtnStock;
+        private System.Windows.Forms.Button BtnTrabajo;
     }
 }

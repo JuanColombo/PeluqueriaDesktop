@@ -41,7 +41,10 @@ namespace PeluqueriaDesktop
             this.subMnuGestionUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.BtnRegistrarTrabajo = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,8 +71,8 @@ namespace PeluqueriaDesktop
             // subMnuNuevoCliente
             // 
             this.subMnuNuevoCliente.Name = "subMnuNuevoCliente";
-            this.subMnuNuevoCliente.Size = new System.Drawing.Size(109, 22);
-            this.subMnuNuevoCliente.Text = "Nuevo";
+            this.subMnuNuevoCliente.Size = new System.Drawing.Size(180, 22);
+            this.subMnuNuevoCliente.Text = "Gestion de Clientes";
             this.subMnuNuevoCliente.Click += new System.EventHandler(this.subMnuNuevoCliente_Click);
             // 
             // productosToolStripMenuItem
@@ -83,7 +86,7 @@ namespace PeluqueriaDesktop
             // subMnuNuevoProducto
             // 
             this.subMnuNuevoProducto.Name = "subMnuNuevoProducto";
-            this.subMnuNuevoProducto.Size = new System.Drawing.Size(180, 22);
+            this.subMnuNuevoProducto.Size = new System.Drawing.Size(178, 22);
             this.subMnuNuevoProducto.Text = "Carga de productos";
             this.subMnuNuevoProducto.Click += new System.EventHandler(this.subMnuNuevoProducto_Click);
             // 
@@ -139,15 +142,37 @@ namespace PeluqueriaDesktop
             this.label1.Text = "Salon A Peluqueria";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BtnRegistrarTrabajo});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(952, 57);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // BtnRegistrarTrabajo
+            // 
+            this.BtnRegistrarTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("BtnRegistrarTrabajo.Image")));
+            this.BtnRegistrarTrabajo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnRegistrarTrabajo.Name = "BtnRegistrarTrabajo";
+            this.BtnRegistrarTrabajo.Size = new System.Drawing.Size(54, 54);
+            this.BtnRegistrarTrabajo.Text = "Trabajos";
+            this.BtnRegistrarTrabajo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(952, 442);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "FrmMenuPrincipal";
@@ -157,6 +182,8 @@ namespace PeluqueriaDesktop
             this.Activated += new System.EventHandler(this.FrmMenuPrincipal_Activated);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +202,8 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.ToolStripMenuItem subMnuGestionUsuarios;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem cambioDeContraseñaToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton BtnRegistrarTrabajo;
     }
 }
 

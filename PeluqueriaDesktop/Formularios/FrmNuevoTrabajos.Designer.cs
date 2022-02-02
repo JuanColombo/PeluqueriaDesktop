@@ -1,6 +1,6 @@
 ﻿namespace PeluqueriaDesktop.Formularios
 {
-    partial class FrmStock
+    partial class FrmNuevoTrabajos
     {
         /// <summary>
         /// Required designer variable.
@@ -32,29 +32,27 @@
             this.LblTituloPrincipal = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
-            this.NumUpDownStockActual = new System.Windows.Forms.NumericUpDown();
-            this.lblNuevoStock = new System.Windows.Forms.Label();
-            this.NumUpDownIngresoEgreso = new System.Windows.Forms.NumericUpDown();
-            this.LblTotal = new System.Windows.Forms.Label();
-            this.NumUpDownTotal = new System.Windows.Forms.NumericUpDown();
+            this.NumUpDownValor = new System.Windows.Forms.NumericUpDown();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.lblMarcaBBDD = new System.Windows.Forms.Label();
+            this.lblClienteBBDD = new System.Windows.Forms.Label();
             this.LblDescripcion = new System.Windows.Forms.Label();
             this.TxtDescripcionBBDD = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownStockActual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownIngresoEgreso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownTotal)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DtpFechaTrabajo = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CboTipoPago = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownValor)).BeginInit();
             this.SuspendLayout();
             // 
             // LblCantidad
             // 
             this.LblCantidad.AutoSize = true;
             this.LblCantidad.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblCantidad.Location = new System.Drawing.Point(475, 207);
+            this.LblCantidad.Location = new System.Drawing.Point(15, 285);
             this.LblCantidad.Name = "LblCantidad";
-            this.LblCantidad.Size = new System.Drawing.Size(132, 30);
+            this.LblCantidad.Size = new System.Drawing.Size(140, 30);
             this.LblCantidad.TabIndex = 0;
-            this.LblCantidad.Text = "Stock Actual:";
+            this.LblCantidad.Text = "Tipo de pago:";
             // 
             // LblTituloPrincipal
             // 
@@ -62,9 +60,9 @@
             this.LblTituloPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblTituloPrincipal.Location = new System.Drawing.Point(12, 9);
             this.LblTituloPrincipal.Name = "LblTituloPrincipal";
-            this.LblTituloPrincipal.Size = new System.Drawing.Size(370, 46);
+            this.LblTituloPrincipal.Size = new System.Drawing.Size(391, 46);
             this.LblTituloPrincipal.TabIndex = 12;
-            this.LblTituloPrincipal.Text = "Stock de Productos";
+            this.LblTituloPrincipal.Text = "Registro de Trabajos";
             // 
             // BtnGuardar
             // 
@@ -90,71 +88,23 @@
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // NumUpDownStockActual
+            // NumUpDownValor
             // 
-            this.NumUpDownStockActual.Enabled = false;
-            this.NumUpDownStockActual.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumUpDownStockActual.Location = new System.Drawing.Point(626, 203);
-            this.NumUpDownStockActual.Maximum = new decimal(new int[] {
+            this.NumUpDownValor.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NumUpDownValor.Location = new System.Drawing.Point(210, 222);
+            this.NumUpDownValor.Maximum = new decimal(new int[] {
             1410065407,
             2,
             0,
             0});
-            this.NumUpDownStockActual.Name = "NumUpDownStockActual";
-            this.NumUpDownStockActual.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownStockActual.TabIndex = 7;
-            // 
-            // lblNuevoStock
-            // 
-            this.lblNuevoStock.AutoSize = true;
-            this.lblNuevoStock.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNuevoStock.Location = new System.Drawing.Point(443, 280);
-            this.lblNuevoStock.Name = "lblNuevoStock";
-            this.lblNuevoStock.Size = new System.Drawing.Size(164, 30);
-            this.lblNuevoStock.TabIndex = 15;
-            this.lblNuevoStock.Text = "Ingreso - Egreso";
-            // 
-            // NumUpDownIngresoEgreso
-            // 
-            this.NumUpDownIngresoEgreso.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumUpDownIngresoEgreso.Location = new System.Drawing.Point(626, 276);
-            this.NumUpDownIngresoEgreso.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.NumUpDownIngresoEgreso.Minimum = new decimal(new int[] {
+            this.NumUpDownValor.Minimum = new decimal(new int[] {
             1215752191,
             23,
             0,
             -2147483648});
-            this.NumUpDownIngresoEgreso.Name = "NumUpDownIngresoEgreso";
-            this.NumUpDownIngresoEgreso.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownIngresoEgreso.TabIndex = 16;
-            // 
-            // LblTotal
-            // 
-            this.LblTotal.AutoSize = true;
-            this.LblTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblTotal.Location = new System.Drawing.Point(25, 359);
-            this.LblTotal.Name = "LblTotal";
-            this.LblTotal.Size = new System.Drawing.Size(62, 30);
-            this.LblTotal.TabIndex = 17;
-            this.LblTotal.Text = "Total:";
-            // 
-            // NumUpDownTotal
-            // 
-            this.NumUpDownTotal.Enabled = false;
-            this.NumUpDownTotal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumUpDownTotal.Location = new System.Drawing.Point(106, 350);
-            this.NumUpDownTotal.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.NumUpDownTotal.Name = "NumUpDownTotal";
-            this.NumUpDownTotal.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownTotal.TabIndex = 18;
+            this.NumUpDownValor.Name = "NumUpDownValor";
+            this.NumUpDownValor.Size = new System.Drawing.Size(97, 39);
+            this.NumUpDownValor.TabIndex = 16;
             // 
             // lblMarca
             // 
@@ -162,67 +112,102 @@
             this.lblMarca.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMarca.Location = new System.Drawing.Point(12, 55);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(76, 30);
+            this.lblMarca.Size = new System.Drawing.Size(82, 30);
             this.lblMarca.TabIndex = 19;
-            this.lblMarca.Text = "Marca:";
+            this.lblMarca.Text = "Cliente:";
             // 
-            // lblMarcaBBDD
+            // lblClienteBBDD
             // 
-            this.lblMarcaBBDD.AutoSize = true;
-            this.lblMarcaBBDD.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMarcaBBDD.Location = new System.Drawing.Point(94, 55);
-            this.lblMarcaBBDD.Name = "lblMarcaBBDD";
-            this.lblMarcaBBDD.Size = new System.Drawing.Size(103, 30);
-            this.lblMarcaBBDD.TabIndex = 20;
-            this.lblMarcaBBDD.Text = "**********";
+            this.lblClienteBBDD.AutoSize = true;
+            this.lblClienteBBDD.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblClienteBBDD.Location = new System.Drawing.Point(94, 55);
+            this.lblClienteBBDD.Name = "lblClienteBBDD";
+            this.lblClienteBBDD.Size = new System.Drawing.Size(103, 30);
+            this.lblClienteBBDD.TabIndex = 20;
+            this.lblClienteBBDD.Text = "**********";
             // 
             // LblDescripcion
             // 
             this.LblDescripcion.AutoSize = true;
             this.LblDescripcion.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblDescripcion.Location = new System.Drawing.Point(12, 96);
+            this.LblDescripcion.Location = new System.Drawing.Point(12, 174);
             this.LblDescripcion.Name = "LblDescripcion";
-            this.LblDescripcion.Size = new System.Drawing.Size(126, 30);
+            this.LblDescripcion.Size = new System.Drawing.Size(188, 30);
             this.LblDescripcion.TabIndex = 21;
-            this.LblDescripcion.Text = "Descripcion:";
+            this.LblDescripcion.Text = "Detalle del trabajo:";
             // 
             // TxtDescripcionBBDD
             // 
             this.TxtDescripcionBBDD.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.TxtDescripcionBBDD.Location = new System.Drawing.Point(12, 129);
+            this.TxtDescripcionBBDD.Location = new System.Drawing.Point(210, 156);
             this.TxtDescripcionBBDD.Multiline = true;
             this.TxtDescripcionBBDD.Name = "TxtDescripcionBBDD";
-            this.TxtDescripcionBBDD.ReadOnly = true;
-            this.TxtDescripcionBBDD.Size = new System.Drawing.Size(312, 95);
+            this.TxtDescripcionBBDD.Size = new System.Drawing.Size(396, 48);
             this.TxtDescripcionBBDD.TabIndex = 22;
             // 
-            // FrmStock
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(15, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 30);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Fecha:";
+            // 
+            // DtpFechaTrabajo
+            // 
+            this.DtpFechaTrabajo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DtpFechaTrabajo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaTrabajo.Location = new System.Drawing.Point(210, 104);
+            this.DtpFechaTrabajo.Name = "DtpFechaTrabajo";
+            this.DtpFechaTrabajo.Size = new System.Drawing.Size(143, 29);
+            this.DtpFechaTrabajo.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(15, 226);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 30);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Precio:";
+            // 
+            // CboTipoPago
+            // 
+            this.CboTipoPago.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CboTipoPago.FormattingEnabled = true;
+            this.CboTipoPago.Location = new System.Drawing.Point(210, 291);
+            this.CboTipoPago.Name = "CboTipoPago";
+            this.CboTipoPago.Size = new System.Drawing.Size(160, 29);
+            this.CboTipoPago.TabIndex = 26;
+            // 
+            // FrmNuevoTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(743, 405);
+            this.Controls.Add(this.CboTipoPago);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.DtpFechaTrabajo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtDescripcionBBDD);
             this.Controls.Add(this.LblDescripcion);
-            this.Controls.Add(this.lblMarcaBBDD);
+            this.Controls.Add(this.lblClienteBBDD);
             this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.NumUpDownTotal);
-            this.Controls.Add(this.LblTotal);
-            this.Controls.Add(this.NumUpDownIngresoEgreso);
-            this.Controls.Add(this.lblNuevoStock);
-            this.Controls.Add(this.NumUpDownStockActual);
+            this.Controls.Add(this.NumUpDownValor);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.LblTituloPrincipal);
             this.Controls.Add(this.LblCantidad);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmStock";
+            this.Name = "FrmNuevoTrabajos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Stock de Productos";
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownStockActual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownIngresoEgreso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownTotal)).EndInit();
+            this.Text = "Trabajos Realizados";
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownValor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,14 +219,14 @@
         private System.Windows.Forms.Label LblTituloPrincipal;
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
-        private System.Windows.Forms.NumericUpDown NumUpDownStockActual;
-        private System.Windows.Forms.Label lblNuevoStock;
-        private System.Windows.Forms.NumericUpDown NumUpDownIngresoEgreso;
-        private System.Windows.Forms.Label LblTotal;
-        private System.Windows.Forms.NumericUpDown NumUpDownTotal;
+        private System.Windows.Forms.NumericUpDown NumUpDownValor;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.Label lblMarcaBBDD;
+        private System.Windows.Forms.Label lblClienteBBDD;
         private System.Windows.Forms.Label LblDescripcion;
         private System.Windows.Forms.TextBox TxtDescripcionBBDD;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker DtpFechaTrabajo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox CboTipoPago;
     }
 }

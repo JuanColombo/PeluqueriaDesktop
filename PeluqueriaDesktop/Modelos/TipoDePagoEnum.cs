@@ -4,7 +4,10 @@ using System.Text;
 
 namespace PeluqueriaDesktop.Modelos
 {
-    public class DetalleClienteCaja
+    public enum TipoDePagoEnum
     {
+        Contado=1,
+        CuentaCorriente
+
     }
 }
