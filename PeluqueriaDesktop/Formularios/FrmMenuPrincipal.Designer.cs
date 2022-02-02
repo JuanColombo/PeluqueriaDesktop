@@ -35,10 +35,11 @@ namespace PeluqueriaDesktop
             this.subMnuNuevoCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subMnuNuevoProducto = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
             this.subMnuParametros = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.subMnuNuevoUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMnuGestionUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,8 +49,8 @@ namespace PeluqueriaDesktop
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
             this.productosToolStripMenuItem,
-            this.configuracionToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
+            this.MnuConfiguracion,
+            this.MnuUsuario});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(952, 24);
@@ -67,7 +68,7 @@ namespace PeluqueriaDesktop
             // subMnuNuevoCliente
             // 
             this.subMnuNuevoCliente.Name = "subMnuNuevoCliente";
-            this.subMnuNuevoCliente.Size = new System.Drawing.Size(180, 22);
+            this.subMnuNuevoCliente.Size = new System.Drawing.Size(109, 22);
             this.subMnuNuevoCliente.Text = "Nuevo";
             this.subMnuNuevoCliente.Click += new System.EventHandler(this.subMnuNuevoCliente_Click);
             // 
@@ -86,35 +87,43 @@ namespace PeluqueriaDesktop
             this.subMnuNuevoProducto.Text = "Carga de productos";
             this.subMnuNuevoProducto.Click += new System.EventHandler(this.subMnuNuevoProducto_Click);
             // 
-            // configuracionToolStripMenuItem
+            // MnuConfiguracion
             // 
-            this.configuracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuConfiguracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.subMnuParametros});
-            this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.configuracionToolStripMenuItem.Text = "Configuracion";
+            this.MnuConfiguracion.Name = "MnuConfiguracion";
+            this.MnuConfiguracion.Size = new System.Drawing.Size(95, 20);
+            this.MnuConfiguracion.Text = "Configuracion";
             // 
             // subMnuParametros
             // 
             this.subMnuParametros.Name = "subMnuParametros";
-            this.subMnuParametros.Size = new System.Drawing.Size(180, 22);
+            this.subMnuParametros.Size = new System.Drawing.Size(134, 22);
             this.subMnuParametros.Text = "Parametros";
             this.subMnuParametros.Click += new System.EventHandler(this.subMnuParametros_Click);
             // 
-            // usuariosToolStripMenuItem
+            // MnuUsuario
             // 
-            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subMnuNuevoUsuario});
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.MnuUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.subMnuGestionUsuarios,
+            this.cambioDeContraseñaToolStripMenuItem});
+            this.MnuUsuario.Name = "MnuUsuario";
+            this.MnuUsuario.Size = new System.Drawing.Size(64, 20);
+            this.MnuUsuario.Text = "Usuarios";
             // 
-            // subMnuNuevoUsuario
+            // subMnuGestionUsuarios
             // 
-            this.subMnuNuevoUsuario.Name = "subMnuNuevoUsuario";
-            this.subMnuNuevoUsuario.Size = new System.Drawing.Size(180, 22);
-            this.subMnuNuevoUsuario.Text = "Nuevo usuario";
-            this.subMnuNuevoUsuario.Click += new System.EventHandler(this.subMnuNuevoUsuario_Click);
+            this.subMnuGestionUsuarios.Name = "subMnuGestionUsuarios";
+            this.subMnuGestionUsuarios.Size = new System.Drawing.Size(193, 22);
+            this.subMnuGestionUsuarios.Text = "Gestion de Usuarios";
+            this.subMnuGestionUsuarios.Click += new System.EventHandler(this.subMnuGestionUsuarios_Click);
+            // 
+            // cambioDeContraseñaToolStripMenuItem
+            // 
+            this.cambioDeContraseñaToolStripMenuItem.Name = "cambioDeContraseñaToolStripMenuItem";
+            this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de contraseña";
+            this.cambioDeContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambioDeContraseñaToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -128,6 +137,7 @@ namespace PeluqueriaDesktop
             this.label1.Size = new System.Drawing.Size(326, 50);
             this.label1.TabIndex = 1;
             this.label1.Text = "Salon A Peluqueria";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmMenuPrincipal
             // 
@@ -144,6 +154,7 @@ namespace PeluqueriaDesktop
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salon A Peluqueria";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.FrmMenuPrincipal_Activated);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -158,11 +169,12 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.ToolStripMenuItem subMnuNuevoCliente;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem subMnuNuevoProducto;
-        private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuConfiguracion;
         private System.Windows.Forms.ToolStripMenuItem subMnuParametros;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem subMnuNuevoUsuario;
+        private System.Windows.Forms.ToolStripMenuItem MnuUsuario;
+        private System.Windows.Forms.ToolStripMenuItem subMnuGestionUsuarios;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem cambioDeContraseñaToolStripMenuItem;
     }
 }
 

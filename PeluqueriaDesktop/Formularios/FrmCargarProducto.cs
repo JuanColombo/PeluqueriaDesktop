@@ -66,11 +66,11 @@ namespace PeluqueriaDesktop.Formularios
                 producto.Marca = txtMarca.Text;
                 producto.Descripcion = txtDescripcion.Text;
 
-                //si el id del Cliente a editar es nulo agregamos un Cliente Nuevo a la tabla
+                //si el id del Producto a editar es nulo agregamos un Producto Nuevo a la tabla
                 if (IdEditar == null)
-                    // agregamos el objeto Clientes a la Base De datos
+                    // agregamos el objeto Producto a la Base De datos
                     db.Producto.Add(producto);
-                else //configuramos el almacenamiento de la modificacion si el id del Cliente es distinto de nulo
+                else //configuramos el almacenamiento de la modificacion si el id del Producto es distinto de nulo
                 {
                     db.Entry(producto).State = EntityState.Modified;
                 }

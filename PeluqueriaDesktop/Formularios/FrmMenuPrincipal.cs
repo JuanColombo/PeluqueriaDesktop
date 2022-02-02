@@ -15,6 +15,8 @@ namespace PeluqueriaDesktop
     public partial class FrmMenuPrincipal : Form
     {
         public static Usuario Usuario;
+        private object BotonStock;
+
         public FrmMenuPrincipal()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace PeluqueriaDesktop
 
         private void subMnuNuevoCliente_Click(object sender, EventArgs e)
         {
-            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente());
+            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock);
             frmCargarClientes.ShowDialog();
         }
 
@@ -36,12 +38,43 @@ namespace PeluqueriaDesktop
 
         private void subMnuParametros_Click(object sender, EventArgs e)
         {
+            var frmParametros = new FrmParametros(this);
+            frmParametros.ShowDialog();
 
         }
 
-        private void subMnuNuevoUsuario_Click(object sender, EventArgs e)
-        {
 
+
+        private void cambioDeContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmCambioContraseña = new FrmCambioContrasena(FrmMenuPrincipal.Usuario.Id);
+            frmCambioContraseña.ShowDialog();
+        }
+
+        private void subMnuGestionUsuarios_Click(object sender, EventArgs e)
+        {
+            var frmGestionUsuarios = new FrmGestionUsuario();
+            frmGestionUsuarios.ShowDialog();
+        }
+
+        private void FrmMenuPrincipal_Activated(object sender, EventArgs e)
+        {
+            if (Usuario == null)
+            {
+                //si no hay nadie logeado, entonces mostramos el formulario de Login
+                var frmLogin = new FrmLogin(this);
+                frmLogin.ShowDialog();
+                if (Usuario != null)
+                {
+                    //dependiendo el tipo de usuario, habilitamos los distintos menues para que tengan acceso
+                    MnuUsuario.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador ? true : false;
+                    MnuConfiguracion.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador ? true : false;
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿using PeluqueriaDesktop.Formularios;
 using PeluqueriaDesktop.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -14,13 +14,25 @@ namespace PeluqueriaDesktop
     {
         IDbAdmin dbAdmin;
         IFormBase FrmNuevoEditar;
+        private object botonStock;
+
         public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar)
-        {
+        { 
             InitializeComponent();
             dbAdmin = objetoDbAdmin;
             FrmNuevoEditar = frmNuevoEditar;
             ActualizarGrilla();
         }
+
+        public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar, object botonStock) 
+        {
+            InitializeComponent();
+            BtnStock.Visible = false;
+            dbAdmin = objetoDbAdmin;
+            FrmNuevoEditar = frmNuevoEditar;
+            ActualizarGrilla();
+        }
+
         private void ActualizarGrilla()
         {
             if (chkVerEliminados.Checked)
@@ -107,6 +119,23 @@ namespace PeluqueriaDesktop
         private void TxtBusqueda_TextChanged_1(object sender, EventArgs e)
         {
             Grid.DataSource = dbAdmin.ObtenerTodos(TxtBusqueda.Text);
+        }
+
+        private void BtnStock_Click(object sender, EventArgs e)
+        {
+            //creamos la variable para saber que id de Producto que tenemos seleccionado
+            var idSeleccionado = Grid.ObtenerIdSeleccionado();
+            var filaAEditar = Grid.CurrentRow.Index;
+
+            var frmStock = new FrmStock(idSeleccionado);
+            frmStock.ShowDialog();
+
+
+            //actualizamos la grilla
+            ActualizarGrilla();
+
+            //seleccionamos el registro editado
+            Grid.CurrentCell = Grid.Rows[filaAEditar].Cells[0];
         }
     }
 }

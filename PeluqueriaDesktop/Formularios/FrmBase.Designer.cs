@@ -37,6 +37,7 @@ namespace PeluqueriaDesktop
             this.BtnNuevo = new System.Windows.Forms.Button();
             this.Grid = new System.Windows.Forms.DataGridView();
             this.chkVerEliminados = new System.Windows.Forms.CheckBox();
+            this.BtnStock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,12 +125,24 @@ namespace PeluqueriaDesktop
             this.chkVerEliminados.UseVisualStyleBackColor = true;
             this.chkVerEliminados.CheckedChanged += new System.EventHandler(this.chkVerEliminados_CheckedChanged_1);
             // 
+            // BtnStock
+            // 
+            this.BtnStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnStock.Location = new System.Drawing.Point(431, 317);
+            this.BtnStock.Name = "BtnStock";
+            this.BtnStock.Size = new System.Drawing.Size(110, 35);
+            this.BtnStock.TabIndex = 16;
+            this.BtnStock.Text = "Stock";
+            this.BtnStock.UseVisualStyleBackColor = false;
+            this.BtnStock.Click += new System.EventHandler(this.BtnStock_Click);
+            // 
             // FrmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnStock);
             this.Controls.Add(this.chkVerEliminados);
             this.Controls.Add(this.TxtBusqueda);
             this.Controls.Add(this.LblBuscar);
@@ -157,5 +170,6 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.Button BtnNuevo;
         private System.Windows.Forms.DataGridView Grid;
         private System.Windows.Forms.CheckBox chkVerEliminados;
+        private System.Windows.Forms.Button BtnStock;
     }
 }

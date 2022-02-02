@@ -29,6 +29,7 @@ namespace PeluqueriaDesktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
@@ -43,7 +44,7 @@ namespace PeluqueriaDesktop
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(144, 24);
+            this.label1.Location = new System.Drawing.Point(146, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 21);
             this.label1.TabIndex = 0;
@@ -53,7 +54,7 @@ namespace PeluqueriaDesktop
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(124, 66);
+            this.label2.Location = new System.Drawing.Point(126, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 21);
             this.label2.TabIndex = 1;
@@ -62,7 +63,7 @@ namespace PeluqueriaDesktop
             // TxtUsuario
             // 
             this.TxtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtUsuario.Location = new System.Drawing.Point(218, 15);
+            this.TxtUsuario.Location = new System.Drawing.Point(220, 51);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(132, 29);
             this.TxtUsuario.TabIndex = 2;
@@ -70,7 +71,7 @@ namespace PeluqueriaDesktop
             // TxtContraseña
             // 
             this.TxtContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtContraseña.Location = new System.Drawing.Point(218, 57);
+            this.TxtContraseña.Location = new System.Drawing.Point(220, 93);
             this.TxtContraseña.Name = "TxtContraseña";
             this.TxtContraseña.PasswordChar = '*';
             this.TxtContraseña.Size = new System.Drawing.Size(132, 29);
@@ -80,7 +81,7 @@ namespace PeluqueriaDesktop
             // BtnAcceder
             // 
             this.BtnAcceder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnAcceder.Location = new System.Drawing.Point(137, 107);
+            this.BtnAcceder.Location = new System.Drawing.Point(144, 159);
             this.BtnAcceder.Name = "BtnAcceder";
             this.BtnAcceder.Size = new System.Drawing.Size(87, 34);
             this.BtnAcceder.TabIndex = 4;
@@ -91,16 +92,17 @@ namespace PeluqueriaDesktop
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnCancelar.Location = new System.Drawing.Point(250, 107);
+            this.BtnCancelar.Location = new System.Drawing.Point(257, 159);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(87, 34);
             this.BtnCancelar.TabIndex = 5;
             this.BtnCancelar.Text = "&Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click_1);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(13, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(105, 73);
@@ -112,7 +114,7 @@ namespace PeluqueriaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 149);
+            this.ClientSize = new System.Drawing.Size(470, 205);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnAcceder);
