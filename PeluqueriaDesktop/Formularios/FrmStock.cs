@@ -17,8 +17,6 @@ namespace PeluqueriaDesktop.Formularios
         public FrmStock(int idSeleccionado)
         {
             InitializeComponent();
-            LblTotal.Visible = false;
-            NumUpDownTotal.Visible = false;
             if (idSeleccionado != 0)
             {
                 IdEditar = idSeleccionado;

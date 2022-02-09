@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStock));
             this.LblCantidad = new System.Windows.Forms.Label();
             this.LblTituloPrincipal = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
@@ -35,14 +36,16 @@
             this.NumUpDownStockActual = new System.Windows.Forms.NumericUpDown();
             this.lblNuevoStock = new System.Windows.Forms.Label();
             this.NumUpDownIngresoEgreso = new System.Windows.Forms.NumericUpDown();
-            this.LblTotal = new System.Windows.Forms.Label();
-            this.NumUpDownTotal = new System.Windows.Forms.NumericUpDown();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblMarcaBBDD = new System.Windows.Forms.Label();
             this.LblDescripcion = new System.Windows.Forms.Label();
             this.TxtDescripcionBBDD = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LblTotal = new System.Windows.Forms.Label();
+            this.NumUpDownTotal = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownStockActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownIngresoEgreso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownTotal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,24 +71,26 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnGuardar.Location = new System.Drawing.Point(501, 351);
+            this.BtnGuardar.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.Location = new System.Drawing.Point(486, 351);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(105, 42);
-            this.BtnGuardar.TabIndex = 13;
+            this.BtnGuardar.Size = new System.Drawing.Size(121, 40);
+            this.BtnGuardar.TabIndex = 3;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCancelar.Location = new System.Drawing.Point(626, 351);
+            this.BtnCancelar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelar.Location = new System.Drawing.Point(613, 351);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(105, 42);
-            this.BtnCancelar.TabIndex = 14;
+            this.BtnCancelar.Size = new System.Drawing.Size(121, 40);
+            this.BtnCancelar.TabIndex = 4;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -102,7 +107,7 @@
             0});
             this.NumUpDownStockActual.Name = "NumUpDownStockActual";
             this.NumUpDownStockActual.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownStockActual.TabIndex = 7;
+            this.NumUpDownStockActual.TabIndex = 0;
             // 
             // lblNuevoStock
             // 
@@ -130,31 +135,7 @@
             -2147483648});
             this.NumUpDownIngresoEgreso.Name = "NumUpDownIngresoEgreso";
             this.NumUpDownIngresoEgreso.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownIngresoEgreso.TabIndex = 16;
-            // 
-            // LblTotal
-            // 
-            this.LblTotal.AutoSize = true;
-            this.LblTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblTotal.Location = new System.Drawing.Point(25, 359);
-            this.LblTotal.Name = "LblTotal";
-            this.LblTotal.Size = new System.Drawing.Size(62, 30);
-            this.LblTotal.TabIndex = 17;
-            this.LblTotal.Text = "Total:";
-            // 
-            // NumUpDownTotal
-            // 
-            this.NumUpDownTotal.Enabled = false;
-            this.NumUpDownTotal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumUpDownTotal.Location = new System.Drawing.Point(106, 350);
-            this.NumUpDownTotal.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
-            0,
-            0});
-            this.NumUpDownTotal.Name = "NumUpDownTotal";
-            this.NumUpDownTotal.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownTotal.TabIndex = 18;
+            this.NumUpDownIngresoEgreso.TabIndex = 1;
             // 
             // lblMarca
             // 
@@ -189,25 +170,60 @@
             // TxtDescripcionBBDD
             // 
             this.TxtDescripcionBBDD.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.TxtDescripcionBBDD.Location = new System.Drawing.Point(12, 129);
+            this.TxtDescripcionBBDD.Location = new System.Drawing.Point(160, 88);
             this.TxtDescripcionBBDD.Multiline = true;
             this.TxtDescripcionBBDD.Name = "TxtDescripcionBBDD";
             this.TxtDescripcionBBDD.ReadOnly = true;
-            this.TxtDescripcionBBDD.Size = new System.Drawing.Size(312, 95);
+            this.TxtDescripcionBBDD.Size = new System.Drawing.Size(427, 53);
             this.TxtDescripcionBBDD.TabIndex = 22;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(74, 158);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(273, 193);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // LblTotal
+            // 
+            this.LblTotal.AutoSize = true;
+            this.LblTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblTotal.Location = new System.Drawing.Point(26, 361);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.Size = new System.Drawing.Size(62, 30);
+            this.LblTotal.TabIndex = 24;
+            this.LblTotal.Text = "Total:";
+            // 
+            // NumUpDownTotal
+            // 
+            this.NumUpDownTotal.Enabled = false;
+            this.NumUpDownTotal.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NumUpDownTotal.Location = new System.Drawing.Point(108, 357);
+            this.NumUpDownTotal.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.NumUpDownTotal.Name = "NumUpDownTotal";
+            this.NumUpDownTotal.Size = new System.Drawing.Size(97, 39);
+            this.NumUpDownTotal.TabIndex = 25;
             // 
             // FrmStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 405);
+            this.Controls.Add(this.NumUpDownTotal);
+            this.Controls.Add(this.LblTotal);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TxtDescripcionBBDD);
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.lblMarcaBBDD);
             this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.NumUpDownTotal);
-            this.Controls.Add(this.LblTotal);
             this.Controls.Add(this.NumUpDownIngresoEgreso);
             this.Controls.Add(this.lblNuevoStock);
             this.Controls.Add(this.NumUpDownStockActual);
@@ -215,6 +231,7 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.LblTituloPrincipal);
             this.Controls.Add(this.LblCantidad);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmStock";
@@ -222,6 +239,7 @@
             this.Text = "Stock de Productos";
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownStockActual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownIngresoEgreso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownTotal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,11 +255,12 @@
         private System.Windows.Forms.NumericUpDown NumUpDownStockActual;
         private System.Windows.Forms.Label lblNuevoStock;
         private System.Windows.Forms.NumericUpDown NumUpDownIngresoEgreso;
-        private System.Windows.Forms.Label LblTotal;
-        private System.Windows.Forms.NumericUpDown NumUpDownTotal;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblMarcaBBDD;
         private System.Windows.Forms.Label LblDescripcion;
         private System.Windows.Forms.TextBox TxtDescripcionBBDD;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label LblTotal;
+        private System.Windows.Forms.NumericUpDown NumUpDownTotal;
     }
 }

@@ -39,7 +39,10 @@ namespace PeluqueriaDesktop.Formularios
             this.TxtApellido = new System.Windows.Forms.TextBox();
             this.LblTelefono = new System.Windows.Forms.Label();
             this.NumUpDownTelefono = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownTelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LblNombre
@@ -79,24 +82,26 @@ namespace PeluqueriaDesktop.Formularios
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnGuardar.BackColor = System.Drawing.Color.DarkCyan;
             this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
             this.BtnGuardar.Location = new System.Drawing.Point(185, 221);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(105, 42);
-            this.BtnGuardar.TabIndex = 13;
+            this.BtnGuardar.Size = new System.Drawing.Size(121, 40);
+            this.BtnGuardar.TabIndex = 3;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BtnCancelar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
             this.BtnCancelar.Location = new System.Drawing.Point(310, 221);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(105, 42);
-            this.BtnCancelar.TabIndex = 14;
+            this.BtnCancelar.Size = new System.Drawing.Size(121, 40);
+            this.BtnCancelar.TabIndex = 4;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -121,20 +126,42 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.NumUpDownTelefono.Location = new System.Drawing.Point(172, 148);
             this.NumUpDownTelefono.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
+            1316134911,
+            2328,
             0,
             0});
             this.NumUpDownTelefono.Name = "NumUpDownTelefono";
             this.NumUpDownTelefono.Size = new System.Drawing.Size(276, 23);
-            this.NumUpDownTelefono.TabIndex = 7;
+            this.NumUpDownTelefono.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(472, 221);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 80);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(172, 174);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 11);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Tel sin 0 y sin 15";
             // 
             // FrmCargarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(609, 305);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.NumUpDownTelefono);
             this.Controls.Add(this.TxtApellido);
             this.Controls.Add(this.BtnCancelar);
@@ -151,6 +178,7 @@ namespace PeluqueriaDesktop.Formularios
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownTelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +195,7 @@ namespace PeluqueriaDesktop.Formularios
         private System.Windows.Forms.TextBox TxtApellido;
         private System.Windows.Forms.Label LblTelefono;
         private System.Windows.Forms.NumericUpDown NumUpDownTelefono;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

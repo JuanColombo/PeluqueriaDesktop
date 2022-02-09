@@ -29,6 +29,7 @@ namespace PeluqueriaDesktop.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCargarProducto));
             this.LblCantidad = new System.Windows.Forms.Label();
             this.LblCodigo = new System.Windows.Forms.Label();
             this.LblTituloPrincipal = new System.Windows.Forms.Label();
@@ -66,7 +67,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.LblTituloPrincipal.AutoSize = true;
             this.LblTituloPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblTituloPrincipal.Location = new System.Drawing.Point(172, 9);
+            this.LblTituloPrincipal.Location = new System.Drawing.Point(154, 9);
             this.LblTituloPrincipal.Name = "LblTituloPrincipal";
             this.LblTituloPrincipal.Size = new System.Drawing.Size(308, 46);
             this.LblTituloPrincipal.TabIndex = 12;
@@ -77,28 +78,30 @@ namespace PeluqueriaDesktop.Formularios
             this.txtMarca.Location = new System.Drawing.Point(172, 148);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(276, 23);
-            this.txtMarca.TabIndex = 0;
+            this.txtMarca.TabIndex = 2;
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnGuardar.BackColor = System.Drawing.Color.DarkCyan;
             this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnGuardar.Location = new System.Drawing.Point(192, 266);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.Location = new System.Drawing.Point(190, 266);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(105, 42);
-            this.BtnGuardar.TabIndex = 13;
+            this.BtnGuardar.Size = new System.Drawing.Size(121, 40);
+            this.BtnGuardar.TabIndex = 4;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BtnCancelar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
             this.BtnCancelar.Location = new System.Drawing.Point(317, 266);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(105, 42);
-            this.BtnCancelar.TabIndex = 14;
+            this.BtnCancelar.Size = new System.Drawing.Size(121, 40);
+            this.BtnCancelar.TabIndex = 5;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -122,7 +125,7 @@ namespace PeluqueriaDesktop.Formularios
             0});
             this.NumUpDownCantidad.Name = "NumUpDownCantidad";
             this.NumUpDownCantidad.Size = new System.Drawing.Size(276, 23);
-            this.NumUpDownCantidad.TabIndex = 7;
+            this.NumUpDownCantidad.TabIndex = 0;
             // 
             // txtDescripcion
             // 
@@ -131,7 +134,7 @@ namespace PeluqueriaDesktop.Formularios
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.PlaceholderText = "Escriba aqui una descripcion del producto";
             this.txtDescripcion.Size = new System.Drawing.Size(276, 53);
-            this.txtDescripcion.TabIndex = 15;
+            this.txtDescripcion.TabIndex = 3;
             // 
             // label1
             // 
@@ -152,14 +155,14 @@ namespace PeluqueriaDesktop.Formularios
             0});
             this.numUpDownCodigo.Name = "numUpDownCodigo";
             this.numUpDownCodigo.Size = new System.Drawing.Size(276, 23);
-            this.numUpDownCodigo.TabIndex = 17;
+            this.numUpDownCodigo.TabIndex = 1;
             // 
             // FrmCargarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(609, 305);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(609, 320);
             this.Controls.Add(this.numUpDownCodigo);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
@@ -171,11 +174,12 @@ namespace PeluqueriaDesktop.Formularios
             this.Controls.Add(this.LblMarca);
             this.Controls.Add(this.LblCodigo);
             this.Controls.Add(this.LblCantidad);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCargarProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo Cliente";
+            this.Text = "Nuevo Producto";
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCodigo)).EndInit();
             this.ResumeLayout(false);

@@ -110,28 +110,35 @@ namespace PeluqueriaDesktop
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(88, 230);
+            this.btnGuardar.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(118, 245);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(112, 52);
+            this.btnGuardar.Size = new System.Drawing.Size(121, 40);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar Usuario";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(228, 230);
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(258, 245);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(121, 52);
+            this.btnCancelar.Size = new System.Drawing.Size(121, 40);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmNuevoEditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(509, 294);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);

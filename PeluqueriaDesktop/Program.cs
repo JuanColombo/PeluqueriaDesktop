@@ -1,6 +1,8 @@
+using PeluqueriaDesktop.Formularios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +19,21 @@ namespace PeluqueriaDesktop
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMenuPrincipal());
+            Application.Run(new FrmInicio());
+        }
+        private static void DespliegueControladoDeErroresOtroshilos(object sender, UnhandledExceptionEventArgs args)
+        {
+            Exception excepcion = (Exception)args.ExceptionObject;
+            //MessageBox.Show($"Ha ocurrido un error:{e.Message}{System.Environment.NewLine}Origen del error:{e.Source}");
+            var frmError = new FrmError(excepcion);
+            frmError.ShowDialog();
+        }
+        private static void DespliegueControladoDeErroresHiloPrincipal(object sender, ThreadExceptionEventArgs e)
+        {
+            //MessageBox.Show($"Ha ocurrido un error:{e.Exception.Message}{System.Environment.NewLine}Origen del error:{e.Exception.Source}");
+            var frmError = new FrmError(e.Exception);
+            frmError.ShowDialog();
+
         }
     }
 }

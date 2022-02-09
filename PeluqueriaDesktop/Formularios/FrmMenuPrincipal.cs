@@ -76,5 +76,11 @@ namespace PeluqueriaDesktop
                 }
             }
         }
+
+        private void BtnRegistrarTrabajo_Click(object sender, EventArgs e)
+        {
+            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock);
+            frmCargarClientes.ShowDialog();
+        }
     }
 }

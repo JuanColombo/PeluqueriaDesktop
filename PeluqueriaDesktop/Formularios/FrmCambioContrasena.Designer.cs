@@ -44,31 +44,35 @@ namespace PeluqueriaDesktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelar.Location = new System.Drawing.Point(243, 219);
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(283, 206);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(124, 63);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Size = new System.Drawing.Size(121, 40);
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardarContraseña
             // 
-            this.btnGuardarContraseña.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardarContraseña.Location = new System.Drawing.Point(69, 219);
+            this.btnGuardarContraseña.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnGuardarContraseña.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardarContraseña.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarContraseña.Location = new System.Drawing.Point(109, 206);
             this.btnGuardarContraseña.Name = "btnGuardarContraseña";
-            this.btnGuardarContraseña.Size = new System.Drawing.Size(130, 63);
-            this.btnGuardarContraseña.TabIndex = 4;
+            this.btnGuardarContraseña.Size = new System.Drawing.Size(121, 40);
+            this.btnGuardarContraseña.TabIndex = 3;
             this.btnGuardarContraseña.Text = "Guardar Contraseña";
-            this.btnGuardarContraseña.UseVisualStyleBackColor = true;
+            this.btnGuardarContraseña.UseVisualStyleBackColor = false;
             this.btnGuardarContraseña.Click += new System.EventHandler(this.btnGuardarContraseña_Click);
             // 
             // lblContraseñaActual
             // 
             this.lblContraseñaActual.AutoSize = true;
             this.lblContraseñaActual.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContraseñaActual.Location = new System.Drawing.Point(89, 100);
+            this.lblContraseñaActual.Location = new System.Drawing.Point(129, 87);
             this.lblContraseñaActual.Name = "lblContraseñaActual";
             this.lblContraseñaActual.Size = new System.Drawing.Size(139, 21);
             this.lblContraseñaActual.TabIndex = 9;
@@ -86,25 +90,25 @@ namespace PeluqueriaDesktop
             // 
             // txtContraseñaNueva
             // 
-            this.txtContraseñaNueva.Location = new System.Drawing.Point(252, 136);
+            this.txtContraseñaNueva.Location = new System.Drawing.Point(292, 123);
             this.txtContraseñaNueva.Name = "txtContraseñaNueva";
             this.txtContraseñaNueva.PasswordChar = '*';
             this.txtContraseñaNueva.Size = new System.Drawing.Size(151, 23);
-            this.txtContraseñaNueva.TabIndex = 2;
+            this.txtContraseñaNueva.TabIndex = 1;
             // 
             // txtContraseñaActual
             // 
-            this.txtContraseñaActual.Location = new System.Drawing.Point(252, 102);
+            this.txtContraseñaActual.Location = new System.Drawing.Point(292, 89);
             this.txtContraseñaActual.Name = "txtContraseñaActual";
             this.txtContraseñaActual.PasswordChar = '*';
             this.txtContraseñaActual.Size = new System.Drawing.Size(151, 23);
-            this.txtContraseñaActual.TabIndex = 1;
+            this.txtContraseñaActual.TabIndex = 0;
             // 
             // lblContraseñaNueva
             // 
             this.lblContraseñaNueva.AutoSize = true;
             this.lblContraseñaNueva.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContraseñaNueva.Location = new System.Drawing.Point(87, 134);
+            this.lblContraseñaNueva.Location = new System.Drawing.Point(127, 121);
             this.lblContraseñaNueva.Name = "lblContraseñaNueva";
             this.lblContraseñaNueva.Size = new System.Drawing.Size(141, 21);
             this.lblContraseñaNueva.TabIndex = 12;
@@ -114,7 +118,7 @@ namespace PeluqueriaDesktop
             // 
             this.lblContraseñaNuevaConfirmacion.AutoSize = true;
             this.lblContraseñaNuevaConfirmacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContraseñaNuevaConfirmacion.Location = new System.Drawing.Point(12, 162);
+            this.lblContraseñaNuevaConfirmacion.Location = new System.Drawing.Point(52, 149);
             this.lblContraseñaNuevaConfirmacion.Name = "lblContraseñaNuevaConfirmacion";
             this.lblContraseñaNuevaConfirmacion.Size = new System.Drawing.Size(216, 21);
             this.lblContraseñaNuevaConfirmacion.TabIndex = 13;
@@ -122,11 +126,11 @@ namespace PeluqueriaDesktop
             // 
             // txtConfirmacionContraseña
             // 
-            this.txtConfirmacionContraseña.Location = new System.Drawing.Point(252, 165);
+            this.txtConfirmacionContraseña.Location = new System.Drawing.Point(292, 152);
             this.txtConfirmacionContraseña.Name = "txtConfirmacionContraseña";
             this.txtConfirmacionContraseña.PasswordChar = '*';
             this.txtConfirmacionContraseña.Size = new System.Drawing.Size(151, 23);
-            this.txtConfirmacionContraseña.TabIndex = 3;
+            this.txtConfirmacionContraseña.TabIndex = 2;
             // 
             // lblUsuarioActivo
             // 
@@ -142,7 +146,8 @@ namespace PeluqueriaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 318);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(544, 275);
             this.Controls.Add(this.lblUsuarioActivo);
             this.Controls.Add(this.txtConfirmacionContraseña);
             this.Controls.Add(this.lblContraseñaNuevaConfirmacion);

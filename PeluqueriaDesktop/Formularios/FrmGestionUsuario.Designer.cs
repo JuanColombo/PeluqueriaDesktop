@@ -42,7 +42,8 @@ namespace PeluqueriaDesktop
             // dataGridUsuarios
             // 
             this.dataGridUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridUsuarios.BackgroundColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dataGridUsuarios.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridUsuarios.Location = new System.Drawing.Point(12, 42);
             this.dataGridUsuarios.Name = "dataGridUsuarios";
@@ -53,58 +54,74 @@ namespace PeluqueriaDesktop
             // 
             // BtnEliminarUsuario
             // 
-            this.BtnEliminarUsuario.Location = new System.Drawing.Point(280, 307);
+            this.BtnEliminarUsuario.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnEliminarUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEliminarUsuario.ForeColor = System.Drawing.Color.White;
+            this.BtnEliminarUsuario.Location = new System.Drawing.Point(288, 307);
             this.BtnEliminarUsuario.Name = "BtnEliminarUsuario";
-            this.BtnEliminarUsuario.Size = new System.Drawing.Size(92, 35);
-            this.BtnEliminarUsuario.TabIndex = 2;
+            this.BtnEliminarUsuario.Size = new System.Drawing.Size(121, 40);
+            this.BtnEliminarUsuario.TabIndex = 3;
             this.BtnEliminarUsuario.Text = "Eliminar";
-            this.BtnEliminarUsuario.UseVisualStyleBackColor = true;
+            this.BtnEliminarUsuario.UseVisualStyleBackColor = false;
             this.BtnEliminarUsuario.Click += new System.EventHandler(this.BtnEliminarUsuario_Click);
             // 
             // BtnEditarUsuario
             // 
-            this.BtnEditarUsuario.Location = new System.Drawing.Point(165, 307);
+            this.BtnEditarUsuario.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnEditarUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEditarUsuario.ForeColor = System.Drawing.Color.White;
+            this.BtnEditarUsuario.Location = new System.Drawing.Point(153, 307);
             this.BtnEditarUsuario.Name = "BtnEditarUsuario";
-            this.BtnEditarUsuario.Size = new System.Drawing.Size(96, 35);
-            this.BtnEditarUsuario.TabIndex = 1;
+            this.BtnEditarUsuario.Size = new System.Drawing.Size(121, 40);
+            this.BtnEditarUsuario.TabIndex = 2;
             this.BtnEditarUsuario.Text = "Editar";
-            this.BtnEditarUsuario.UseVisualStyleBackColor = true;
+            this.BtnEditarUsuario.UseVisualStyleBackColor = false;
             this.BtnEditarUsuario.Click += new System.EventHandler(this.BtnEditarUsuario_Click);
             // 
             // BtnAñadirUsuario
             // 
-            this.BtnAñadirUsuario.Location = new System.Drawing.Point(51, 307);
+            this.BtnAñadirUsuario.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnAñadirUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnAñadirUsuario.ForeColor = System.Drawing.Color.White;
+            this.BtnAñadirUsuario.Location = new System.Drawing.Point(26, 307);
             this.BtnAñadirUsuario.Name = "BtnAñadirUsuario";
-            this.BtnAñadirUsuario.Size = new System.Drawing.Size(90, 35);
-            this.BtnAñadirUsuario.TabIndex = 0;
+            this.BtnAñadirUsuario.Size = new System.Drawing.Size(121, 40);
+            this.BtnAñadirUsuario.TabIndex = 1;
             this.BtnAñadirUsuario.Text = "Añadir";
-            this.BtnAñadirUsuario.UseVisualStyleBackColor = true;
+            this.BtnAñadirUsuario.UseVisualStyleBackColor = false;
             this.BtnAñadirUsuario.Click += new System.EventHandler(this.BtnAñadirUsuario_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(610, 322);
+            this.btnSalir.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(585, 322);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(92, 35);
-            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Size = new System.Drawing.Size(121, 40);
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnCambiarContraseña
             // 
-            this.btnCambiarContraseña.Location = new System.Drawing.Point(404, 307);
+            this.btnCambiarContraseña.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnCambiarContraseña.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCambiarContraseña.ForeColor = System.Drawing.Color.White;
+            this.btnCambiarContraseña.Location = new System.Drawing.Point(424, 307);
             this.btnCambiarContraseña.Name = "btnCambiarContraseña";
-            this.btnCambiarContraseña.Size = new System.Drawing.Size(127, 35);
+            this.btnCambiarContraseña.Size = new System.Drawing.Size(121, 40);
             this.btnCambiarContraseña.TabIndex = 4;
-            this.btnCambiarContraseña.Text = "CambiarContraseña";
-            this.btnCambiarContraseña.UseVisualStyleBackColor = true;
+            this.btnCambiarContraseña.Text = "Cambiar Contraseña";
+            this.btnCambiarContraseña.UseVisualStyleBackColor = false;
             this.btnCambiarContraseña.Click += new System.EventHandler(this.btnCambiarContraseña_Click);
             // 
             // FrmGestionUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(748, 364);
             this.Controls.Add(this.btnCambiarContraseña);
             this.Controls.Add(this.btnSalir);

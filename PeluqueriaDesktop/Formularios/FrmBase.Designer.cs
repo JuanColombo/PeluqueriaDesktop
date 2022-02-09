@@ -29,6 +29,7 @@ namespace PeluqueriaDesktop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBase));
             this.TxtBusqueda = new System.Windows.Forms.TextBox();
             this.LblBuscar = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
@@ -38,22 +39,21 @@ namespace PeluqueriaDesktop
             this.Grid = new System.Windows.Forms.DataGridView();
             this.chkVerEliminados = new System.Windows.Forms.CheckBox();
             this.BtnStock = new System.Windows.Forms.Button();
-            this.BtnTrabajo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtBusqueda
             // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(217, 415);
+            this.TxtBusqueda.Location = new System.Drawing.Point(75, 324);
             this.TxtBusqueda.Name = "TxtBusqueda";
-            this.TxtBusqueda.Size = new System.Drawing.Size(249, 23);
-            this.TxtBusqueda.TabIndex = 14;
+            this.TxtBusqueda.Size = new System.Drawing.Size(402, 23);
+            this.TxtBusqueda.TabIndex = 6;
             this.TxtBusqueda.TextChanged += new System.EventHandler(this.TxtBusqueda_TextChanged_1);
             // 
             // LblBuscar
             // 
             this.LblBuscar.AutoSize = true;
-            this.LblBuscar.Location = new System.Drawing.Point(313, 397);
+            this.LblBuscar.Location = new System.Drawing.Point(24, 328);
             this.LblBuscar.Name = "LblBuscar";
             this.LblBuscar.Size = new System.Drawing.Size(45, 15);
             this.LblBuscar.TabIndex = 13;
@@ -61,44 +61,52 @@ namespace PeluqueriaDesktop
             // 
             // BtnSalir
             // 
-            this.BtnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnSalir.Location = new System.Drawing.Point(678, 390);
+            this.BtnSalir.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnSalir.ForeColor = System.Drawing.Color.White;
+            this.BtnSalir.Location = new System.Drawing.Point(672, 390);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(110, 48);
-            this.BtnSalir.TabIndex = 12;
+            this.BtnSalir.Size = new System.Drawing.Size(121, 40);
+            this.BtnSalir.TabIndex = 8;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnEliminar.Location = new System.Drawing.Point(296, 317);
+            this.BtnEliminar.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnEliminar.Location = new System.Drawing.Point(288, 390);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(110, 35);
-            this.BtnEliminar.TabIndex = 11;
+            this.BtnEliminar.Size = new System.Drawing.Size(121, 40);
+            this.BtnEliminar.TabIndex = 3;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click_1);
             // 
             // BtnEditar
             // 
-            this.BtnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnEditar.Location = new System.Drawing.Point(166, 317);
+            this.BtnEditar.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnEditar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnEditar.Location = new System.Drawing.Point(158, 390);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(110, 35);
-            this.BtnEditar.TabIndex = 10;
+            this.BtnEditar.Size = new System.Drawing.Size(121, 40);
+            this.BtnEditar.TabIndex = 2;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = false;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click_1);
             // 
             // BtnNuevo
             // 
-            this.BtnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnNuevo.Location = new System.Drawing.Point(39, 317);
+            this.BtnNuevo.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnNuevo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnNuevo.Location = new System.Drawing.Point(31, 390);
             this.BtnNuevo.Name = "BtnNuevo";
-            this.BtnNuevo.Size = new System.Drawing.Size(110, 35);
-            this.BtnNuevo.TabIndex = 9;
+            this.BtnNuevo.Size = new System.Drawing.Size(121, 40);
+            this.BtnNuevo.TabIndex = 1;
             this.BtnNuevo.Text = "Nuevo";
             this.BtnNuevo.UseVisualStyleBackColor = false;
             this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click_1);
@@ -106,6 +114,8 @@ namespace PeluqueriaDesktop
             // Grid
             // 
             this.Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Grid.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid.Location = new System.Drawing.Point(12, 46);
             this.Grid.Name = "Grid";
@@ -113,48 +123,40 @@ namespace PeluqueriaDesktop
             this.Grid.RowTemplate.Height = 25;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid.Size = new System.Drawing.Size(776, 252);
-            this.Grid.TabIndex = 8;
+            this.Grid.TabIndex = 0;
             // 
             // chkVerEliminados
             // 
             this.chkVerEliminados.AutoSize = true;
-            this.chkVerEliminados.Location = new System.Drawing.Point(489, 415);
+            this.chkVerEliminados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.chkVerEliminados.Location = new System.Drawing.Point(655, 304);
             this.chkVerEliminados.Name = "chkVerEliminados";
-            this.chkVerEliminados.Size = new System.Drawing.Size(103, 19);
-            this.chkVerEliminados.TabIndex = 15;
+            this.chkVerEliminados.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.chkVerEliminados.Size = new System.Drawing.Size(133, 25);
+            this.chkVerEliminados.TabIndex = 7;
             this.chkVerEliminados.Text = "Ver Eliminados";
             this.chkVerEliminados.UseVisualStyleBackColor = true;
             this.chkVerEliminados.CheckedChanged += new System.EventHandler(this.chkVerEliminados_CheckedChanged_1);
             // 
             // BtnStock
             // 
-            this.BtnStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnStock.Location = new System.Drawing.Point(431, 317);
+            this.BtnStock.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnStock.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnStock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnStock.Location = new System.Drawing.Point(423, 390);
             this.BtnStock.Name = "BtnStock";
-            this.BtnStock.Size = new System.Drawing.Size(110, 35);
-            this.BtnStock.TabIndex = 16;
+            this.BtnStock.Size = new System.Drawing.Size(121, 40);
+            this.BtnStock.TabIndex = 4;
             this.BtnStock.Text = "Stock";
             this.BtnStock.UseVisualStyleBackColor = false;
             this.BtnStock.Click += new System.EventHandler(this.BtnStock_Click);
-            // 
-            // BtnTrabajo
-            // 
-            this.BtnTrabajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnTrabajo.Location = new System.Drawing.Point(39, 358);
-            this.BtnTrabajo.Name = "BtnTrabajo";
-            this.BtnTrabajo.Size = new System.Drawing.Size(110, 35);
-            this.BtnTrabajo.TabIndex = 17;
-            this.BtnTrabajo.Text = "Registrar Trabajo";
-            this.BtnTrabajo.UseVisualStyleBackColor = false;
-            this.BtnTrabajo.Click += new System.EventHandler(this.BtnTrabajo_Click);
             // 
             // FrmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BtnTrabajo);
             this.Controls.Add(this.BtnStock);
             this.Controls.Add(this.chkVerEliminados);
             this.Controls.Add(this.TxtBusqueda);
@@ -164,6 +166,7 @@ namespace PeluqueriaDesktop
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnNuevo);
             this.Controls.Add(this.Grid);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
@@ -184,6 +187,5 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.DataGridView Grid;
         private System.Windows.Forms.CheckBox chkVerEliminados;
         private System.Windows.Forms.Button BtnStock;
-        private System.Windows.Forms.Button BtnTrabajo;
     }
 }

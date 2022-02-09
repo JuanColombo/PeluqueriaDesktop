@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoTrabajos));
             this.LblCantidad = new System.Windows.Forms.Label();
             this.LblTituloPrincipal = new System.Windows.Forms.Label();
             this.BtnGuardar = new System.Windows.Forms.Button();
@@ -66,31 +67,33 @@
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnGuardar.Location = new System.Drawing.Point(501, 351);
+            this.BtnGuardar.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.Location = new System.Drawing.Point(474, 353);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(105, 42);
-            this.BtnGuardar.TabIndex = 13;
+            this.BtnGuardar.Size = new System.Drawing.Size(121, 40);
+            this.BtnGuardar.TabIndex = 4;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCancelar.Location = new System.Drawing.Point(626, 351);
+            this.BtnCancelar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCancelar.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelar.Location = new System.Drawing.Point(610, 353);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(105, 42);
-            this.BtnCancelar.TabIndex = 14;
+            this.BtnCancelar.Size = new System.Drawing.Size(121, 40);
+            this.BtnCancelar.TabIndex = 5;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // NumUpDownValor
             // 
-            this.NumUpDownValor.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NumUpDownValor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumUpDownValor.Location = new System.Drawing.Point(210, 222);
             this.NumUpDownValor.Maximum = new decimal(new int[] {
             1410065407,
@@ -103,8 +106,8 @@
             0,
             -2147483648});
             this.NumUpDownValor.Name = "NumUpDownValor";
-            this.NumUpDownValor.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownValor.TabIndex = 16;
+            this.NumUpDownValor.Size = new System.Drawing.Size(160, 33);
+            this.NumUpDownValor.TabIndex = 2;
             // 
             // lblMarca
             // 
@@ -143,7 +146,7 @@
             this.TxtDescripcionBBDD.Multiline = true;
             this.TxtDescripcionBBDD.Name = "TxtDescripcionBBDD";
             this.TxtDescripcionBBDD.Size = new System.Drawing.Size(396, 48);
-            this.TxtDescripcionBBDD.TabIndex = 22;
+            this.TxtDescripcionBBDD.TabIndex = 1;
             // 
             // label1
             // 
@@ -162,7 +165,7 @@
             this.DtpFechaTrabajo.Location = new System.Drawing.Point(210, 104);
             this.DtpFechaTrabajo.Name = "DtpFechaTrabajo";
             this.DtpFechaTrabajo.Size = new System.Drawing.Size(143, 29);
-            this.DtpFechaTrabajo.TabIndex = 24;
+            this.DtpFechaTrabajo.TabIndex = 0;
             // 
             // label2
             // 
@@ -181,13 +184,13 @@
             this.CboTipoPago.Location = new System.Drawing.Point(210, 291);
             this.CboTipoPago.Name = "CboTipoPago";
             this.CboTipoPago.Size = new System.Drawing.Size(160, 29);
-            this.CboTipoPago.TabIndex = 26;
+            this.CboTipoPago.TabIndex = 3;
             // 
             // FrmNuevoTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 405);
             this.Controls.Add(this.CboTipoPago);
             this.Controls.Add(this.label2);
@@ -202,11 +205,12 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.LblTituloPrincipal);
             this.Controls.Add(this.LblCantidad);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmNuevoTrabajos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trabajos Realizados";
+            this.Text = "Registrar Trabajo";
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownValor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

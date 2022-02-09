@@ -80,7 +80,7 @@ namespace PeluqueriaDesktop
             this.txtBBDD.Location = new System.Drawing.Point(184, 114);
             this.txtBBDD.Name = "txtBBDD";
             this.txtBBDD.Size = new System.Drawing.Size(170, 23);
-            this.txtBBDD.TabIndex = 2;
+            this.txtBBDD.TabIndex = 1;
             // 
             // lblUsuario
             // 
@@ -98,7 +98,7 @@ namespace PeluqueriaDesktop
             this.txtUsuario.Location = new System.Drawing.Point(184, 164);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(170, 23);
-            this.txtUsuario.TabIndex = 4;
+            this.txtUsuario.TabIndex = 2;
             // 
             // lblContraseña
             // 
@@ -116,16 +116,19 @@ namespace PeluqueriaDesktop
             this.txtContraseña.Location = new System.Drawing.Point(184, 219);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(170, 23);
-            this.txtContraseña.TabIndex = 6;
+            this.txtContraseña.TabIndex = 3;
             // 
             // btnGuardarModificar
             // 
+            this.btnGuardarModificar.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnGuardarModificar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardarModificar.ForeColor = System.Drawing.Color.White;
             this.btnGuardarModificar.Location = new System.Drawing.Point(170, 406);
             this.btnGuardarModificar.Name = "btnGuardarModificar";
-            this.btnGuardarModificar.Size = new System.Drawing.Size(110, 55);
-            this.btnGuardarModificar.TabIndex = 8;
+            this.btnGuardarModificar.Size = new System.Drawing.Size(121, 40);
+            this.btnGuardarModificar.TabIndex = 6;
             this.btnGuardarModificar.Text = "Modificar";
-            this.btnGuardarModificar.UseVisualStyleBackColor = true;
+            this.btnGuardarModificar.UseVisualStyleBackColor = false;
             this.btnGuardarModificar.Click += new System.EventHandler(this.btnGuardarModificar_Click);
             // 
             // PbxImagen
@@ -154,24 +157,27 @@ namespace PeluqueriaDesktop
             this.txtImagen.Location = new System.Drawing.Point(184, 274);
             this.txtImagen.Name = "txtImagen";
             this.txtImagen.Size = new System.Drawing.Size(170, 23);
-            this.txtImagen.TabIndex = 11;
+            this.txtImagen.TabIndex = 4;
             // 
             // btnExaminar
             // 
+            this.btnExaminar.BackColor = System.Drawing.Color.DarkCyan;
             this.btnExaminar.Enabled = false;
+            this.btnExaminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExaminar.ForeColor = System.Drawing.Color.White;
             this.btnExaminar.Location = new System.Drawing.Point(391, 274);
             this.btnExaminar.Name = "btnExaminar";
-            this.btnExaminar.Size = new System.Drawing.Size(75, 23);
-            this.btnExaminar.TabIndex = 12;
+            this.btnExaminar.Size = new System.Drawing.Size(109, 34);
+            this.btnExaminar.TabIndex = 5;
             this.btnExaminar.Text = "Examinar";
-            this.btnExaminar.UseVisualStyleBackColor = true;
+            this.btnExaminar.UseVisualStyleBackColor = false;
             this.btnExaminar.Click += new System.EventHandler(this.btnExaminar_Click);
             // 
             // FrmParametros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(512, 485);
             this.Controls.Add(this.btnExaminar);
