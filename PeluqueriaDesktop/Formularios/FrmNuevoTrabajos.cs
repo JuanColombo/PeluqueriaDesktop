@@ -45,7 +45,7 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
 
-                detalleTrabajo.ClienteId = cliente.Id;
+                detalleTrabajo.ClienteId = cliente.Id; 
                 detalleTrabajo.Fecha = DtpFechaTrabajo.Value.Date;
                 detalleTrabajo.DetalleTrabajo = TxtDescripcionBBDD.Text;
                 detalleTrabajo.FormaDePago = (TipoDePagoEnum)CboTipoPago.SelectedValue;

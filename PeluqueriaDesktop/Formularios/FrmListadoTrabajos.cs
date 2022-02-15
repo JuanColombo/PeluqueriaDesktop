@@ -32,7 +32,7 @@ namespace PeluqueriaDesktop.Formularios
                                           Id = detalleTrabajo.Id,
                                           Fecha = detalleTrabajo.Fecha,
                                           Detalle = detalleTrabajo.DetalleTrabajo,
-                                          Cliente = detalleTrabajo.cliente.Nombre,
+                                          Cliente = detalleTrabajo.cliente.Nombre + " " + detalleTrabajo.cliente.Apellido,
                                           FormaPago = detalleTrabajo.FormaDePago
                                       };
                 Grid.DataSource = trabajosAListar.ToList();

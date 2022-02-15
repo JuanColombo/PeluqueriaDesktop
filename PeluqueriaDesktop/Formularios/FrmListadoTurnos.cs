@@ -31,7 +31,7 @@ namespace PeluqueriaDesktop.Formularios
                                           Id = turnos.Id,
                                           Fecha = turnos.Fecha,
                                           Trabajo = turnos.TrabajoARealizar,
-                                          Cliente = turnos.Cliente.Nombre
+                                          Cliente = turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido
                                       };
                 Grid.DataSource = turnosAListar.ToList();
             }
