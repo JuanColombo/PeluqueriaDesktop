@@ -5,13 +5,13 @@ using System.Text;
 
 namespace PeluqueriaDesktop.Modelos
 {
-   public class DetalleTrabajos
+   public class DetalleTrabajos : ModeloBase
     {
         public int Id { get; set; }
         [Required]
         public DateTime Fecha { get; set; }
         [Required]
-        public int IdCliente { get; set; }
+        public int ClienteId { get; set; }
         public Cliente cliente { get; set; }
         [Required]
         public string DetalleTrabajo { get; set; }
@@ -19,5 +19,6 @@ namespace PeluqueriaDesktop.Modelos
         public TipoDePagoEnum FormaDePago { get; set; }
         [Required]
         public double Valor { get; set; }
+        public ICollection<Cliente> Clientes { get; set; }
     }
 }

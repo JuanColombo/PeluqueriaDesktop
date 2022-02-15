@@ -24,7 +24,11 @@ namespace PeluqueriaDesktop
             modelBuilder.Entity<Producto>().HasData(
                 new Producto { Id = 1, Cantidad = 1, Codigo = 0003145, Marca = "Avon", Descripcion="Tintura color morado" },
                 new Producto { Id = 2, Cantidad = 5, Codigo = 10444584, Marca = "Plusbelle", Descripcion = "Shampoo manzana" }
-      );
+                 );
+            modelBuilder.Entity<Usuario>().HasData(
+              new Usuario { Id = 1, Nombre = "Ivan Valle", User = "ivan", Password = "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3", TipoUsuario = TipoUsuarioEnum.Administrador },
+              new Usuario { Id = 2, Nombre = "Juan Pablo Colombo", User = "juan", Password = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4", TipoUsuario = TipoUsuarioEnum.Administrador }
+                );
 
 
 
@@ -34,6 +38,7 @@ namespace PeluqueriaDesktop
         public DbSet<Producto> Producto { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<DetalleTrabajos> DetalleTrabajos { get; set; }
+        public DbSet<Turno> Turnos { get; set; }
 
 
 

@@ -16,6 +16,7 @@ namespace PeluqueriaDesktop
     {
         public static Usuario Usuario;
         private object BotonStock;
+        private object BotonTurno;
 
         public FrmMenuPrincipal()
         {
@@ -81,6 +82,24 @@ namespace PeluqueriaDesktop
         {
             var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock);
             frmCargarClientes.ShowDialog();
+        }
+
+        private void BtnCargarTurno_Click(object sender, EventArgs e)
+        {
+            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock, BotonTurno);
+            frmCargarClientes.ShowDialog();
+        }
+
+        private void subMnuListadoTrabajos_Click(object sender, EventArgs e)
+        {
+            var frmListadoTrabajos = new FrmListadoTrabajos(new DbAdminTrabajosRealizados());
+            frmListadoTrabajos.ShowDialog();
+        }
+
+        private void subMnuListadoTurnos_Click(object sender, EventArgs e)
+        {
+            var frmListadoTurnos = new FrmListadoTurnos(new DbAdminTrabajosRealizados());
+            frmListadoTurnos.ShowDialog();
         }
     }
 }

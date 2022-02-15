@@ -15,6 +15,7 @@ namespace PeluqueriaDesktop
         IDbAdmin dbAdmin;
         IFormBase FrmNuevoEditar;
         private object botonStock;
+        private object botonTurno;
 
         public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar)
         { 
@@ -28,6 +29,14 @@ namespace PeluqueriaDesktop
         {
             InitializeComponent();
             BtnStock.Text = "Registrar Trabajo";
+            dbAdmin = objetoDbAdmin;
+            FrmNuevoEditar = frmNuevoEditar;
+            ActualizarGrilla();
+        }
+        public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar, object botonStock, object botonTurno)
+        {
+            InitializeComponent();
+            BtnStock.Text = "Registrar Turno";
             dbAdmin = objetoDbAdmin;
             FrmNuevoEditar = frmNuevoEditar;
             ActualizarGrilla();
@@ -138,7 +147,7 @@ namespace PeluqueriaDesktop
                 //seleccionamos el registro editado
                 Grid.CurrentCell = Grid.Rows[filaAEditar].Cells[0];
             }
-            else 
+            else if (BtnStock.Text == "Registrar Trabajo")
             {
                 //creamos la variable para saber que id de Producto que tenemos seleccionado
                 var idSeleccionado = Grid.ObtenerIdSeleccionado();
@@ -146,6 +155,22 @@ namespace PeluqueriaDesktop
 
                 var frmNuevoTrabajos = new FrmNuevoTrabajos(idSeleccionado);
                 frmNuevoTrabajos.ShowDialog();
+
+
+                //actualizamos la grilla
+                ActualizarGrilla();
+
+                //seleccionamos el registro editado
+                Grid.CurrentCell = Grid.Rows[filaAEditar].Cells[0];
+            }
+            else
+            {
+                //creamos la variable para saber que id de Producto que tenemos seleccionado
+                var idSeleccionado = Grid.ObtenerIdSeleccionado();
+                var filaAEditar = Grid.CurrentRow.Index;
+
+                var frmNuevoTurno = new FrmCargarTurno(idSeleccionado);
+                frmNuevoTurno.ShowDialog();
 
 
                 //actualizamos la grilla

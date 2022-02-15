@@ -12,7 +12,7 @@
       <Value Profile="(Default)">sa</Value>
     </Setting>
     <Setting Name="contraseña" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1234</Value>
+      <Value Profile="(Default)">123</Value>
     </Setting>
     <Setting Name="imagenDeFondo" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

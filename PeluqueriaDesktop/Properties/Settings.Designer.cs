@@ -61,7 +61,7 @@ namespace PeluqueriaDesktop.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1234")]
+        [global::System.Configuration.DefaultSettingValueAttribute("123")]
         public string contraseña {
             get {
                 return ((string)(this["contraseña"]));

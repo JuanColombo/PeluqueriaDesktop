@@ -30,6 +30,9 @@ namespace PeluqueriaDesktop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("DetalleTrabajosId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("Eliminado")
                         .HasColumnType("bit");
 
@@ -47,6 +50,8 @@ namespace PeluqueriaDesktop.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DetalleTrabajosId");
 
                     b.HasIndex("UsuarioId");
 
@@ -78,28 +83,36 @@ namespace PeluqueriaDesktop.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("int");
+
                     b.Property<string>("DetalleTrabajo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Eliminado")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaHoraEliminacion")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("FormaDePago")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdCliente")
+                    b.Property<int?>("UsuarioId")
                         .HasColumnType("int");
 
                     b.Property<double>("Valor")
                         .HasColumnType("float");
 
-                    b.Property<int?>("clienteId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("clienteId");
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("DetalleTrabajos");
                 });
@@ -161,6 +174,44 @@ namespace PeluqueriaDesktop.Migrations
                         });
                 });
 
+            modelBuilder.Entity("PeluqueriaDesktop.Turno", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Eliminado")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaHoraEliminacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Hora")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TrabajoARealizar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Turnos");
+                });
+
             modelBuilder.Entity("PeluqueriaDesktop.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -200,10 +251,34 @@ namespace PeluqueriaDesktop.Migrations
                     b.HasIndex("UsuarioId1");
 
                     b.ToTable("Usuarios");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Eliminado = false,
+                            Nombre = "Ivan Valle",
+                            Password = "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+                            TipoUsuario = 3,
+                            User = "ivan"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Eliminado = false,
+                            Nombre = "Juan Pablo Colombo",
+                            Password = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+                            TipoUsuario = 3,
+                            User = "juan"
+                        });
                 });
 
             modelBuilder.Entity("PeluqueriaDesktop.Cliente", b =>
                 {
+                    b.HasOne("PeluqueriaDesktop.Modelos.DetalleTrabajos", null)
+                        .WithMany("Clientes")
+                        .HasForeignKey("DetalleTrabajosId");
+
                     b.HasOne("PeluqueriaDesktop.Usuario", "Usuario")
                         .WithMany()
                         .HasForeignKey("UsuarioId");
@@ -213,11 +288,30 @@ namespace PeluqueriaDesktop.Migrations
                 {
                     b.HasOne("PeluqueriaDesktop.Cliente", "cliente")
                         .WithMany()
-                        .HasForeignKey("clienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PeluqueriaDesktop.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId");
                 });
 
             modelBuilder.Entity("PeluqueriaDesktop.Modelos.Producto", b =>
                 {
+                    b.HasOne("PeluqueriaDesktop.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId");
+                });
+
+            modelBuilder.Entity("PeluqueriaDesktop.Turno", b =>
+                {
+                    b.HasOne("PeluqueriaDesktop.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("PeluqueriaDesktop.Usuario", "Usuario")
                         .WithMany()
                         .HasForeignKey("UsuarioId");

@@ -1,4 +1,5 @@
-﻿using PeluqueriaDesktop.Modelos;
+﻿using PeluqueriaDesktop.AdminData;
+using PeluqueriaDesktop.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,12 +10,12 @@ using System.Windows.Forms;
 
 namespace PeluqueriaDesktop.Formularios
 {
-    public partial class FrmNuevoTrabajos : Form
+    public partial class FrmCargarTurno : Form
     {
         public int? IdDatos { get; set; }
         Cliente cliente = new Cliente();
-        DetalleTrabajos detalleTrabajo = new DetalleTrabajos();
-        public FrmNuevoTrabajos(int idSeleccionado)
+        Turno turno = new Turno();
+        public FrmCargarTurno(int idSeleccionado)
         {
             InitializeComponent();
             if (idSeleccionado != 0)
@@ -30,8 +31,7 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 cliente = db.Cliente.Find(IdDatos);
-                lblClienteBBDD.Text = cliente.Apellido + " " + cliente.Nombre ;
-                CboTipoPago.DataSource = Enum.GetValues(typeof(TipoDePagoEnum));
+                lblClienteBBDD.Text = cliente.Apellido + " " + cliente.Nombre;
             }
         }
 
@@ -39,19 +39,16 @@ namespace PeluqueriaDesktop.Formularios
         {
             this.MensajeDeAdvertenciaDeSalida();
         }
-
-        private void BtnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click_1(object sender, EventArgs e)
         {
             using (var db = new PeluqueriaContext())
             {
 
-                detalleTrabajo.ClienteId = cliente.Id;
-                detalleTrabajo.Fecha = DtpFechaTrabajo.Value.Date;
-                detalleTrabajo.DetalleTrabajo = TxtDescripcionBBDD.Text;
-                detalleTrabajo.FormaDePago = (TipoDePagoEnum)CboTipoPago.SelectedValue;
-                detalleTrabajo.Valor = (int)NumUpDownValor.Value;
-
-                db.DetalleTrabajos.Add(detalleTrabajo);
+                turno.ClienteId = cliente.Id;
+                turno.Fecha = DtpFechaTurno.Value.Date;
+                turno.Hora = DtpHoraTurno.Value;
+                turno.TrabajoARealizar = txtTrabajo.Text;
+                db.Turnos.Add(turno);
 
                 db.SaveChanges();
 
@@ -59,6 +56,6 @@ namespace PeluqueriaDesktop.Formularios
             }
             this.Close();
         }
-        }
     }
+}
 
