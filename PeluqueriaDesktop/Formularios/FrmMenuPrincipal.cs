@@ -101,5 +101,11 @@ namespace PeluqueriaDesktop
             var frmListadoTurnos = new FrmListadoTurnos(new DbAdminTrabajosRealizados());
             frmListadoTurnos.ShowDialog();
         }
+
+        private void BtnCaja_Click(object sender, EventArgs e)
+        {
+            var fmrCaja = new FrmCaja();
+            fmrCaja.ShowDialog();
+        }
     }
 }

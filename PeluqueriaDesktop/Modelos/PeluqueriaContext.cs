@@ -39,6 +39,7 @@ namespace PeluqueriaDesktop
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<DetalleTrabajos> DetalleTrabajos { get; set; }
         public DbSet<Turno> Turnos { get; set; }
+        public DbSet<Caja> Caja { get; set; }
 
 
 

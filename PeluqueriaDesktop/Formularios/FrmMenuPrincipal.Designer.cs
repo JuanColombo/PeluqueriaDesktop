@@ -47,6 +47,7 @@ namespace PeluqueriaDesktop
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.BtnRegistrarTrabajo = new System.Windows.Forms.ToolStripButton();
             this.BtnCargarTurno = new System.Windows.Forms.ToolStripButton();
+            this.BtnCaja = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -176,7 +177,8 @@ namespace PeluqueriaDesktop
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BtnRegistrarTrabajo,
-            this.BtnCargarTurno});
+            this.BtnCargarTurno,
+            this.BtnCaja});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(843, 57);
@@ -202,6 +204,16 @@ namespace PeluqueriaDesktop
             this.BtnCargarTurno.Text = "Turnos";
             this.BtnCargarTurno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCargarTurno.Click += new System.EventHandler(this.BtnCargarTurno_Click);
+            // 
+            // BtnCaja
+            // 
+            this.BtnCaja.Image = ((System.Drawing.Image)(resources.GetObject("BtnCaja.Image")));
+            this.BtnCaja.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnCaja.Name = "BtnCaja";
+            this.BtnCaja.Size = new System.Drawing.Size(39, 54);
+            this.BtnCaja.Text = "Caja";
+            this.BtnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnCaja.Click += new System.EventHandler(this.BtnCaja_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -248,6 +260,7 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.ToolStripMenuItem MnuTrabajos;
         private System.Windows.Forms.ToolStripMenuItem subMnuListadoTrabajos;
         private System.Windows.Forms.ToolStripMenuItem subMnuListadoTurnos;
+        private System.Windows.Forms.ToolStripButton BtnCaja;
     }
 }
 
