@@ -42,6 +42,7 @@ namespace PeluqueriaDesktop.Formularios
             this.TxtBusqueda.Name = "TxtBusqueda";
             this.TxtBusqueda.Size = new System.Drawing.Size(402, 23);
             this.TxtBusqueda.TabIndex = 19;
+            this.TxtBusqueda.TextChanged += new System.EventHandler(this.TxtBusqueda_TextChanged);
             // 
             // LblBuscar
             // 

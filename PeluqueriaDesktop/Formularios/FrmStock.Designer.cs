@@ -34,8 +34,8 @@
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.NumUpDownStockActual = new System.Windows.Forms.NumericUpDown();
-            this.lblNuevoStock = new System.Windows.Forms.Label();
-            this.NumUpDownIngresoEgreso = new System.Windows.Forms.NumericUpDown();
+            this.lblIngreso = new System.Windows.Forms.Label();
+            this.NumUpDownIngreso = new System.Windows.Forms.NumericUpDown();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblMarcaBBDD = new System.Windows.Forms.Label();
             this.LblDescripcion = new System.Windows.Forms.Label();
@@ -43,10 +43,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LblTotal = new System.Windows.Forms.Label();
             this.NumUpDownTotal = new System.Windows.Forms.NumericUpDown();
+            this.NumUpDownEgreso = new System.Windows.Forms.NumericUpDown();
+            this.lblEgreso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownStockActual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownIngresoEgreso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownEgreso)).BeginInit();
             this.SuspendLayout();
             // 
             // LblCantidad
@@ -109,33 +112,33 @@
             this.NumUpDownStockActual.Size = new System.Drawing.Size(97, 39);
             this.NumUpDownStockActual.TabIndex = 0;
             // 
-            // lblNuevoStock
+            // lblIngreso
             // 
-            this.lblNuevoStock.AutoSize = true;
-            this.lblNuevoStock.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNuevoStock.Location = new System.Drawing.Point(443, 280);
-            this.lblNuevoStock.Name = "lblNuevoStock";
-            this.lblNuevoStock.Size = new System.Drawing.Size(164, 30);
-            this.lblNuevoStock.TabIndex = 15;
-            this.lblNuevoStock.Text = "Ingreso - Egreso";
+            this.lblIngreso.AutoSize = true;
+            this.lblIngreso.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIngreso.Location = new System.Drawing.Point(520, 252);
+            this.lblIngreso.Name = "lblIngreso";
+            this.lblIngreso.Size = new System.Drawing.Size(87, 30);
+            this.lblIngreso.TabIndex = 15;
+            this.lblIngreso.Text = "Ingreso:";
             // 
-            // NumUpDownIngresoEgreso
+            // NumUpDownIngreso
             // 
-            this.NumUpDownIngresoEgreso.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumUpDownIngresoEgreso.Location = new System.Drawing.Point(626, 276);
-            this.NumUpDownIngresoEgreso.Maximum = new decimal(new int[] {
+            this.NumUpDownIngreso.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NumUpDownIngreso.Location = new System.Drawing.Point(626, 248);
+            this.NumUpDownIngreso.Maximum = new decimal(new int[] {
             1410065407,
             2,
             0,
             0});
-            this.NumUpDownIngresoEgreso.Minimum = new decimal(new int[] {
+            this.NumUpDownIngreso.Minimum = new decimal(new int[] {
             1215752191,
             23,
             0,
             -2147483648});
-            this.NumUpDownIngresoEgreso.Name = "NumUpDownIngresoEgreso";
-            this.NumUpDownIngresoEgreso.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownIngresoEgreso.TabIndex = 1;
+            this.NumUpDownIngreso.Name = "NumUpDownIngreso";
+            this.NumUpDownIngreso.Size = new System.Drawing.Size(97, 39);
+            this.NumUpDownIngreso.TabIndex = 1;
             // 
             // lblMarca
             // 
@@ -211,12 +214,42 @@
             this.NumUpDownTotal.Size = new System.Drawing.Size(97, 39);
             this.NumUpDownTotal.TabIndex = 25;
             // 
+            // NumUpDownEgreso
+            // 
+            this.NumUpDownEgreso.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NumUpDownEgreso.Location = new System.Drawing.Point(626, 295);
+            this.NumUpDownEgreso.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.NumUpDownEgreso.Minimum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            -2147483648});
+            this.NumUpDownEgreso.Name = "NumUpDownEgreso";
+            this.NumUpDownEgreso.Size = new System.Drawing.Size(97, 39);
+            this.NumUpDownEgreso.TabIndex = 26;
+            // 
+            // lblEgreso
+            // 
+            this.lblEgreso.AutoSize = true;
+            this.lblEgreso.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEgreso.Location = new System.Drawing.Point(520, 299);
+            this.lblEgreso.Name = "lblEgreso";
+            this.lblEgreso.Size = new System.Drawing.Size(86, 30);
+            this.lblEgreso.TabIndex = 27;
+            this.lblEgreso.Text = " Egreso:";
+            // 
             // FrmStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 405);
+            this.Controls.Add(this.NumUpDownEgreso);
+            this.Controls.Add(this.lblEgreso);
             this.Controls.Add(this.NumUpDownTotal);
             this.Controls.Add(this.LblTotal);
             this.Controls.Add(this.pictureBox1);
@@ -224,8 +257,8 @@
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.lblMarcaBBDD);
             this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.NumUpDownIngresoEgreso);
-            this.Controls.Add(this.lblNuevoStock);
+            this.Controls.Add(this.NumUpDownIngreso);
+            this.Controls.Add(this.lblIngreso);
             this.Controls.Add(this.NumUpDownStockActual);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
@@ -238,9 +271,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock de Productos";
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownStockActual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownIngresoEgreso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownEgreso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,8 +287,8 @@
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.NumericUpDown NumUpDownStockActual;
-        private System.Windows.Forms.Label lblNuevoStock;
-        private System.Windows.Forms.NumericUpDown NumUpDownIngresoEgreso;
+        private System.Windows.Forms.Label lblIngreso;
+        private System.Windows.Forms.NumericUpDown NumUpDownIngreso;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblMarcaBBDD;
         private System.Windows.Forms.Label LblDescripcion;
@@ -262,5 +296,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LblTotal;
         private System.Windows.Forms.NumericUpDown NumUpDownTotal;
+        private System.Windows.Forms.NumericUpDown NumUpDownEgreso;
+        private System.Windows.Forms.Label lblEgreso;
     }
 }

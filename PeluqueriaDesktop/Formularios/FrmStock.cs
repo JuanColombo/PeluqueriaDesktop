@@ -45,7 +45,7 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
 
-                producto.Cantidad = producto.Cantidad + (double)NumUpDownIngresoEgreso.Value;
+                producto.Cantidad = producto.Cantidad + (double)NumUpDownIngreso.Value- (double)NumUpDownEgreso.Value;
                 db.Entry(producto).State = EntityState.Modified;
                 db.SaveChanges();
                 MessageBox.Show("Stock de " + producto.Marca + "  modificado con exito");

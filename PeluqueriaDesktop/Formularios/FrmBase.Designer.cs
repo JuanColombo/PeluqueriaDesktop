@@ -39,6 +39,8 @@ namespace PeluqueriaDesktop
             this.Grid = new System.Windows.Forms.DataGridView();
             this.chkVerEliminados = new System.Windows.Forms.CheckBox();
             this.BtnStock = new System.Windows.Forms.Button();
+            this.lblEliminados = new System.Windows.Forms.Label();
+            this.lblTituloFormulario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,12 +153,32 @@ namespace PeluqueriaDesktop
             this.BtnStock.UseVisualStyleBackColor = false;
             this.BtnStock.Click += new System.EventHandler(this.BtnStock_Click);
             // 
+            // lblEliminados
+            // 
+            this.lblEliminados.AutoSize = true;
+            this.lblEliminados.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblEliminados.Location = new System.Drawing.Point(30, 13);
+            this.lblEliminados.Name = "lblEliminados";
+            this.lblEliminados.Size = new System.Drawing.Size(0, 21);
+            this.lblEliminados.TabIndex = 14;
+            // 
+            // lblTituloFormulario
+            // 
+            this.lblTituloFormulario.AutoSize = true;
+            this.lblTituloFormulario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblTituloFormulario.Location = new System.Drawing.Point(697, 18);
+            this.lblTituloFormulario.Name = "lblTituloFormulario";
+            this.lblTituloFormulario.Size = new System.Drawing.Size(0, 21);
+            this.lblTituloFormulario.TabIndex = 15;
+            // 
             // FrmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTituloFormulario);
+            this.Controls.Add(this.lblEliminados);
             this.Controls.Add(this.BtnStock);
             this.Controls.Add(this.chkVerEliminados);
             this.Controls.Add(this.TxtBusqueda);
@@ -169,7 +191,7 @@ namespace PeluqueriaDesktop
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Clientes";
+            this.Text = ":: Salon A Peluqueria ::";
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,5 +209,7 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.DataGridView Grid;
         private System.Windows.Forms.CheckBox chkVerEliminados;
         private System.Windows.Forms.Button BtnStock;
+        private System.Windows.Forms.Label lblEliminados;
+        private System.Windows.Forms.Label lblTituloFormulario;
     }
 }

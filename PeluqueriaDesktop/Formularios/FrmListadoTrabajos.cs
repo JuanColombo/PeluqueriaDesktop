@@ -44,5 +44,10 @@ namespace PeluqueriaDesktop.Formularios
         {
             this.MensajeDeAdvertenciaDeSalida();
         }
+
+        private void TxtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            Grid.DataSource = dbAdmin.ObtenerTodos(TxtBusqueda.Text);
+        }
     }
 }

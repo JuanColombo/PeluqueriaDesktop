@@ -8,6 +8,7 @@ namespace PeluqueriaDesktop.Interfaces
     {
         IEnumerable<object> ObtenerTodos();
         IEnumerable<object> ObtenerEliminados();
+        IEnumerable<object> ObtenerEliminados(string cadenaBuscada);
         IEnumerable<object> ObtenerTodos(string cadenaBuscada);
         void Eliminar(int idSeleccionado);
         void Restaurar(int idSeleccionado);

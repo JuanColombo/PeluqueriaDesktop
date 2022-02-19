@@ -63,6 +63,7 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnSalir.TabIndex = 21;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // Grid
             // 
@@ -78,7 +79,7 @@ namespace PeluqueriaDesktop.Formularios
             this.Grid.Size = new System.Drawing.Size(776, 338);
             this.Grid.TabIndex = 14;
             // 
-            // FrmListadoTrabajos
+            // FrmListadoTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,7 +90,7 @@ namespace PeluqueriaDesktop.Formularios
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.Grid);
             this.MaximizeBox = false;
-            this.Name = "FrmListadoTrabajos";
+            this.Name = "FrmListadoTurnos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado De Trabajos Realizados";
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();

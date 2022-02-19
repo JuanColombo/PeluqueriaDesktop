@@ -50,6 +50,13 @@ namespace PeluqueriaDesktop.AdminData
             using PeluqueriaContext db = new PeluqueriaContext();
             return db.Cliente.Include(u => u.Usuario).IgnoreQueryFilters().Where(c => c.Eliminado == true).ToList();
         }
+        public IEnumerable<object> ObtenerEliminados(string cadenaBuscada)
+        {
+            //instanciamos nuestro objeto db Context
+            using PeluqueriaContext db = new PeluqueriaContext();
+            ////consultamos en la cadena buscada si contiene la expresion
+            return db.Cliente.Where(c => c.Nombre.Contains(cadenaBuscada) || c.Apellido.Contains(cadenaBuscada)).Include(u => u.Usuario).IgnoreQueryFilters().Where(c => c.Eliminado == true).ToList().ToList();
+        }
 
         public IEnumerable<object> ObtenerTodos()
         {
@@ -62,7 +69,7 @@ namespace PeluqueriaDesktop.AdminData
             //instanciamos nuestro objeto db Context
             using PeluqueriaContext db = new PeluqueriaContext();
             ////consultamos en la cadena buscada si contiene la expresion
-            return db.Cliente.Where(c => c.Nombre.Contains(cadenaBuscada)).Include(u => u.Usuario).IgnoreQueryFilters().Where(c => c.Eliminado == false).ToList().ToList();
+            return db.Cliente.Where(c => c.Nombre.Contains(cadenaBuscada) || c.Apellido.Contains(cadenaBuscada)).Include(u => u.Usuario).IgnoreQueryFilters().Where(c => c.Eliminado == false).ToList().ToList();
         }
 
         public void Restaurar(int idSeleccionado)

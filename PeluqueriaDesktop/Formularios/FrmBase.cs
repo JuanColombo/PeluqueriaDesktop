@@ -20,6 +20,9 @@ namespace PeluqueriaDesktop
         public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar)
         { 
             InitializeComponent();
+            lblTituloFormulario.Text = "Productos";
+            lblEliminados.Text = "Productos Eliminados";
+            lblEliminados.Visible = false;
             dbAdmin = objetoDbAdmin;
             FrmNuevoEditar = frmNuevoEditar;
             ActualizarGrilla();
@@ -28,7 +31,10 @@ namespace PeluqueriaDesktop
         public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar, object botonStock) 
         {
             InitializeComponent();
+            lblTituloFormulario.Text = "Clientes";
             BtnStock.Text = "Registrar Trabajo";
+            lblEliminados.Text = "Clientes Eliminados";
+            lblEliminados.Visible = false;
             dbAdmin = objetoDbAdmin;
             FrmNuevoEditar = frmNuevoEditar;
             ActualizarGrilla();
@@ -37,6 +43,7 @@ namespace PeluqueriaDesktop
         {
             InitializeComponent();
             BtnStock.Text = "Registrar Turno";
+            lblTituloFormulario.Text = "Clientes";
             dbAdmin = objetoDbAdmin;
             FrmNuevoEditar = frmNuevoEditar;
             ActualizarGrilla();
@@ -113,10 +120,17 @@ namespace PeluqueriaDesktop
 
         private void chkVerEliminados_CheckedChanged_1(object sender, EventArgs e)
         {
+
             if (chkVerEliminados.Checked)
+            {
+                lblEliminados.Visible = true;
                 BtnEliminar.Text = "Restaurar";
+            }
             else
+            {
+                lblEliminados.Visible = false;
                 BtnEliminar.Text = "Eliminar";
+            }
             ActualizarGrilla();
         }
 
@@ -127,6 +141,11 @@ namespace PeluqueriaDesktop
 
         private void TxtBusqueda_TextChanged_1(object sender, EventArgs e)
         {
+            if (chkVerEliminados.Checked)
+            {
+                Grid.DataSource = dbAdmin.ObtenerEliminados(TxtBusqueda.Text);
+            }
+            else
             Grid.DataSource = dbAdmin.ObtenerTodos(TxtBusqueda.Text);
         }
 
