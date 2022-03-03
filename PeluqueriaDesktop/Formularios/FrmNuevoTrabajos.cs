@@ -1,5 +1,7 @@
-﻿using PeluqueriaDesktop.Modelos;
+﻿using Microsoft.EntityFrameworkCore;
+using PeluqueriaDesktop.Modelos;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +14,9 @@ namespace PeluqueriaDesktop.Formularios
     public partial class FrmNuevoTrabajos : Form
     {
         public int? IdDatos { get; set; }
+        public int? IdEditar { get; set; }
         Cliente cliente = new Cliente();
+
         DetalleTrabajos detalleTrabajo = new DetalleTrabajos();
         public FrmNuevoTrabajos(int idSeleccionado)
         {
@@ -23,6 +27,38 @@ namespace PeluqueriaDesktop.Formularios
                 CargarDatosPantalla();
             }
 
+        }
+        public FrmNuevoTrabajos(int idSeleccionado,int idTrabajoSeleccionado)
+        {
+            InitializeComponent();
+            DtpFechaTrabajo.Enabled = false;
+            TxtDescripcionBBDD.Enabled = false;
+            NumUpDownValor.Enabled = false;
+            CargarComboPago();
+            if (idTrabajoSeleccionado != 0)
+            {
+                IdEditar = idTrabajoSeleccionado;
+                CargarDatosPantallaTrabajo();
+            }
+
+        }
+
+        private void CargarComboPago()
+        {
+            CboTipoPago.DataSource = Enum.GetValues(typeof(TipoDePagoEnum));
+        }
+
+        private void CargarDatosPantallaTrabajo()
+        {
+            using (var db = new PeluqueriaContext())
+            {
+                detalleTrabajo = db.DetalleTrabajos.Find(IdEditar);
+                lblClienteBBDD.Text = detalleTrabajo.ClienteId.ToString();
+                DtpFechaTrabajo.Value = detalleTrabajo.Fecha;
+                TxtDescripcionBBDD.Text = detalleTrabajo.DetalleTrabajo;
+                NumUpDownValor.Value = (int)detalleTrabajo.Valor;
+                CboTipoPago.SelectedItem = detalleTrabajo.FormaDePago;
+            }
         }
 
         private void CargarDatosPantalla()
@@ -44,14 +80,20 @@ namespace PeluqueriaDesktop.Formularios
         {
             using (var db = new PeluqueriaContext())
             {
-
-                detalleTrabajo.ClienteId = cliente.Id; 
-                detalleTrabajo.Fecha = DtpFechaTrabajo.Value.Date;
-                detalleTrabajo.DetalleTrabajo = TxtDescripcionBBDD.Text;
                 detalleTrabajo.FormaDePago = (TipoDePagoEnum)CboTipoPago.SelectedValue;
-                detalleTrabajo.Valor = (int)NumUpDownValor.Value;
 
-                db.DetalleTrabajos.Add(detalleTrabajo);
+                if (IdEditar == null) { 
+                    detalleTrabajo.ClienteId = cliente.Id;
+                    detalleTrabajo.Fecha = DtpFechaTrabajo.Value.Date;
+                    detalleTrabajo.DetalleTrabajo = TxtDescripcionBBDD.Text;
+                    detalleTrabajo.Valor = (int)NumUpDownValor.Value;
+                    //agregamos el objeto Tutor al objeto DbContext
+                    db.DetalleTrabajos.Add(detalleTrabajo);
+                }
+                else //configuramos el almacenamiento de la modificación
+                {
+                    db.Entry(detalleTrabajo).State = EntityState.Modified;
+                }
 
                 db.SaveChanges();
 

@@ -43,9 +43,6 @@ namespace PeluqueriaDesktop
             frmParametros.ShowDialog();
 
         }
-
-
-
         private void cambioDeContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frmCambioContraseña = new FrmCambioContrasena(FrmMenuPrincipal.Usuario.Id);
@@ -68,8 +65,9 @@ namespace PeluqueriaDesktop
                 if (Usuario != null)
                 {
                     //dependiendo el tipo de usuario, habilitamos los distintos menues para que tengan acceso
-                    MnuUsuario.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador ? true : false;
-                    MnuConfiguracion.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador ? true : false;
+                    MnuUsuario.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
+                    MnuConfiguracion.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
+                    BtnCaja.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
                 }
                 else
                 {
@@ -106,6 +104,12 @@ namespace PeluqueriaDesktop
         {
             var fmrCaja = new FrmCaja();
             fmrCaja.ShowDialog();
+        }
+
+        private void BtnClientes_Click(object sender, EventArgs e)
+        {
+            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock);
+            frmCargarClientes.ShowDialog();
         }
     }
 }

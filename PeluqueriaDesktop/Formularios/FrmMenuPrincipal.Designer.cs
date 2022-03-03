@@ -48,6 +48,7 @@ namespace PeluqueriaDesktop
             this.BtnRegistrarTrabajo = new System.Windows.Forms.ToolStripButton();
             this.BtnCargarTurno = new System.Windows.Forms.ToolStripButton();
             this.BtnCaja = new System.Windows.Forms.ToolStripButton();
+            this.BtnClientes = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,7 @@ namespace PeluqueriaDesktop
             this.MnuUsuario});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(843, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(938, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,7 +78,7 @@ namespace PeluqueriaDesktop
             // subMnuNuevoCliente
             // 
             this.subMnuNuevoCliente.Name = "subMnuNuevoCliente";
-            this.subMnuNuevoCliente.Size = new System.Drawing.Size(175, 22);
+            this.subMnuNuevoCliente.Size = new System.Drawing.Size(180, 22);
             this.subMnuNuevoCliente.Text = "Gestion de Clientes";
             this.subMnuNuevoCliente.Click += new System.EventHandler(this.subMnuNuevoCliente_Click);
             // 
@@ -181,7 +182,7 @@ namespace PeluqueriaDesktop
             this.BtnCaja});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(843, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(938, 57);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -215,12 +216,27 @@ namespace PeluqueriaDesktop
             this.BtnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCaja.Click += new System.EventHandler(this.BtnCaja_Click);
             // 
+            // BtnClientes
+            // 
+            this.BtnClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnClientes.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.BtnClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnClientes.Location = new System.Drawing.Point(793, 97);
+            this.BtnClientes.Name = "BtnClientes";
+            this.BtnClientes.Size = new System.Drawing.Size(124, 48);
+            this.BtnClientes.TabIndex = 2;
+            this.BtnClientes.Text = "Clientes";
+            this.BtnClientes.UseVisualStyleBackColor = false;
+            this.BtnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(843, 350);
+            this.ClientSize = new System.Drawing.Size(938, 413);
+            this.Controls.Add(this.BtnClientes);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
@@ -261,6 +277,7 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.ToolStripMenuItem subMnuListadoTrabajos;
         private System.Windows.Forms.ToolStripMenuItem subMnuListadoTurnos;
         private System.Windows.Forms.ToolStripButton BtnCaja;
+        private System.Windows.Forms.Button BtnClientes;
     }
 }
 

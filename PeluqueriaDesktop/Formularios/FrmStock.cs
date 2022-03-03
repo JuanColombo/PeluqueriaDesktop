@@ -60,5 +60,21 @@ namespace PeluqueriaDesktop.Formularios
         {
             this.MensajeDeAdvertenciaDeSalida();
         }
+
+
+        private void PrecioTotal()
+        {
+            NumUpDownTotal.Value = NumUpDownStockActual.Value + NumUpDownIngreso.Value - NumUpDownEgreso.Value;
+        }
+
+        private void NumUpDownIngreso_ValueChanged(object sender, EventArgs e)
+        {
+            PrecioTotal();
+        }
+
+        private void NumUpDownEgreso_ValueChanged(object sender, EventArgs e)
+        {
+            PrecioTotal();
+        }
     }
 }

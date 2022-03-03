@@ -80,7 +80,7 @@
             this.BtnGuardar.Location = new System.Drawing.Point(486, 351);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(121, 40);
-            this.BtnGuardar.TabIndex = 3;
+            this.BtnGuardar.TabIndex = 2;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -93,7 +93,7 @@
             this.BtnCancelar.Location = new System.Drawing.Point(613, 351);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(121, 40);
-            this.BtnCancelar.TabIndex = 4;
+            this.BtnCancelar.TabIndex = 3;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -111,6 +111,7 @@
             this.NumUpDownStockActual.Name = "NumUpDownStockActual";
             this.NumUpDownStockActual.Size = new System.Drawing.Size(97, 39);
             this.NumUpDownStockActual.TabIndex = 0;
+            this.NumUpDownStockActual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblIngreso
             // 
@@ -138,7 +139,9 @@
             -2147483648});
             this.NumUpDownIngreso.Name = "NumUpDownIngreso";
             this.NumUpDownIngreso.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownIngreso.TabIndex = 1;
+            this.NumUpDownIngreso.TabIndex = 0;
+            this.NumUpDownIngreso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NumUpDownIngreso.ValueChanged += new System.EventHandler(this.NumUpDownIngreso_ValueChanged);
             // 
             // lblMarca
             // 
@@ -179,6 +182,7 @@
             this.TxtDescripcionBBDD.ReadOnly = true;
             this.TxtDescripcionBBDD.Size = new System.Drawing.Size(427, 53);
             this.TxtDescripcionBBDD.TabIndex = 22;
+            this.TxtDescripcionBBDD.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -213,6 +217,7 @@
             this.NumUpDownTotal.Name = "NumUpDownTotal";
             this.NumUpDownTotal.Size = new System.Drawing.Size(97, 39);
             this.NumUpDownTotal.TabIndex = 25;
+            this.NumUpDownTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NumUpDownEgreso
             // 
@@ -230,7 +235,9 @@
             -2147483648});
             this.NumUpDownEgreso.Name = "NumUpDownEgreso";
             this.NumUpDownEgreso.Size = new System.Drawing.Size(97, 39);
-            this.NumUpDownEgreso.TabIndex = 26;
+            this.NumUpDownEgreso.TabIndex = 1;
+            this.NumUpDownEgreso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NumUpDownEgreso.ValueChanged += new System.EventHandler(this.NumUpDownEgreso_ValueChanged);
             // 
             // lblEgreso
             // 

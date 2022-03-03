@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PeluqueriaDesktop.Interfaces;
+using PeluqueriaDesktop.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
