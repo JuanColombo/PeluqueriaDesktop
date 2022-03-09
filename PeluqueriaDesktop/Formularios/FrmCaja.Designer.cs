@@ -52,6 +52,7 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnSalir.TabIndex = 21;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // lblTitulo
             // 
@@ -68,6 +69,11 @@ namespace PeluqueriaDesktop.Formularios
             this.numUpDownTotal.Enabled = false;
             this.numUpDownTotal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numUpDownTotal.Location = new System.Drawing.Point(209, 82);
+            this.numUpDownTotal.Maximum = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            0});
             this.numUpDownTotal.Name = "numUpDownTotal";
             this.numUpDownTotal.Size = new System.Drawing.Size(330, 50);
             this.numUpDownTotal.TabIndex = 23;
@@ -76,6 +82,11 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.numUpDownRetiro.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numUpDownRetiro.Location = new System.Drawing.Point(209, 168);
+            this.numUpDownRetiro.Maximum = new decimal(new int[] {
+            -1530494977,
+            232830,
+            0,
+            0});
             this.numUpDownRetiro.Name = "numUpDownRetiro";
             this.numUpDownRetiro.Size = new System.Drawing.Size(330, 50);
             this.numUpDownRetiro.TabIndex = 24;
@@ -101,6 +112,7 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnGuardarCambios.TabIndex = 26;
             this.BtnGuardarCambios.Text = "Guardar Cambios";
             this.BtnGuardarCambios.UseVisualStyleBackColor = false;
+            this.BtnGuardarCambios.Click += new System.EventHandler(this.BtnGuardarCambios_Click);
             // 
             // lblFecha
             // 

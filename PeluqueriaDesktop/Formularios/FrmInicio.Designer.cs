@@ -41,7 +41,7 @@ namespace PeluqueriaDesktop
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(126, 19);
+            this.label1.Location = new System.Drawing.Point(119, -2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 40);
             this.label1.TabIndex = 0;
@@ -49,10 +49,11 @@ namespace PeluqueriaDesktop
             // 
             // PnlFondo
             // 
-            this.PnlFondo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PnlFondo.Location = new System.Drawing.Point(13, 62);
+            this.PnlFondo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PnlFondo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PnlFondo.Location = new System.Drawing.Point(2, 41);
             this.PnlFondo.Name = "PnlFondo";
-            this.PnlFondo.Size = new System.Drawing.Size(504, 170);
+            this.PnlFondo.Size = new System.Drawing.Size(524, 205);
             this.PnlFondo.TabIndex = 1;
             // 
             // PbaBarraProgreso

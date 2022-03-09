@@ -33,6 +33,7 @@ namespace PeluqueriaDesktop
                 {
                     TmrCronometro.Enabled = false;
                     var frmMenuPrincipal = new FrmMenuPrincipal();
+                    this.Hide();
                     frmMenuPrincipal.ShowDialog();
                     Application.Exit();
                 }

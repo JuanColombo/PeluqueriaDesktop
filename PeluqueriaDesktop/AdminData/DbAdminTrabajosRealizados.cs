@@ -40,9 +40,15 @@ namespace PeluqueriaDesktop.AdminData
             throw new NotImplementedException();
         }
 
-        public IEnumerable<object> ObtenerTodos()
+        public IEnumerable<object> ObtenerTodosLosContados()
         {
-            throw new NotImplementedException();
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.DetalleTrabajos.Include(u => u.Usuario).Where(c => c.FormaDePago == TipoDePagoEnum.Contado).ToList();
+        }
+        public IEnumerable<object> ObtenerTodosLosRetiros()
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.Caja.ToList();
         }
 
         public IEnumerable<object> ObtenerTodos(string cadenaBuscada)
@@ -57,6 +63,11 @@ namespace PeluqueriaDesktop.AdminData
      
 
         public void Restaurar(int idSeleccionado)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<object> ObtenerTodos()
         {
             throw new NotImplementedException();
         }
