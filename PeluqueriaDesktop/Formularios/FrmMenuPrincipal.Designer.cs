@@ -43,6 +43,7 @@ namespace PeluqueriaDesktop
             this.MnuUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.subMnuGestionUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.BtnRegistrarTrabajo = new System.Windows.Forms.ToolStripButton();
@@ -50,9 +51,13 @@ namespace PeluqueriaDesktop
             this.BtnCaja = new System.Windows.Forms.ToolStripButton();
             this.BtnClientes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PbDesarrollo22 = new System.Windows.Forms.PictureBox();
+            this.BtnProductos = new System.Windows.Forms.Button();
+            this.BtnTrabajo = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbDesarrollo22)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -62,7 +67,8 @@ namespace PeluqueriaDesktop
             this.productosToolStripMenuItem,
             this.MnuTrabajos,
             this.MnuConfiguracion,
-            this.MnuUsuario});
+            this.MnuUsuario,
+            this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(817, 24);
@@ -160,16 +166,23 @@ namespace PeluqueriaDesktop
             this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de contraseña";
             this.cambioDeContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambioDeContraseñaToolStripMenuItem_Click);
             // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Clarendon Blk BT", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(28, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 50);
+            this.label1.Size = new System.Drawing.Size(396, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "Salon A Peluqueria";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -222,9 +235,10 @@ namespace PeluqueriaDesktop
             // 
             this.BtnClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnClientes.BackColor = System.Drawing.Color.DarkCyan;
-            this.BtnClientes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnClientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnClientes.Location = new System.Drawing.Point(672, 97);
+            this.BtnClientes.Location = new System.Drawing.Point(693, 84);
             this.BtnClientes.Name = "BtnClientes";
             this.BtnClientes.Size = new System.Drawing.Size(124, 48);
             this.BtnClientes.TabIndex = 2;
@@ -240,15 +254,63 @@ namespace PeluqueriaDesktop
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(186, 177);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(383, 125);
+            this.panel1.Size = new System.Drawing.Size(427, 125);
             this.panel1.TabIndex = 3;
+            // 
+            // PbDesarrollo22
+            // 
+            this.PbDesarrollo22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PbDesarrollo22.BackColor = System.Drawing.Color.Transparent;
+            this.PbDesarrollo22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbDesarrollo22.BackgroundImage")));
+            this.PbDesarrollo22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PbDesarrollo22.Location = new System.Drawing.Point(708, 325);
+            this.PbDesarrollo22.Name = "PbDesarrollo22";
+            this.PbDesarrollo22.Size = new System.Drawing.Size(109, 111);
+            this.PbDesarrollo22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PbDesarrollo22.TabIndex = 4;
+            this.PbDesarrollo22.TabStop = false;
+            this.PbDesarrollo22.Click += new System.EventHandler(this.PbDesarrollo22_Click);
+            // 
+            // BtnProductos
+            // 
+            this.BtnProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnProductos.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnProductos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnProductos.Location = new System.Drawing.Point(693, 138);
+            this.BtnProductos.Name = "BtnProductos";
+            this.BtnProductos.Size = new System.Drawing.Size(124, 48);
+            this.BtnProductos.TabIndex = 5;
+            this.BtnProductos.Text = "Productos";
+            this.BtnProductos.UseVisualStyleBackColor = false;
+            this.BtnProductos.Click += new System.EventHandler(this.BtnProductos_Click);
+            // 
+            // BtnTrabajo
+            // 
+            this.BtnTrabajo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnTrabajo.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnTrabajo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnTrabajo.Location = new System.Drawing.Point(693, 192);
+            this.BtnTrabajo.Name = "BtnTrabajo";
+            this.BtnTrabajo.Size = new System.Drawing.Size(124, 48);
+            this.BtnTrabajo.TabIndex = 6;
+            this.BtnTrabajo.Text = "Registrar Trabajo";
+            this.BtnTrabajo.UseVisualStyleBackColor = false;
+            this.BtnTrabajo.Click += new System.EventHandler(this.BtnTrabajo_Click);
             // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(817, 438);
+            this.Controls.Add(this.BtnTrabajo);
+            this.Controls.Add(this.BtnProductos);
+            this.Controls.Add(this.PbDesarrollo22);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnClientes);
             this.Controls.Add(this.toolStrip1);
@@ -266,6 +328,7 @@ namespace PeluqueriaDesktop
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbDesarrollo22)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +356,10 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.ToolStripButton BtnCaja;
         private System.Windows.Forms.Button BtnClientes;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox PbDesarrollo22;
+        private System.Windows.Forms.Button BtnProductos;
+        private System.Windows.Forms.Button BtnTrabajo;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
     }
 }
 

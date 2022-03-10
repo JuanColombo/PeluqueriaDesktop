@@ -35,13 +35,15 @@ namespace PeluqueriaDesktop
             this.PbaBarraProgreso = new System.Windows.Forms.ProgressBar();
             this.LblPorcentaje = new System.Windows.Forms.Label();
             this.TmrCronometro = new System.Windows.Forms.Timer(this.components);
+            this.PnlFondo.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(119, -2);
+            this.label1.Location = new System.Drawing.Point(114, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 40);
             this.label1.TabIndex = 0;
@@ -51,16 +53,17 @@ namespace PeluqueriaDesktop
             // 
             this.PnlFondo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PnlFondo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PnlFondo.Location = new System.Drawing.Point(2, 41);
+            this.PnlFondo.Controls.Add(this.label1);
+            this.PnlFondo.Location = new System.Drawing.Point(2, 0);
             this.PnlFondo.Name = "PnlFondo";
-            this.PnlFondo.Size = new System.Drawing.Size(524, 205);
+            this.PnlFondo.Size = new System.Drawing.Size(524, 246);
             this.PnlFondo.TabIndex = 1;
             // 
             // PbaBarraProgreso
             // 
-            this.PbaBarraProgreso.Location = new System.Drawing.Point(13, 252);
+            this.PbaBarraProgreso.Location = new System.Drawing.Point(13, 258);
             this.PbaBarraProgreso.Name = "PbaBarraProgreso";
-            this.PbaBarraProgreso.Size = new System.Drawing.Size(453, 31);
+            this.PbaBarraProgreso.Size = new System.Drawing.Size(453, 20);
             this.PbaBarraProgreso.TabIndex = 2;
             // 
             // LblPorcentaje
@@ -87,13 +90,14 @@ namespace PeluqueriaDesktop
             this.Controls.Add(this.LblPorcentaje);
             this.Controls.Add(this.PbaBarraProgreso);
             this.Controls.Add(this.PnlFondo);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInicio";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSplash";
             this.Activated += new System.EventHandler(this.FrmInicio_Activated);
+            this.PnlFondo.ResumeLayout(false);
+            this.PnlFondo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

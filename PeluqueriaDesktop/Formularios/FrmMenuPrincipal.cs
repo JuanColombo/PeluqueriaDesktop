@@ -111,5 +111,31 @@ namespace PeluqueriaDesktop
             var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock);
             frmCargarClientes.ShowDialog();
         }
+
+        private void BtnProductos_Click(object sender, EventArgs e)
+        {
+            var frmCargarProductos = new FrmBase(new DbAdminProductos(), new FrmCargarProducto());
+            frmCargarProductos.ShowDialog();
+        }
+
+        private void BtnTrabajo_Click(object sender, EventArgs e)
+        {
+            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock);
+            frmCargarClientes.ShowDialog();
+
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmAcercaDe = new FrmAcercaDe();
+            frmAcercaDe.ShowDialog();
+        }
+
+        private void PbDesarrollo22_Click(object sender, EventArgs e)
+        {
+            var frmAcercaDe = new FrmAcercaDe();
+            frmAcercaDe.ShowDialog();
+
+        }
     }
 }
