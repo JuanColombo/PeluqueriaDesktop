@@ -92,6 +92,7 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnModificar.TabIndex = 23;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // FrmListadoTurnos
             // 

@@ -108,6 +108,7 @@ namespace PeluqueriaDesktop
         {
             var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock, BotonTurno);
             frmCargarClientes.ShowDialog();
+            ActualizarGrilla();
         }
 
         private void subMnuListadoTrabajos_Click(object sender, EventArgs e)
@@ -176,6 +177,7 @@ namespace PeluqueriaDesktop
         {
             var frmNuevoTurno = new FrmCargarTurno();
             frmNuevoTurno.ShowDialog();
+            ActualizarGrilla();
         }
     }
 }

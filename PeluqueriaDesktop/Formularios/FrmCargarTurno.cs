@@ -58,6 +58,7 @@ namespace PeluqueriaDesktop.Formularios
                 cliente = db.Cliente.Find(IdDatos);
                 lblClienteBBDD.Text = cliente.Apellido + " " + cliente.Nombre;
             }
+ 
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -99,6 +100,11 @@ namespace PeluqueriaDesktop.Formularios
                 }
                 this.Close();
             }
+        }
+
+        private void BtnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
