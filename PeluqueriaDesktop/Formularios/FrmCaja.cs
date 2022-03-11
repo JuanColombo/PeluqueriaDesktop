@@ -56,6 +56,7 @@ namespace PeluqueriaDesktop.Formularios
             {
                 caja.TotalCaja = (int)numUpDownTotal.Value;
                 caja.RetiroCaja = (int)numUpDownRetiro.Value;
+                caja.DescripcionRetiro = txtDescripcionRetiro.Text;
                 caja.Fecha = DtpFechaCaja.Value;
                 db.Caja.Add(caja);
                 db.SaveChanges();

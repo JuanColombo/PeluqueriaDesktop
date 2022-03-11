@@ -69,5 +69,9 @@ namespace PeluqueriaDesktop
         {
             return grid.CurrentRow.Cells[nroColumnaNombre].Value.ToString();
         }
+        public static void ColorBotones(this Button button)
+        {
+            button.BackColor = System.Drawing.Color.Orange;
+        }
     }
 }

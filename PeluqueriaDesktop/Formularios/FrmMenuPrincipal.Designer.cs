@@ -44,20 +44,23 @@ namespace PeluqueriaDesktop
             this.subMnuGestionUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.BtnRegistrarTrabajo = new System.Windows.Forms.ToolStripButton();
             this.BtnCargarTurno = new System.Windows.Forms.ToolStripButton();
             this.BtnCaja = new System.Windows.Forms.ToolStripButton();
             this.BtnClientes = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.PbDesarrollo22 = new System.Windows.Forms.PictureBox();
             this.BtnProductos = new System.Windows.Forms.Button();
             this.BtnTrabajo = new System.Windows.Forms.Button();
+            this.BtnRegistrarTurno = new System.Windows.Forms.Button();
+            this.Grid = new System.Windows.Forms.DataGridView();
+            this.DtpFechaMnuPrincipal = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnNuevoTurno = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbDesarrollo22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -71,7 +74,7 @@ namespace PeluqueriaDesktop
             this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(817, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1136, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -118,7 +121,7 @@ namespace PeluqueriaDesktop
             // 
             this.subMnuListadoTrabajos.Name = "subMnuListadoTrabajos";
             this.subMnuListadoTrabajos.Size = new System.Drawing.Size(176, 22);
-            this.subMnuListadoTrabajos.Text = "Ver LIstado trabajos";
+            this.subMnuListadoTrabajos.Text = "Ver Listado trabajos";
             this.subMnuListadoTrabajos.Click += new System.EventHandler(this.subMnuListadoTrabajos_Click);
             // 
             // subMnuListadoTurnos
@@ -173,20 +176,6 @@ namespace PeluqueriaDesktop
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Clarendon Blk BT", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(28, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(396, 45);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Salon A Peluqueria";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -197,7 +186,7 @@ namespace PeluqueriaDesktop
             this.BtnCaja});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(817, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(1136, 57);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -238,7 +227,7 @@ namespace PeluqueriaDesktop
             this.BtnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnClientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnClientes.Location = new System.Drawing.Point(693, 84);
+            this.BtnClientes.Location = new System.Drawing.Point(1012, 84);
             this.BtnClientes.Name = "BtnClientes";
             this.BtnClientes.Size = new System.Drawing.Size(124, 48);
             this.BtnClientes.TabIndex = 2;
@@ -246,24 +235,13 @@ namespace PeluqueriaDesktop
             this.BtnClientes.UseVisualStyleBackColor = false;
             this.BtnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(186, 177);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(427, 125);
-            this.panel1.TabIndex = 3;
-            // 
             // PbDesarrollo22
             // 
             this.PbDesarrollo22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.PbDesarrollo22.BackColor = System.Drawing.Color.Transparent;
             this.PbDesarrollo22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PbDesarrollo22.BackgroundImage")));
             this.PbDesarrollo22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PbDesarrollo22.Location = new System.Drawing.Point(708, 325);
+            this.PbDesarrollo22.Location = new System.Drawing.Point(1027, 369);
             this.PbDesarrollo22.Name = "PbDesarrollo22";
             this.PbDesarrollo22.Size = new System.Drawing.Size(109, 111);
             this.PbDesarrollo22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -278,7 +256,7 @@ namespace PeluqueriaDesktop
             this.BtnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnProductos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnProductos.Location = new System.Drawing.Point(693, 138);
+            this.BtnProductos.Location = new System.Drawing.Point(1012, 138);
             this.BtnProductos.Name = "BtnProductos";
             this.BtnProductos.Size = new System.Drawing.Size(124, 48);
             this.BtnProductos.TabIndex = 5;
@@ -293,7 +271,7 @@ namespace PeluqueriaDesktop
             this.BtnTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnTrabajo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnTrabajo.Location = new System.Drawing.Point(693, 192);
+            this.BtnTrabajo.Location = new System.Drawing.Point(1012, 192);
             this.BtnTrabajo.Name = "BtnTrabajo";
             this.BtnTrabajo.Size = new System.Drawing.Size(124, 48);
             this.BtnTrabajo.TabIndex = 6;
@@ -301,17 +279,88 @@ namespace PeluqueriaDesktop
             this.BtnTrabajo.UseVisualStyleBackColor = false;
             this.BtnTrabajo.Click += new System.EventHandler(this.BtnTrabajo_Click);
             // 
+            // BtnRegistrarTurno
+            // 
+            this.BtnRegistrarTurno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnRegistrarTurno.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnRegistrarTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnRegistrarTurno.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnRegistrarTurno.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnRegistrarTurno.Location = new System.Drawing.Point(1012, 246);
+            this.BtnRegistrarTurno.Name = "BtnRegistrarTurno";
+            this.BtnRegistrarTurno.Size = new System.Drawing.Size(124, 48);
+            this.BtnRegistrarTurno.TabIndex = 7;
+            this.BtnRegistrarTurno.Text = "Registrar Turno";
+            this.BtnRegistrarTurno.UseVisualStyleBackColor = false;
+            this.BtnRegistrarTurno.Click += new System.EventHandler(this.BtnRegistrarTurno_Click);
+            // 
+            // Grid
+            // 
+            this.Grid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Grid.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid.Location = new System.Drawing.Point(247, 218);
+            this.Grid.Name = "Grid";
+            this.Grid.ReadOnly = true;
+            this.Grid.RowTemplate.Height = 25;
+            this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grid.Size = new System.Drawing.Size(657, 195);
+            this.Grid.TabIndex = 8;
+            // 
+            // DtpFechaMnuPrincipal
+            // 
+            this.DtpFechaMnuPrincipal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DtpFechaMnuPrincipal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DtpFechaMnuPrincipal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaMnuPrincipal.Location = new System.Drawing.Point(544, 152);
+            this.DtpFechaMnuPrincipal.Name = "DtpFechaMnuPrincipal";
+            this.DtpFechaMnuPrincipal.Size = new System.Drawing.Size(200, 35);
+            this.DtpFechaMnuPrincipal.TabIndex = 9;
+            this.DtpFechaMnuPrincipal.ValueChanged += new System.EventHandler(this.DtpFechaMnuPrincipal_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(379, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 32);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Turnos del dia:";
+            // 
+            // BtnNuevoTurno
+            // 
+            this.BtnNuevoTurno.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnNuevoTurno.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnNuevoTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnNuevoTurno.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnNuevoTurno.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnNuevoTurno.Location = new System.Drawing.Point(765, 422);
+            this.BtnNuevoTurno.Name = "BtnNuevoTurno";
+            this.BtnNuevoTurno.Size = new System.Drawing.Size(124, 48);
+            this.BtnNuevoTurno.TabIndex = 11;
+            this.BtnNuevoTurno.Text = "Nuevo Turno";
+            this.BtnNuevoTurno.UseVisualStyleBackColor = false;
+            this.BtnNuevoTurno.Click += new System.EventHandler(this.BtnNuevoTurno_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.Orange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(817, 438);
+            this.ClientSize = new System.Drawing.Size(1136, 482);
+            this.Controls.Add(this.BtnNuevoTurno);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DtpFechaMnuPrincipal);
+            this.Controls.Add(this.Grid);
+            this.Controls.Add(this.BtnRegistrarTurno);
             this.Controls.Add(this.BtnTrabajo);
             this.Controls.Add(this.BtnProductos);
             this.Controls.Add(this.PbDesarrollo22);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnClientes);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -326,9 +375,8 @@ namespace PeluqueriaDesktop
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbDesarrollo22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,7 +393,6 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.ToolStripMenuItem subMnuParametros;
         private System.Windows.Forms.ToolStripMenuItem MnuUsuario;
         private System.Windows.Forms.ToolStripMenuItem subMnuGestionUsuarios;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem cambioDeContraseñaToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton BtnRegistrarTrabajo;
@@ -355,11 +402,15 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.ToolStripMenuItem subMnuListadoTurnos;
         private System.Windows.Forms.ToolStripButton BtnCaja;
         private System.Windows.Forms.Button BtnClientes;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox PbDesarrollo22;
         private System.Windows.Forms.Button BtnProductos;
         private System.Windows.Forms.Button BtnTrabajo;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.Button BtnRegistrarTurno;
+        private System.Windows.Forms.DataGridView Grid;
+        private System.Windows.Forms.DateTimePicker DtpFechaMnuPrincipal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnNuevoTurno;
     }
 }
 

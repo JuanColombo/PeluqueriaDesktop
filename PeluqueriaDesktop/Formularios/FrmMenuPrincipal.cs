@@ -15,13 +15,35 @@ namespace PeluqueriaDesktop
     public partial class FrmMenuPrincipal : Form
     {
         public static Usuario Usuario;
+        DbAdminTurnos dbAdmin = new DbAdminTurnos();
         private object BotonStock;
         private object BotonTurno;
 
         public FrmMenuPrincipal()
         {
             InitializeComponent();
+            ActualizarGrilla();
+            Grid.OcultarColumnas();
             BackgroundImage = HelperPeluqueria.RecuperarImagenDeArchivoDeRecursos("fondoSistema"); ;
+        }
+
+        private void ActualizarGrilla()
+        {
+            using (var db = new PeluqueriaContext())
+            {
+                var turnosAListar = from turnos in db.Turnos
+                                    where DtpFechaMnuPrincipal.Value.Date == turnos.Fecha.Date
+                                    select new
+                                    {
+                                        Id = turnos.Id,
+                                        Fecha = turnos.Fecha,
+                                        Hora = turnos.Hora.ToShortTimeString(),
+                                        Trabajo = turnos.TrabajoARealizar,
+                                        Cliente = turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido
+                                    };
+                Grid.DataSource = turnosAListar.ToList();
+
+            }
         }
 
         private void subMnuNuevoCliente_Click(object sender, EventArgs e)
@@ -136,6 +158,24 @@ namespace PeluqueriaDesktop
             var frmAcercaDe = new FrmAcercaDe();
             frmAcercaDe.ShowDialog();
 
+        }
+
+        private void BtnRegistrarTurno_Click(object sender, EventArgs e)
+        {
+            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock, BotonTurno);
+            frmCargarClientes.ShowDialog();
+
+        }
+
+        private void DtpFechaMnuPrincipal_ValueChanged(object sender, EventArgs e)
+        {
+            ActualizarGrilla();
+        }
+
+        private void BtnNuevoTurno_Click(object sender, EventArgs e)
+        {
+            var frmNuevoTurno = new FrmCargarTurno();
+            frmNuevoTurno.ShowDialog();
         }
     }
 }

@@ -13,5 +13,6 @@ namespace PeluqueriaDesktop.Modelos
         public double TotalCaja { get; set; }
         [Required]
         public double RetiroCaja { get; set; }
+        public string DescripcionRetiro { get; set; }
     }
 }

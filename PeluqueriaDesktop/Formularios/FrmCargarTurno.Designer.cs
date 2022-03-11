@@ -39,6 +39,7 @@
             this.DtpHoraTurno = new System.Windows.Forms.DateTimePicker();
             this.lblClienteBBDD = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
+            this.CboClientes = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // LblFecha
@@ -96,7 +97,7 @@
             // 
             // txtTrabajo
             // 
-            this.txtTrabajo.Location = new System.Drawing.Point(172, 192);
+            this.txtTrabajo.Location = new System.Drawing.Point(172, 193);
             this.txtTrabajo.Multiline = true;
             this.txtTrabajo.Name = "txtTrabajo";
             this.txtTrabajo.PlaceholderText = "Escriba aqui una descripcion del producto";
@@ -114,25 +115,27 @@
             // 
             // DtpFechaTurno
             // 
+            this.DtpFechaTurno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DtpFechaTurno.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DtpFechaTurno.Location = new System.Drawing.Point(172, 123);
             this.DtpFechaTurno.Name = "DtpFechaTurno";
-            this.DtpFechaTurno.Size = new System.Drawing.Size(200, 23);
+            this.DtpFechaTurno.Size = new System.Drawing.Size(200, 29);
             this.DtpFechaTurno.TabIndex = 17;
             // 
             // DtpHoraTurno
             // 
+            this.DtpHoraTurno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DtpHoraTurno.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DtpHoraTurno.Location = new System.Drawing.Point(172, 154);
+            this.DtpHoraTurno.Location = new System.Drawing.Point(172, 158);
             this.DtpHoraTurno.Name = "DtpHoraTurno";
-            this.DtpHoraTurno.Size = new System.Drawing.Size(200, 23);
+            this.DtpHoraTurno.Size = new System.Drawing.Size(200, 29);
             this.DtpHoraTurno.TabIndex = 18;
             // 
             // lblClienteBBDD
             // 
             this.lblClienteBBDD.AutoSize = true;
             this.lblClienteBBDD.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblClienteBBDD.Location = new System.Drawing.Point(121, 73);
+            this.lblClienteBBDD.Location = new System.Drawing.Point(127, 73);
             this.lblClienteBBDD.Name = "lblClienteBBDD";
             this.lblClienteBBDD.Size = new System.Drawing.Size(103, 30);
             this.lblClienteBBDD.TabIndex = 22;
@@ -148,12 +151,24 @@
             this.lblMarca.TabIndex = 21;
             this.lblMarca.Text = "Cliente:";
             // 
+            // CboClientes
+            // 
+            this.CboClientes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.CboClientes.FormattingEnabled = true;
+            this.CboClientes.Location = new System.Drawing.Point(127, 70);
+            this.CboClientes.Name = "CboClientes";
+            this.CboClientes.Size = new System.Drawing.Size(368, 33);
+            this.CboClientes.Sorted = true;
+            this.CboClientes.TabIndex = 23;
+            this.CboClientes.Visible = false;
+            // 
             // FrmCargarTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(609, 320);
+            this.Controls.Add(this.CboClientes);
             this.Controls.Add(this.lblClienteBBDD);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.DtpHoraTurno);
@@ -188,5 +203,6 @@
         private System.Windows.Forms.DateTimePicker DtpHoraTurno;
         private System.Windows.Forms.Label lblClienteBBDD;
         private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.ComboBox CboClientes;
     }
 }

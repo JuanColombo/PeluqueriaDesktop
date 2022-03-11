@@ -27,15 +27,18 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 var turnosAListar = from turnos in db.Turnos
-                                      select new
-                                      {
-                                          Id = turnos.Id,
-                                          Fecha = turnos.Fecha,
-                                          Trabajo = turnos.TrabajoARealizar,
-                                          Cliente = turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido
+                                    select new
+                                    {
+                                        Id = turnos.Id,
+                                        Fecha = turnos.Fecha,
+                                        Hora = turnos.Hora.ToShortTimeString(),
+                                        Trabajo = turnos.TrabajoARealizar,
+                                        Cliente = turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido
                                       };
                 Grid.DataSource = turnosAListar.ToList();
+
             }
+          
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
@@ -57,6 +60,7 @@ namespace PeluqueriaDesktop.Formularios
                                     {
                                         Id = turnos.Id,
                                         Fecha = turnos.Fecha,
+                                        Hora = turnos.Hora.ToShortTimeString(),
                                         Trabajo = turnos.TrabajoARealizar,
                                         Cliente = turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido
                                     };

@@ -33,6 +33,7 @@ namespace PeluqueriaDesktop.Formularios
             this.LblBuscar = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.Grid = new System.Windows.Forms.DataGridView();
+            this.BtnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,12 +81,25 @@ namespace PeluqueriaDesktop.Formularios
             this.Grid.Size = new System.Drawing.Size(776, 338);
             this.Grid.TabIndex = 14;
             // 
+            // BtnModificar
+            // 
+            this.BtnModificar.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnModificar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnModificar.ForeColor = System.Drawing.Color.White;
+            this.BtnModificar.Location = new System.Drawing.Point(540, 394);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(121, 40);
+            this.BtnModificar.TabIndex = 23;
+            this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.UseVisualStyleBackColor = false;
+            // 
             // FrmListadoTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.TxtBusqueda);
             this.Controls.Add(this.LblBuscar);
             this.Controls.Add(this.BtnSalir);
@@ -106,5 +120,6 @@ namespace PeluqueriaDesktop.Formularios
         private System.Windows.Forms.Label LblBuscar;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.DataGridView Grid;
+        private System.Windows.Forms.Button BtnModificar;
     }
 }

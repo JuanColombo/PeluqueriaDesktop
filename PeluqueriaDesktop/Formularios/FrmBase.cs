@@ -20,6 +20,7 @@ namespace PeluqueriaDesktop
         public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar)
         { 
             InitializeComponent();
+            AplicarColorABotones();
             lblTituloFormulario.Text = "Productos";
             lblEliminados.Text = "Productos Eliminados";
             lblEliminados.Visible = false;
@@ -28,9 +29,12 @@ namespace PeluqueriaDesktop
             ActualizarGrilla();
         }
 
+        
+
         public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar, object botonStock) 
         {
             InitializeComponent();
+            AplicarColorABotones();
             lblTituloFormulario.Text = "Clientes";
             BtnStock.Text = "Registrar Trabajo";
             lblEliminados.Text = "Clientes Eliminados";
@@ -42,6 +46,7 @@ namespace PeluqueriaDesktop
         public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar, object botonStock, object botonTurno)
         {
             InitializeComponent();
+            AplicarColorABotones();
             BtnStock.Text = "Registrar Turno";
             lblTituloFormulario.Text = "Clientes";
             dbAdmin = objetoDbAdmin;
@@ -200,5 +205,10 @@ namespace PeluqueriaDesktop
             }
 
         }
+        private void AplicarColorABotones()
+        {
+            BtnNuevo.ColorBotones();
+            BtnEditar.ColorBotones();
+            BtnEliminar.ColorBotones();        }
     }
 }
