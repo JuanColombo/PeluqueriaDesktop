@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace PeluqueriaDesktop.Formularios
 {
@@ -19,12 +20,40 @@ namespace PeluqueriaDesktop.Formularios
         public FrmCargarTurno()
         {
             InitializeComponent();
+            BtnGuardar.Text = "Guardar";
             CboClientes.Visible = true;
             lblClienteBBDD.Visible = false;
             CargarComboClientes();
 
         }
+        public FrmCargarTurno(int idSeleccionado)
+        {
+            InitializeComponent();
+            BtnGuardar.Text = "Guardar";
+            CboClientes.Visible = false;
+            lblClienteBBDD.Visible = true;
+            if (idSeleccionado != 0)
+            {
+                IdDatos = idSeleccionado;
+                CargarDatosPantalla();
+            }
 
+        }
+        public FrmCargarTurno(int idSeleccionado, object modificarTurno)
+        {
+            InitializeComponent();
+            CboClientes.Visible = true;
+            lblClienteBBDD.Visible = false;
+            BtnGuardar.Text = "Guardar Cambios";
+            CargarComboClientes();
+            CboClientes.Enabled = false;
+            if (idSeleccionado != 0)
+            {
+                IdDatos = idSeleccionado;
+                CargarDatosDelTurno();
+            }
+
+        }
         private void CargarComboClientes()
         {
             using (var db = new PeluqueriaContext())
@@ -35,20 +64,20 @@ namespace PeluqueriaDesktop.Formularios
                 CboClientes.DataSource = listaClientes.ToList();
                 CboClientes.DisplayMember = "nombre";
                 CboClientes.ValueMember = "id";
+                CboClientes.SelectedValue = 0;
             }
         }
-
-        public FrmCargarTurno(int idSeleccionado)
+        private void CargarDatosDelTurno()
         {
-            InitializeComponent();
-            CboClientes.Visible = false;
-            lblClienteBBDD.Visible = true;
-            if (idSeleccionado != 0)
+            using (var db = new PeluqueriaContext())
             {
-                IdDatos = idSeleccionado;
-                CargarDatosPantalla();
+                turno = db.Turnos.Find(IdDatos);
+                //lblClienteBBDD.Text = turno.ClienteId.ToString();
+                CboClientes.SelectedValue = turno.ClienteId;
+                DtpFechaTurno.Value = turno.Fecha.Date;
+                DtpHoraTurno.Value = turno.Hora;
+                txtTrabajo.Text = turno.TrabajoARealizar;
             }
-
         }
 
         private void CargarDatosPantalla()
@@ -67,7 +96,7 @@ namespace PeluqueriaDesktop.Formularios
         }
         private void BtnGuardar_Click_1(object sender, EventArgs e)
         { 
-            if (lblClienteBBDD.Visible == true) { 
+            if (lblClienteBBDD.Visible == true && BtnGuardar.Text=="Guardar") { 
             using (var db = new PeluqueriaContext())
             {
 
@@ -83,12 +112,12 @@ namespace PeluqueriaDesktop.Formularios
             }
             this.Close();
             }
-            else
+            else if (CboClientes.Visible==true && BtnGuardar.Text=="Guardar")
             {
                 using (var db = new PeluqueriaContext())
                 {
 
-                    turno.ClienteId = CboClientes.SelectedIndex;
+                    turno.ClienteId =(int)CboClientes.SelectedValue;
                     turno.Fecha = DtpFechaTurno.Value.Date;
                     turno.Hora = DtpHoraTurno.Value;
                     turno.TrabajoARealizar = txtTrabajo.Text;
@@ -99,6 +128,20 @@ namespace PeluqueriaDesktop.Formularios
                     MessageBox.Show("La operación fue realizada con exito");
                 }
                 this.Close();
+            }
+            else if (BtnGuardar.Text=="Guardar Cambios")
+            {
+                using (var db = new PeluqueriaContext())
+                {
+                    turno.Fecha = DtpFechaTurno.Value.Date;
+                    turno.Hora = DtpHoraTurno.Value;
+                    turno.TrabajoARealizar = txtTrabajo.Text;
+                    db.Entry(turno).State = EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("La operación fue realizada con exito");
+                }
+                this.Close();
+
             }
         }
 

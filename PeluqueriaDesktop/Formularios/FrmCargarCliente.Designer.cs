@@ -69,9 +69,9 @@ namespace PeluqueriaDesktop.Formularios
             this.LblTituloPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblTituloPrincipal.Location = new System.Drawing.Point(172, 9);
             this.LblTituloPrincipal.Name = "LblTituloPrincipal";
-            this.LblTituloPrincipal.Size = new System.Drawing.Size(270, 46);
+            this.LblTituloPrincipal.Size = new System.Drawing.Size(144, 46);
             this.LblTituloPrincipal.TabIndex = 12;
-            this.LblTituloPrincipal.Text = "Nuevo Cliente";
+            this.LblTituloPrincipal.Text = "Cliente";
             // 
             // TxtNombre
             // 

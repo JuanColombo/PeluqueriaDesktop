@@ -19,15 +19,10 @@ namespace PeluqueriaDesktop.Formularios
         public int? IdEditar { get; set; }
         Cliente cliente = new Cliente();
         
-        public FrmCargarCliente()
+        public FrmCargarCliente(int? idSeleccionado = null)
         {
             InitializeComponent();
-            
-        }
-        public FrmCargarCliente(int idSeleccionado)
-        {
-            InitializeComponent();
-            if (idSeleccionado != 0)
+            if (idSeleccionado != null)
             {
                 IdEditar = idSeleccionado;
                 //llamamos al metodo de carga datos
@@ -35,6 +30,17 @@ namespace PeluqueriaDesktop.Formularios
             }
 
         }
+        //public FrmCargarCliente(int idSeleccionado)
+        //{
+        //    InitializeComponent();
+        //    if (idSeleccionado != 0)
+        //    {
+        //        IdEditar = idSeleccionado;
+        //        //llamamos al metodo de carga datos
+        //        CargarDatosDelCliente();
+        //    }
+
+        //}
 
         private void CargarDatosDelCliente()
         {

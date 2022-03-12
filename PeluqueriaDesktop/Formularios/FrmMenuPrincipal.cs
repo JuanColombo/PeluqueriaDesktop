@@ -44,6 +44,7 @@ namespace PeluqueriaDesktop
                 Grid.DataSource = turnosAListar.ToList();
 
             }
+           
         }
 
         private void subMnuNuevoCliente_Click(object sender, EventArgs e)
@@ -131,7 +132,7 @@ namespace PeluqueriaDesktop
 
         private void BtnClientes_Click(object sender, EventArgs e)
         {
-            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock);
+            var frmCargarClientes = new FrmCargarCliente();
             frmCargarClientes.ShowDialog();
         }
 

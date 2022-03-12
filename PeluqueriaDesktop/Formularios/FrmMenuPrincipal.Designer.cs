@@ -227,11 +227,11 @@ namespace PeluqueriaDesktop
             this.BtnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnClientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnClientes.Location = new System.Drawing.Point(1012, 84);
+            this.BtnClientes.Location = new System.Drawing.Point(1006, 84);
             this.BtnClientes.Name = "BtnClientes";
             this.BtnClientes.Size = new System.Drawing.Size(124, 48);
             this.BtnClientes.TabIndex = 2;
-            this.BtnClientes.Text = "Clientes";
+            this.BtnClientes.Text = "Nuevo Cliente";
             this.BtnClientes.UseVisualStyleBackColor = false;
             this.BtnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
             // 
@@ -256,7 +256,7 @@ namespace PeluqueriaDesktop
             this.BtnProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnProductos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnProductos.Location = new System.Drawing.Point(1012, 138);
+            this.BtnProductos.Location = new System.Drawing.Point(1006, 138);
             this.BtnProductos.Name = "BtnProductos";
             this.BtnProductos.Size = new System.Drawing.Size(124, 48);
             this.BtnProductos.TabIndex = 5;
@@ -271,7 +271,7 @@ namespace PeluqueriaDesktop
             this.BtnTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnTrabajo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnTrabajo.Location = new System.Drawing.Point(1012, 192);
+            this.BtnTrabajo.Location = new System.Drawing.Point(1006, 192);
             this.BtnTrabajo.Name = "BtnTrabajo";
             this.BtnTrabajo.Size = new System.Drawing.Size(124, 48);
             this.BtnTrabajo.TabIndex = 6;
@@ -286,7 +286,7 @@ namespace PeluqueriaDesktop
             this.BtnRegistrarTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnRegistrarTurno.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnRegistrarTurno.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnRegistrarTurno.Location = new System.Drawing.Point(1012, 246);
+            this.BtnRegistrarTurno.Location = new System.Drawing.Point(1006, 246);
             this.BtnRegistrarTurno.Name = "BtnRegistrarTurno";
             this.BtnRegistrarTurno.Size = new System.Drawing.Size(124, 48);
             this.BtnRegistrarTurno.TabIndex = 7;
@@ -301,12 +301,12 @@ namespace PeluqueriaDesktop
             this.Grid.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid.Location = new System.Drawing.Point(247, 218);
+            this.Grid.Location = new System.Drawing.Point(157, 218);
             this.Grid.Name = "Grid";
             this.Grid.ReadOnly = true;
             this.Grid.RowTemplate.Height = 25;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(657, 195);
+            this.Grid.Size = new System.Drawing.Size(830, 195);
             this.Grid.TabIndex = 8;
             // 
             // DtpFechaMnuPrincipal
@@ -324,6 +324,7 @@ namespace PeluqueriaDesktop
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(379, 152);
             this.label1.Name = "label1";
@@ -350,7 +351,7 @@ namespace PeluqueriaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Orange;
+            this.BackColor = System.Drawing.Color.Khaki;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1136, 482);
             this.Controls.Add(this.BtnNuevoTurno);

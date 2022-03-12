@@ -108,7 +108,7 @@ namespace PeluqueriaDesktop
 
             // preguntar si realmente desea eliminar al Calendario [nombre_Calendario_seleccionado]
             //colocamos el signo $ para crear la interpolacion de cadenas
-            DialogResult respuesta = MessageBox.Show($"¿Estas seguro que desea {BtnEliminar.Text} a {nombreCalendarioSeleccionado}?", BtnEliminar.Text + " Calendario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult respuesta = MessageBox.Show($"¿Estas seguro que desea {BtnEliminar.Text} a {nombreCalendarioSeleccionado}?", BtnEliminar.Text , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             //si responde que si, instanciamos al objeto dbContext y eliminamos el Calendario a traves del id que obtuvimos.
             if (respuesta == DialogResult.Yes && BtnEliminar.Text == "Eliminar")

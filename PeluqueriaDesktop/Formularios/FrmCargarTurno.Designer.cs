@@ -77,7 +77,7 @@
             this.BtnGuardar.ForeColor = System.Drawing.Color.White;
             this.BtnGuardar.Location = new System.Drawing.Point(190, 266);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(121, 40);
+            this.BtnGuardar.Size = new System.Drawing.Size(121, 49);
             this.BtnGuardar.TabIndex = 4;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
@@ -90,7 +90,7 @@
             this.BtnCancelar.ForeColor = System.Drawing.Color.White;
             this.BtnCancelar.Location = new System.Drawing.Point(317, 266);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(121, 40);
+            this.BtnCancelar.Size = new System.Drawing.Size(121, 49);
             this.BtnCancelar.TabIndex = 5;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
@@ -159,7 +159,6 @@
             this.CboClientes.Location = new System.Drawing.Point(127, 70);
             this.CboClientes.Name = "CboClientes";
             this.CboClientes.Size = new System.Drawing.Size(368, 33);
-            this.CboClientes.Sorted = true;
             this.CboClientes.TabIndex = 23;
             this.CboClientes.Visible = false;
             // 
