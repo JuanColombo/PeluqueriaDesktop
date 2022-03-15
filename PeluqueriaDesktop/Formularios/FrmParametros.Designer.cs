@@ -115,6 +115,7 @@ namespace PeluqueriaDesktop
             this.txtContraseña.Enabled = false;
             this.txtContraseña.Location = new System.Drawing.Point(184, 219);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(170, 23);
             this.txtContraseña.TabIndex = 3;
             // 

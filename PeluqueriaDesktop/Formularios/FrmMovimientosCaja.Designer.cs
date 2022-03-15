@@ -1,7 +1,7 @@
 ﻿
 namespace PeluqueriaDesktop.Formularios
 {
-    partial class FrmListadoTurnos
+    partial class FrmMovimientosCaja
     {
         /// <summary>
         /// Required designer variable.
@@ -29,37 +29,19 @@ namespace PeluqueriaDesktop.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            this.TxtBusqueda = new System.Windows.Forms.TextBox();
-            this.LblBuscar = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.Grid = new System.Windows.Forms.DataGridView();
-            this.BtnModificar = new System.Windows.Forms.Button();
+            this.DtpFechaCaja = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // TxtBusqueda
-            // 
-            this.TxtBusqueda.Location = new System.Drawing.Point(64, 394);
-            this.TxtBusqueda.Name = "TxtBusqueda";
-            this.TxtBusqueda.Size = new System.Drawing.Size(402, 23);
-            this.TxtBusqueda.TabIndex = 19;
-            this.TxtBusqueda.TextChanged += new System.EventHandler(this.TxtBusqueda_TextChanged);
-            // 
-            // LblBuscar
-            // 
-            this.LblBuscar.AutoSize = true;
-            this.LblBuscar.Location = new System.Drawing.Point(13, 398);
-            this.LblBuscar.Name = "LblBuscar";
-            this.LblBuscar.Size = new System.Drawing.Size(45, 15);
-            this.LblBuscar.TabIndex = 22;
-            this.LblBuscar.Text = "Buscar ";
             // 
             // BtnSalir
             // 
             this.BtnSalir.BackColor = System.Drawing.Color.DarkSlateGray;
             this.BtnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSalir.ForeColor = System.Drawing.Color.White;
-            this.BtnSalir.Location = new System.Drawing.Point(667, 394);
+            this.BtnSalir.Location = new System.Drawing.Point(680, 179);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(121, 40);
             this.BtnSalir.TabIndex = 21;
@@ -70,6 +52,7 @@ namespace PeluqueriaDesktop.Formularios
             // Grid
             // 
             this.Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Grid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Grid.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -78,37 +61,44 @@ namespace PeluqueriaDesktop.Formularios
             this.Grid.ReadOnly = true;
             this.Grid.RowTemplate.Height = 25;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(776, 338);
+            this.Grid.Size = new System.Drawing.Size(791, 124);
             this.Grid.TabIndex = 14;
             // 
-            // BtnModificar
+            // DtpFechaCaja
             // 
-            this.BtnModificar.BackColor = System.Drawing.Color.DarkCyan;
-            this.BtnModificar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnModificar.ForeColor = System.Drawing.Color.White;
-            this.BtnModificar.Location = new System.Drawing.Point(540, 394);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(121, 40);
-            this.BtnModificar.TabIndex = 23;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = false;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            this.DtpFechaCaja.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.DtpFechaCaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaCaja.Location = new System.Drawing.Point(140, 179);
+            this.DtpFechaCaja.Name = "DtpFechaCaja";
+            this.DtpFechaCaja.Size = new System.Drawing.Size(129, 33);
+            this.DtpFechaCaja.TabIndex = 22;
+            this.DtpFechaCaja.ValueChanged += new System.EventHandler(this.DtpFechaCaja_ValueChanged);
             // 
-            // FrmListadoTurnos
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(26, 185);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 25);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Caja del dia:";
+            // 
+            // FrmMovimientosCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BtnModificar);
-            this.Controls.Add(this.TxtBusqueda);
-            this.Controls.Add(this.LblBuscar);
+            this.ClientSize = new System.Drawing.Size(813, 237);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DtpFechaCaja);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.Grid);
             this.MaximizeBox = false;
-            this.Name = "FrmListadoTurnos";
+            this.Name = "FrmMovimientosCaja";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Listado De Turnos";
+            this.Text = "Movimientos de Caja";
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,11 +106,9 @@ namespace PeluqueriaDesktop.Formularios
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TxtBusqueda;
-        private System.Windows.Forms.Label LblBuscar;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.DataGridView Grid;
-        private System.Windows.Forms.Button BtnModificar;
+        private System.Windows.Forms.DateTimePicker DtpFechaCaja;
+        private System.Windows.Forms.Label label1;
     }
 }

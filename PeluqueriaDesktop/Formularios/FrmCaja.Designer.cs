@@ -149,11 +149,11 @@ namespace PeluqueriaDesktop.Formularios
             // 
             // txtDescripcionRetiro
             // 
-            this.txtDescripcionRetiro.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDescripcionRetiro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDescripcionRetiro.Location = new System.Drawing.Point(209, 194);
             this.txtDescripcionRetiro.Multiline = true;
             this.txtDescripcionRetiro.Name = "txtDescripcionRetiro";
-            this.txtDescripcionRetiro.Size = new System.Drawing.Size(330, 45);
+            this.txtDescripcionRetiro.Size = new System.Drawing.Size(330, 85);
             this.txtDescripcionRetiro.TabIndex = 1;
             // 
             // FrmCaja

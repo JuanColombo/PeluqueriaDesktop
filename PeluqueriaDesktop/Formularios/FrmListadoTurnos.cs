@@ -74,7 +74,7 @@ namespace PeluqueriaDesktop.Formularios
         {
             //creamos la variable para saber que id de Producto que tenemos seleccionado
             var idSeleccionado = Grid.ObtenerIdSeleccionado();
-            //var filaAEditar = Grid.CurrentRow.Index;
+            var filaAEditar = Grid.CurrentRow.Index;
 
             var frmNuevoTurno = new FrmCargarTurno(idSeleccionado, modificarTurno);
             frmNuevoTurno.ShowDialog();
@@ -84,7 +84,7 @@ namespace PeluqueriaDesktop.Formularios
             ActualizarGrilla();
 
             //seleccionamos el registro editado
-            //Grid.CurrentCell = Grid.Rows[filaAEditar].Cells[0];
+            Grid.CurrentCell = Grid.Rows[filaAEditar].Cells[0];
         }
     }
 }

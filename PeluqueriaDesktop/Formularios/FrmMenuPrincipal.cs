@@ -180,5 +180,11 @@ namespace PeluqueriaDesktop
             frmNuevoTurno.ShowDialog();
             ActualizarGrilla();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var frmMovimientosCaja = new FrmMovimientosCaja();
+            frmMovimientosCaja.ShowDialog();
+        }
     }
 }
