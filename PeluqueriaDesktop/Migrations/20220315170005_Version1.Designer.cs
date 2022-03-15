@@ -10,8 +10,8 @@ using PeluqueriaDesktop;
 namespace PeluqueriaDesktop.Migrations
 {
     [DbContext(typeof(PeluqueriaContext))]
-    [Migration("20220309181253_caja2")]
-    partial class caja2
+    [Migration("20220315170005_Version1")]
+    partial class Version1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,24 +58,6 @@ namespace PeluqueriaDesktop.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Cliente");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Apellido = "Valle",
-                            Eliminado = false,
-                            Nombre = "Ivan Carlos",
-                            Telefono = 3498459297.0
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Apellido = "Colombo",
-                            Eliminado = false,
-                            Nombre = "Juan Pablo",
-                            Telefono = 3498463367.0
-                        });
                 });
 
             modelBuilder.Entity("PeluqueriaDesktop.Modelos.Caja", b =>
@@ -84,6 +66,9 @@ namespace PeluqueriaDesktop.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DescripcionRetiro")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
@@ -175,26 +160,6 @@ namespace PeluqueriaDesktop.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Producto");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Cantidad = 1.0,
-                            Codigo = 3145.0,
-                            Descripcion = "Tintura color morado",
-                            Eliminado = false,
-                            Marca = "Avon"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Cantidad = 5.0,
-                            Codigo = 10444584.0,
-                            Descripcion = "Shampoo manzana",
-                            Eliminado = false,
-                            Marca = "Plusbelle"
-                        });
                 });
 
             modelBuilder.Entity("PeluqueriaDesktop.Turno", b =>
@@ -293,6 +258,15 @@ namespace PeluqueriaDesktop.Migrations
                             Password = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
                             TipoUsuario = 3,
                             User = "juan"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Eliminado = false,
+                            Nombre = "Andrea Dellguste",
+                            Password = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+                            TipoUsuario = 1,
+                            User = "andrea"
                         });
                 });
 

@@ -2,7 +2,7 @@
 
 namespace PeluqueriaDesktop.Migrations
 {
-    public partial class Turnos : Migration
+    public partial class Version1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
