@@ -24,7 +24,8 @@ namespace PeluqueriaDesktop
             InitializeComponent();
             ActualizarGrilla();
             Grid.OcultarColumnas();
-            BackgroundImage = HelperPeluqueria.RecuperarImagenDeArchivoDeRecursos("fondoSistema"); ;
+            BackgroundImage = HelperPeluqueria.RecuperarImagenDeArchivoDeRecursos("fondoSistema"); 
+
         }
 
         private void ActualizarGrilla()
@@ -33,6 +34,8 @@ namespace PeluqueriaDesktop
             {
                 var turnosAListar = from turnos in db.Turnos
                                     where DtpFechaMnuPrincipal.Value.Date == turnos.Fecha.Date
+                                    where turnos.Eliminado == false
+                                    orderby turnos.Hora
                                     select new
                                     {
                                         Id = turnos.Id,
@@ -43,8 +46,9 @@ namespace PeluqueriaDesktop
                                     };
                 Grid.DataSource = turnosAListar.ToList();
 
+
             }
-           
+
         }
 
         private void subMnuNuevoCliente_Click(object sender, EventArgs e)
@@ -80,6 +84,7 @@ namespace PeluqueriaDesktop
 
         private void FrmMenuPrincipal_Activated(object sender, EventArgs e)
         {
+            
             if (Usuario == null)
             {
                 //si no hay nadie logeado, entonces mostramos el formulario de Login
@@ -97,6 +102,7 @@ namespace PeluqueriaDesktop
                     Application.Exit();
                 }
             }
+            ActualizarGrilla();
         }
 
         private void BtnRegistrarTrabajo_Click(object sender, EventArgs e)
@@ -186,5 +192,7 @@ namespace PeluqueriaDesktop
             var frmMovimientosCaja = new FrmMovimientosCaja();
             frmMovimientosCaja.ShowDialog();
         }
+
+
     }
 }

@@ -29,6 +29,7 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 var turnosAListar = from turnos in db.Turnos
+                                    where turnos.Eliminado==false
                                     select new
                                     {
                                         Id = turnos.Id,
@@ -58,6 +59,7 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 var turnosAListar = from turnos in db.Turnos
+                                    where turnos.Eliminado == false
                                     select new
                                     {
                                         Id = turnos.Id,
@@ -85,6 +87,24 @@ namespace PeluqueriaDesktop.Formularios
 
             //seleccionamos el registro editado
             Grid.CurrentCell = Grid.Rows[filaAEditar].Cells[0];
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            //obtenemos el id y el nombre del Turno seleccionado en la grilla
+            var idSeleccionado = Grid.ObtenerIdSeleccionado();
+            // preguntar si realmente desea eliminar al Calendario [nombre_Calendario_seleccionado]
+            //colocamos el signo $ para crear la interpolacion de cadenas
+            DialogResult respuesta = MessageBox.Show($"¿Estas seguro que desea {BtnEliminar.Text} el turno seleccionado?", BtnEliminar.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            //si responde que si, instanciamos al objeto dbContext y eliminamos el Calendario a traves del id que obtuvimos.
+            if (respuesta == DialogResult.Yes && BtnEliminar.Text == "Eliminar")
+            {
+                dbAdmin.Eliminar(idSeleccionado);
+                ActualizarGrilla();
+            }
+            else
+                this.Close();
         }
     }
 }

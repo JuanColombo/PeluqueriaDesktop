@@ -22,7 +22,15 @@ namespace PeluqueriaDesktop.AdminData
 
         public void Eliminar(int idSeleccionado)
         {
-            throw new NotImplementedException();
+            using PeluqueriaContext db = new PeluqueriaContext();
+            var turno = db.Turnos.Find(idSeleccionado);
+
+            //REALIZAMOS TODA LA MECANICA PARA QUE MODIFIQUE EN LA BASE DE DATOS AL CALENDARIO
+            turno.Eliminado = true;
+            turno.FechaHoraEliminacion = DateTime.Now;
+            turno.Usuario = FrmMenuPrincipal.Usuario;
+            db.Entry(turno).State = EntityState.Modified;
+            db.SaveChanges();
         }
 
         public object Obtener(int? idObtener)

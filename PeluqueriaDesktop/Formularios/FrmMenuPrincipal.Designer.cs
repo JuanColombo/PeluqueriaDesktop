@@ -48,6 +48,7 @@ namespace PeluqueriaDesktop
             this.BtnRegistrarTrabajo = new System.Windows.Forms.ToolStripButton();
             this.BtnCargarTurno = new System.Windows.Forms.ToolStripButton();
             this.BtnCaja = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.BtnClientes = new System.Windows.Forms.Button();
             this.PbDesarrollo22 = new System.Windows.Forms.PictureBox();
             this.BtnProductos = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@ namespace PeluqueriaDesktop
             this.DtpFechaMnuPrincipal = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnNuevoTurno = new System.Windows.Forms.Button();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbDesarrollo22)).BeginInit();
@@ -121,14 +121,14 @@ namespace PeluqueriaDesktop
             // subMnuListadoTrabajos
             // 
             this.subMnuListadoTrabajos.Name = "subMnuListadoTrabajos";
-            this.subMnuListadoTrabajos.Size = new System.Drawing.Size(180, 22);
+            this.subMnuListadoTrabajos.Size = new System.Drawing.Size(176, 22);
             this.subMnuListadoTrabajos.Text = "Ver Listado trabajos";
             this.subMnuListadoTrabajos.Click += new System.EventHandler(this.subMnuListadoTrabajos_Click);
             // 
             // subMnuListadoTurnos
             // 
             this.subMnuListadoTurnos.Name = "subMnuListadoTurnos";
-            this.subMnuListadoTurnos.Size = new System.Drawing.Size(180, 22);
+            this.subMnuListadoTurnos.Size = new System.Drawing.Size(176, 22);
             this.subMnuListadoTurnos.Text = "Ver Listado Turnos";
             this.subMnuListadoTurnos.Click += new System.EventHandler(this.subMnuListadoTurnos_Click);
             // 
@@ -222,6 +222,16 @@ namespace PeluqueriaDesktop
             this.BtnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCaja.Click += new System.EventHandler(this.BtnCaja_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(123, 54);
+            this.toolStripButton1.Text = "Movimientos de Caja";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // BtnClientes
             // 
             this.BtnClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -303,12 +313,12 @@ namespace PeluqueriaDesktop
             this.Grid.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid.Location = new System.Drawing.Point(157, 218);
+            this.Grid.Location = new System.Drawing.Point(157, 166);
             this.Grid.Name = "Grid";
             this.Grid.ReadOnly = true;
             this.Grid.RowTemplate.Height = 25;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(830, 195);
+            this.Grid.Size = new System.Drawing.Size(830, 247);
             this.Grid.TabIndex = 8;
             // 
             // DtpFechaMnuPrincipal
@@ -316,7 +326,7 @@ namespace PeluqueriaDesktop
             this.DtpFechaMnuPrincipal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtpFechaMnuPrincipal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DtpFechaMnuPrincipal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaMnuPrincipal.Location = new System.Drawing.Point(544, 152);
+            this.DtpFechaMnuPrincipal.Location = new System.Drawing.Point(544, 125);
             this.DtpFechaMnuPrincipal.Name = "DtpFechaMnuPrincipal";
             this.DtpFechaMnuPrincipal.Size = new System.Drawing.Size(200, 35);
             this.DtpFechaMnuPrincipal.TabIndex = 9;
@@ -328,7 +338,7 @@ namespace PeluqueriaDesktop
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(379, 152);
+            this.label1.Location = new System.Drawing.Point(379, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 32);
             this.label1.TabIndex = 10;
@@ -348,16 +358,6 @@ namespace PeluqueriaDesktop
             this.BtnNuevoTurno.Text = "Nuevo Turno";
             this.BtnNuevoTurno.UseVisualStyleBackColor = false;
             this.BtnNuevoTurno.Click += new System.EventHandler(this.BtnNuevoTurno_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(123, 54);
-            this.toolStripButton1.Text = "Movimientos de Caja";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // FrmMenuPrincipal
             // 

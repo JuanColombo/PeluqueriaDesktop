@@ -34,6 +34,7 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnSalir = new System.Windows.Forms.Button();
             this.Grid = new System.Windows.Forms.DataGridView();
             this.BtnModificar = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,9 +60,9 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnSalir.BackColor = System.Drawing.Color.DarkSlateGray;
             this.BtnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSalir.ForeColor = System.Drawing.Color.White;
-            this.BtnSalir.Location = new System.Drawing.Point(667, 394);
+            this.BtnSalir.Location = new System.Drawing.Point(695, 398);
             this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(121, 40);
+            this.BtnSalir.Size = new System.Drawing.Size(93, 36);
             this.BtnSalir.TabIndex = 21;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = false;
@@ -86,13 +87,26 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnModificar.BackColor = System.Drawing.Color.DarkCyan;
             this.BtnModificar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnModificar.ForeColor = System.Drawing.Color.White;
-            this.BtnModificar.Location = new System.Drawing.Point(540, 394);
+            this.BtnModificar.Location = new System.Drawing.Point(596, 398);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(121, 40);
+            this.BtnModificar.Size = new System.Drawing.Size(93, 36);
             this.BtnModificar.TabIndex = 23;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
             this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnEliminar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
+            this.BtnEliminar.Location = new System.Drawing.Point(497, 398);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(93, 36);
+            this.BtnEliminar.TabIndex = 24;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // FrmListadoTurnos
             // 
@@ -100,6 +114,7 @@ namespace PeluqueriaDesktop.Formularios
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.TxtBusqueda);
             this.Controls.Add(this.LblBuscar);
@@ -122,5 +137,6 @@ namespace PeluqueriaDesktop.Formularios
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.DataGridView Grid;
         private System.Windows.Forms.Button BtnModificar;
+        private System.Windows.Forms.Button BtnEliminar;
     }
 }
