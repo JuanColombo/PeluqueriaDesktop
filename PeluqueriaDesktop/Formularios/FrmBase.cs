@@ -67,7 +67,7 @@ namespace PeluqueriaDesktop
                 Grid.OcultarColumnas();
             }
         }  
-
+        
         private void BtnNuevo_Click_1(object sender, EventArgs e)
         {
             FrmNuevoEditar.LimpiarDatosDeLaPantalla();

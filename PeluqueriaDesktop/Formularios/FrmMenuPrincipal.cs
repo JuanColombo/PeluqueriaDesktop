@@ -35,14 +35,14 @@ namespace PeluqueriaDesktop
                 var turnosAListar = from turnos in db.Turnos
                                     where DtpFechaMnuPrincipal.Value.Date == turnos.Fecha.Date
                                     where turnos.Eliminado == false
-                                    orderby turnos.Hora
+                                    orderby turnos.Hora.Hour
                                     select new
                                     {
                                         Id = turnos.Id,
                                         Fecha = turnos.Fecha,
                                         Hora = turnos.Hora.ToShortTimeString(),
-                                        Trabajo = turnos.TrabajoARealizar,
-                                        Cliente = turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido
+                                        Trabajo = turnos.TrabajoARealizar.ToUpper(),
+                                        Cliente = (turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido).ToUpper()
                                     };
                 Grid.DataSource = turnosAListar.ToList();
 

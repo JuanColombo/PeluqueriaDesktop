@@ -103,7 +103,7 @@ namespace PeluqueriaDesktop.Formularios
                 turno.ClienteId = cliente.Id;
                 turno.Fecha = DtpFechaTurno.Value.Date;
                 turno.Hora = DtpHoraTurno.Value;
-                turno.TrabajoARealizar = txtTrabajo.Text;
+                turno.TrabajoARealizar = txtTrabajo.Text.ToUpper();
                 db.Turnos.Add(turno);
 
                 db.SaveChanges();
@@ -120,7 +120,7 @@ namespace PeluqueriaDesktop.Formularios
                     turno.ClienteId =(int)CboClientes.SelectedValue;
                     turno.Fecha = DtpFechaTurno.Value.Date;
                     turno.Hora = DtpHoraTurno.Value;
-                    turno.TrabajoARealizar = txtTrabajo.Text;
+                    turno.TrabajoARealizar = txtTrabajo.Text.ToUpper();
                     db.Turnos.Add(turno);
 
                     db.SaveChanges();
@@ -135,7 +135,7 @@ namespace PeluqueriaDesktop.Formularios
                 {
                     turno.Fecha = DtpFechaTurno.Value.Date;
                     turno.Hora = DtpHoraTurno.Value;
-                    turno.TrabajoARealizar = txtTrabajo.Text;
+                    turno.TrabajoARealizar = txtTrabajo.Text.ToUpper();
                     db.Entry(turno).State = EntityState.Modified;
                     db.SaveChanges();
                     MessageBox.Show("La operación fue realizada con exito");

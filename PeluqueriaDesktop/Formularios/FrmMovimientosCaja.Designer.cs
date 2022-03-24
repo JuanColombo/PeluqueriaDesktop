@@ -67,10 +67,10 @@ namespace PeluqueriaDesktop.Formularios
             // DtpFechaCaja
             // 
             this.DtpFechaCaja.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.DtpFechaCaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaCaja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DtpFechaCaja.Location = new System.Drawing.Point(140, 179);
             this.DtpFechaCaja.Name = "DtpFechaCaja";
-            this.DtpFechaCaja.Size = new System.Drawing.Size(129, 33);
+            this.DtpFechaCaja.Size = new System.Drawing.Size(171, 33);
             this.DtpFechaCaja.TabIndex = 22;
             this.DtpFechaCaja.ValueChanged += new System.EventHandler(this.DtpFechaCaja_ValueChanged);
             // 

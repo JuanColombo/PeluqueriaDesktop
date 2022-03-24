@@ -29,14 +29,15 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 var turnosAListar = from turnos in db.Turnos
-                                    where turnos.Eliminado==false
+                                    orderby turnos.Fecha.Date
+                                    where turnos.Eliminado == false
                                     select new
                                     {
                                         Id = turnos.Id,
                                         Fecha = turnos.Fecha,
                                         Hora = turnos.Hora.ToShortTimeString(),
                                         Trabajo = turnos.TrabajoARealizar,
-                                        Cliente = turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido
+                                        Cliente = (turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido).ToUpper()
                                       };
                 Grid.DataSource = turnosAListar.ToList();
 
@@ -59,14 +60,15 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 var turnosAListar = from turnos in db.Turnos
+                                    orderby turnos.Fecha.Date
                                     where turnos.Eliminado == false
                                     select new
                                     {
                                         Id = turnos.Id,
                                         Fecha = turnos.Fecha,
                                         Hora = turnos.Hora.ToShortTimeString(),
-                                        Trabajo = turnos.TrabajoARealizar,
-                                        Cliente = turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido
+                                        Trabajo = turnos.TrabajoARealizar.ToUpper(),
+                                        Cliente = (turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido).ToUpper()
                                     };
                 Grid.DataSource = turnosAListar.IgnoreQueryFilters().Where(c => c.Cliente.Contains(textoABuscar) || c.Fecha.Day.ToString().Contains(textoABuscar)).ToList();
             }

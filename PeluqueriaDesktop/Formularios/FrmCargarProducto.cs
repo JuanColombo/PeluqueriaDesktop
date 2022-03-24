@@ -63,8 +63,8 @@ namespace PeluqueriaDesktop.Formularios
                 //le asignamos a sus propiedades el valor de cada uno de los cuadros de texto
                 producto.Cantidad = (double)NumUpDownCantidad.Value;
                 producto.Codigo = (double)numUpDownCodigo.Value;
-                producto.Marca = txtMarca.Text;
-                producto.Descripcion = txtDescripcion.Text;
+                producto.Marca = txtMarca.Text.ToUpper();
+                producto.Descripcion = txtDescripcion.Text.ToUpper();
 
                 //si el id del Producto a editar es nulo agregamos un Producto Nuevo a la tabla
                 if (IdEditar == null)

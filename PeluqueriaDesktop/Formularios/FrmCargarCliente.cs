@@ -65,8 +65,8 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 //le asignamos a sus propiedades el valor de cada uno de los cuadros de texto
-                cliente.Nombre = TxtNombre.Text;
-                cliente.Apellido = TxtApellido.Text;
+                cliente.Nombre = TxtNombre.Text.ToUpper();
+                cliente.Apellido = TxtApellido.Text.ToUpper();
                 cliente.Telefono = (double)NumUpDownTelefono.Value;
 
                 //si el id del Cliente a editar es nulo agregamos un Cliente Nuevo a la tabla

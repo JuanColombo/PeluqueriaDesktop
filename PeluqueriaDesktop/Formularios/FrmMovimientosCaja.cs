@@ -11,9 +11,14 @@ namespace PeluqueriaDesktop.Formularios
 {
     public partial class FrmMovimientosCaja : Form
     {
+        
         public FrmMovimientosCaja()
         {
             InitializeComponent();
+            //personalizamos el datetime para mostrar
+            DtpFechaCaja.Format = DateTimePickerFormat.Custom;
+            // Le damos el formato de mes colocando una M por caracter y las y por año
+            DtpFechaCaja.CustomFormat = "MMMMMMMMMMMMMMMM yyyy";
             ActualizarGrilla();
             AjustarColumna();
         }
@@ -32,7 +37,7 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 var cajasAListar = from cajas in db.Caja
-                                   where DtpFechaCaja.Value.Date == cajas.Fecha.Date
+                                   where DtpFechaCaja.Value.Month == cajas.Fecha.Month
                                    select new
                                    {
                                        Fecha = cajas.Fecha.Date,
