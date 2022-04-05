@@ -41,10 +41,10 @@ namespace PeluqueriaDesktop.Formularios
                                    select new
                                    {
                                        Fecha = cajas.Fecha.Date,
-                                       Total = "$"+cajas.TotalCaja,
-                                       Retiro = "$" +cajas.RetiroCaja,
-                                       Saldo = "$" +(cajas.TotalCaja - cajas.RetiroCaja),
-                                       Descripcion = cajas.DescripcionRetiro
+                                       Total = "$" + cajas.TotalCaja,
+                                       Retiro = "$" + cajas.RetiroCaja,
+                                       Saldo = "$" + (cajas.TotalCaja - cajas.RetiroCaja),
+                                       Descripcion = cajas.DescripcionRetiro.ToUpper()
                                     };
                 Grid.DataSource = cajasAListar.ToList();
 

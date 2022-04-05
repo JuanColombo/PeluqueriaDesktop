@@ -210,5 +210,18 @@ namespace PeluqueriaDesktop
             BtnNuevo.ColorBotones();
             BtnEditar.ColorBotones();
             BtnEliminar.ColorBotones();        }
+
+        private void BtnVerFicha_Click(object sender, EventArgs e)
+        {
+            var idSeleccionado = Grid.ObtenerIdSeleccionado();
+            var filaAEditar = Grid.CurrentRow.Index;
+
+            var frmClienteTrabajos = new FrmClienteTrabajos(idSeleccionado);
+            frmClienteTrabajos.ShowDialog();
+
+
+            //actualizamos la grilla
+            ActualizarGrilla();
+        }
     }
 }

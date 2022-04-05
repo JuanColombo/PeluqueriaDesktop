@@ -30,13 +30,14 @@ namespace PeluqueriaDesktop.Formularios
             {
                 var turnosAListar = from turnos in db.Turnos
                                     orderby turnos.Fecha.Date
+                                    
                                     where turnos.Eliminado == false
                                     select new
                                     {
                                         Id = turnos.Id,
                                         Fecha = turnos.Fecha,
                                         Hora = turnos.Hora.ToShortTimeString(),
-                                        Trabajo = turnos.TrabajoARealizar,
+                                        Trabajo = turnos.TrabajoARealizar.ToUpper(),
                                         Cliente = (turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido).ToUpper()
                                       };
                 Grid.DataSource = turnosAListar.ToList();

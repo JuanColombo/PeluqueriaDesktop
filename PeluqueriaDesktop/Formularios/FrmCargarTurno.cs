@@ -102,7 +102,7 @@ namespace PeluqueriaDesktop.Formularios
 
                 turno.ClienteId = cliente.Id;
                 turno.Fecha = DtpFechaTurno.Value.Date;
-                turno.Hora = DtpHoraTurno.Value;
+                turno.Hora = DtpFechaTurno.Value;
                 turno.TrabajoARealizar = txtTrabajo.Text.ToUpper();
                 db.Turnos.Add(turno);
 
@@ -120,6 +120,9 @@ namespace PeluqueriaDesktop.Formularios
                     turno.ClienteId =(int)CboClientes.SelectedValue;
                     turno.Fecha = DtpFechaTurno.Value.Date;
                     turno.Hora = DtpHoraTurno.Value;
+
+                   
+
                     turno.TrabajoARealizar = txtTrabajo.Text.ToUpper();
                     db.Turnos.Add(turno);
 

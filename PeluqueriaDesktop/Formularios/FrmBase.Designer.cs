@@ -41,6 +41,7 @@ namespace PeluqueriaDesktop
             this.BtnStock = new System.Windows.Forms.Button();
             this.lblEliminados = new System.Windows.Forms.Label();
             this.lblTituloFormulario = new System.Windows.Forms.Label();
+            this.BtnVerFicha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +80,7 @@ namespace PeluqueriaDesktop
             this.BtnEliminar.BackColor = System.Drawing.Color.DarkCyan;
             this.BtnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnEliminar.Location = new System.Drawing.Point(288, 390);
+            this.BtnEliminar.Location = new System.Drawing.Point(266, 390);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(121, 40);
             this.BtnEliminar.TabIndex = 3;
@@ -92,7 +93,7 @@ namespace PeluqueriaDesktop
             this.BtnEditar.BackColor = System.Drawing.Color.DarkCyan;
             this.BtnEditar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnEditar.Location = new System.Drawing.Point(158, 390);
+            this.BtnEditar.Location = new System.Drawing.Point(136, 390);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(121, 40);
             this.BtnEditar.TabIndex = 2;
@@ -105,7 +106,7 @@ namespace PeluqueriaDesktop
             this.BtnNuevo.BackColor = System.Drawing.Color.DarkCyan;
             this.BtnNuevo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnNuevo.Location = new System.Drawing.Point(31, 390);
+            this.BtnNuevo.Location = new System.Drawing.Point(9, 390);
             this.BtnNuevo.Name = "BtnNuevo";
             this.BtnNuevo.Size = new System.Drawing.Size(121, 40);
             this.BtnNuevo.TabIndex = 1;
@@ -145,7 +146,7 @@ namespace PeluqueriaDesktop
             this.BtnStock.BackColor = System.Drawing.Color.DarkCyan;
             this.BtnStock.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnStock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnStock.Location = new System.Drawing.Point(423, 390);
+            this.BtnStock.Location = new System.Drawing.Point(401, 390);
             this.BtnStock.Name = "BtnStock";
             this.BtnStock.Size = new System.Drawing.Size(121, 40);
             this.BtnStock.TabIndex = 4;
@@ -171,12 +172,26 @@ namespace PeluqueriaDesktop
             this.lblTituloFormulario.Size = new System.Drawing.Size(0, 21);
             this.lblTituloFormulario.TabIndex = 15;
             // 
+            // BtnVerFicha
+            // 
+            this.BtnVerFicha.BackColor = System.Drawing.Color.Khaki;
+            this.BtnVerFicha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnVerFicha.ForeColor = System.Drawing.Color.Black;
+            this.BtnVerFicha.Location = new System.Drawing.Point(672, 344);
+            this.BtnVerFicha.Name = "BtnVerFicha";
+            this.BtnVerFicha.Size = new System.Drawing.Size(121, 40);
+            this.BtnVerFicha.TabIndex = 16;
+            this.BtnVerFicha.Text = "Ver Ficha";
+            this.BtnVerFicha.UseVisualStyleBackColor = false;
+            this.BtnVerFicha.Click += new System.EventHandler(this.BtnVerFicha_Click);
+            // 
             // FrmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnVerFicha);
             this.Controls.Add(this.lblTituloFormulario);
             this.Controls.Add(this.lblEliminados);
             this.Controls.Add(this.BtnStock);
@@ -211,5 +226,6 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.Button BtnStock;
         private System.Windows.Forms.Label lblEliminados;
         private System.Windows.Forms.Label lblTituloFormulario;
+        private System.Windows.Forms.Button BtnVerFicha;
     }
 }

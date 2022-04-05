@@ -7,7 +7,8 @@ namespace PeluqueriaDesktop.Modelos
     public enum TipoDePagoEnum
     {
         Contado=1,
-        CuentaCorriente
+        CuentaCorriente,
+        TarjetaCredito
 
     }
 }

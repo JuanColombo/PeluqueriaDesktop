@@ -31,9 +31,9 @@ namespace PeluqueriaDesktop.Formularios
         public FrmNuevoTrabajos(int idSeleccionado,int idTrabajoSeleccionado)
         {
             InitializeComponent();
-            DtpFechaTrabajo.Enabled = false;
-            TxtDescripcionBBDD.Enabled = false;
-            NumUpDownValor.Enabled = false;
+            DtpFechaTrabajo.Enabled = true;
+            TxtDescripcionBBDD.Enabled = true;
+            NumUpDownValor.Enabled = true;
             CargarComboPago();
             if (idTrabajoSeleccionado != 0)
             {
@@ -81,6 +81,9 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 detalleTrabajo.FormaDePago = (TipoDePagoEnum)CboTipoPago.SelectedValue;
+                detalleTrabajo.Fecha = DtpFechaTrabajo.Value.Date;
+                detalleTrabajo.DetalleTrabajo = TxtDescripcionBBDD.Text;
+                detalleTrabajo.Valor = (int)NumUpDownValor.Value;
 
                 if (IdEditar == null) { 
                     detalleTrabajo.ClienteId = cliente.Id;
