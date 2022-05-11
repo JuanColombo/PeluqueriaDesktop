@@ -61,7 +61,6 @@ namespace PeluqueriaDesktop.Formularios
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-           
             using (var db = new PeluqueriaContext())
             {
                 //le asignamos a sus propiedades el valor de cada uno de los cuadros de texto

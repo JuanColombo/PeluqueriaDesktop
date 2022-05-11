@@ -72,7 +72,7 @@ namespace PeluqueriaDesktop.Formularios
             this.DtpFechaFicha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DtpFechaFicha.Location = new System.Drawing.Point(140, 301);
             this.DtpFechaFicha.Name = "DtpFechaFicha";
-            this.DtpFechaFicha.Size = new System.Drawing.Size(121, 33);
+            this.DtpFechaFicha.Size = new System.Drawing.Size(69, 33);
             this.DtpFechaFicha.TabIndex = 22;
             this.DtpFechaFicha.ValueChanged += new System.EventHandler(this.DtpFechaFicha_ValueChanged);
             // 
