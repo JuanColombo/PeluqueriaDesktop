@@ -33,6 +33,35 @@ namespace PeluqueriaDesktop.AdminData
             db.SaveChanges();
         }
 
+        public IEnumerable<object> ObtenerIngresos(DateTime fecha)
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.DetalleTrabajos.Include(a => a.Usuario).Where(f => f.Fecha.Month == fecha.Month && f.Fecha.Year == fecha.Year).ToList();
+        }
+
+        public IEnumerable<object> ObtenerTodosLosContados()
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.DetalleTrabajos.Include(u => u.Usuario).Where(c => c.FormaDePago == TipoDePagoEnum.Contado).ToList();
+        }
+        public IEnumerable<object> ObtenerTodosLosRetiros(DateTime fecha)
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.Caja.Where(f => f.Fecha.Month == fecha.Month && f.Fecha.Year == fecha.Year).ToList();
+        }
+
+        public IEnumerable<object> ObtenerTodos(string cadenaBuscada)
+        {
+            //instanciamos nuestro objeto db Context
+            using PeluqueriaContext db = new PeluqueriaContext();
+            ////consultamos en la cadena buscada si contiene la expresion
+            return db.DetalleTrabajos.Where(c => c.cliente.Nombre.Contains(cadenaBuscada)).Include(u => u.Usuario).IgnoreQueryFilters().Where(c => c.Eliminado == false).ToList().ToList();
+        }
+        public IEnumerable<object> ObtenerTodosLosRetiros()
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.Caja.ToList();
+        }
         public object Obtener(int? idObtener)
         {
             throw new NotImplementedException();
@@ -47,29 +76,6 @@ namespace PeluqueriaDesktop.AdminData
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<object> ObtenerTodosLosContados()
-        {
-            using PeluqueriaContext db = new PeluqueriaContext();
-            return db.DetalleTrabajos.Include(u => u.Usuario).Where(c => c.FormaDePago == TipoDePagoEnum.Contado).ToList();
-        }
-        public IEnumerable<object> ObtenerTodosLosRetiros()
-        {
-            using PeluqueriaContext db = new PeluqueriaContext();
-            return db.Caja.ToList();
-        }
-
-        public IEnumerable<object> ObtenerTodos(string cadenaBuscada)
-        {
-            //instanciamos nuestro objeto db Context
-            using PeluqueriaContext db = new PeluqueriaContext();
-            ////consultamos en la cadena buscada si contiene la expresion
-            return db.DetalleTrabajos.Where(c => c.cliente.Nombre.Contains(cadenaBuscada)).Include(u => u.Usuario).IgnoreQueryFilters().Where(c => c.Eliminado == false).ToList().ToList();
-        }
-
-
-     
-
         public void Restaurar(int idSeleccionado)
         {
             throw new NotImplementedException();

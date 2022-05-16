@@ -48,7 +48,8 @@ namespace PeluqueriaDesktop
             this.BtnRegistrarTrabajo = new System.Windows.Forms.ToolStripButton();
             this.BtnCargarTurno = new System.Windows.Forms.ToolStripButton();
             this.BtnCaja = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.BtnMovCaja = new System.Windows.Forms.ToolStripButton();
+            this.BtnResMensual = new System.Windows.Forms.ToolStripButton();
             this.BtnClientes = new System.Windows.Forms.Button();
             this.PbDesarrollo22 = new System.Windows.Forms.PictureBox();
             this.BtnProductos = new System.Windows.Forms.Button();
@@ -185,7 +186,8 @@ namespace PeluqueriaDesktop
             this.BtnRegistrarTrabajo,
             this.BtnCargarTurno,
             this.BtnCaja,
-            this.toolStripButton1});
+            this.BtnMovCaja,
+            this.BtnResMensual});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1136, 57);
@@ -222,15 +224,25 @@ namespace PeluqueriaDesktop
             this.BtnCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCaja.Click += new System.EventHandler(this.BtnCaja_Click);
             // 
-            // toolStripButton1
+            // BtnMovCaja
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(123, 54);
-            this.toolStripButton1.Text = "Movimientos de Caja";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.BtnMovCaja.Image = ((System.Drawing.Image)(resources.GetObject("BtnMovCaja.Image")));
+            this.BtnMovCaja.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnMovCaja.Name = "BtnMovCaja";
+            this.BtnMovCaja.Size = new System.Drawing.Size(123, 54);
+            this.BtnMovCaja.Text = "Movimientos de Caja";
+            this.BtnMovCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnMovCaja.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // BtnResMensual
+            // 
+            this.BtnResMensual.Image = ((System.Drawing.Image)(resources.GetObject("BtnResMensual.Image")));
+            this.BtnResMensual.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnResMensual.Name = "BtnResMensual";
+            this.BtnResMensual.Size = new System.Drawing.Size(108, 54);
+            this.BtnResMensual.Text = "Resumen Mensual";
+            this.BtnResMensual.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnResMensual.Click += new System.EventHandler(this.MnuResumenMensual_Click);
             // 
             // BtnClientes
             // 
@@ -424,7 +436,8 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.DateTimePicker DtpFechaMnuPrincipal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnNuevoTurno;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton BtnMovCaja;
+        private System.Windows.Forms.ToolStripButton BtnResMensual;
     }
 }
 

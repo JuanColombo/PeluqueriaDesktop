@@ -11,12 +11,11 @@ using PeluqueriaDesktop.Modelos;
 
 namespace PeluqueriaDesktop.Formularios
 {
-    public partial class FrmMovimientosCaja : Form
+    public partial class FrmResumenMensual : Form
     {
         DbAdminTrabajosRealizados dbAdmin = new DbAdminTrabajosRealizados();
         Caja caja = new Caja();
-
-        public FrmMovimientosCaja()
+        public FrmResumenMensual()
         {
             InitializeComponent();
             //personalizamos el datetime para mostrar
@@ -24,16 +23,21 @@ namespace PeluqueriaDesktop.Formularios
             // Le damos el formato de mes colocando una M por caracter y las y por año
             DtpFechaCaja.CustomFormat = "MMMMMMMMMMMMMMMM yyyy";
             ActualizarGrilla();
-            AjustarColumna();
-            CargarTotalRetiro();
+            CargarTotalIngresos();
         }
 
-        private void CargarTotalRetiro()
+        private void CargarTotalIngresos()
         {
-
             var retiroTotal = 0;
+            var sumaCaja = 0;
             var fecha = DtpFechaCaja.Value;
 
+            var detalle = dbAdmin.ObtenerIngresos(fecha);
+
+            foreach (DetalleTrabajos i in detalle)
+            {
+                sumaCaja += (int)i.Valor;
+            }
             var retiro = dbAdmin.ObtenerTodosLosRetiros(fecha);
             foreach (Caja i in retiro)
             {
@@ -42,29 +46,26 @@ namespace PeluqueriaDesktop.Formularios
             }
 
             numUpDownTotalEgresos.Value = retiroTotal;
-        }
 
-        private void AjustarColumna()
-        {
-            this.Grid.Columns[4].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            numUpDownTotalIngresos.Value = sumaCaja;
+
         }
 
         private void ActualizarGrilla()
         {
             using (var db = new PeluqueriaContext())
             {
-                var cajasAListar = from cajas in db.Caja
-                                   where DtpFechaCaja.Value.Month == cajas.Fecha.Month
-                                   where DtpFechaCaja.Value.Year == cajas.Fecha.Year
+                var resumenMensual = from detalle in db.DetalleTrabajos
+                                   where DtpFechaCaja.Value.Month == detalle.Fecha.Month
+                                   where DtpFechaCaja.Value.Year == detalle.Fecha.Year
                                    select new
                                    {
-                                       Fecha = cajas.Fecha.Date,
-                                       Total = "$" + cajas.TotalCaja,
-                                       Retiro = "$" + cajas.RetiroCaja,
-                                       Saldo = "$" + (cajas.TotalCaja - cajas.RetiroCaja),
-                                       Descripcion = cajas.DescripcionRetiro.ToUpper()
+                                       Fecha = detalle.Fecha.Date,
+                                       FormaPago = detalle.FormaDePago,
+                                       Valor = "$" + detalle.Valor
                                     };
-                Grid.DataSource = cajasAListar.ToList();
+                    
+                Grid.DataSource = resumenMensual.ToList();
 
             }
         }
@@ -72,13 +73,13 @@ namespace PeluqueriaDesktop.Formularios
         private void DtpFechaCaja_ValueChanged(object sender, EventArgs e)
         {
             ActualizarGrilla();
-            AjustarColumna();
-            CargarTotalRetiro();
+            CargarTotalIngresos();
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

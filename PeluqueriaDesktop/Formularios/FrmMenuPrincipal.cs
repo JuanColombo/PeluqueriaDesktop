@@ -96,6 +96,9 @@ namespace PeluqueriaDesktop
                     MnuUsuario.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
                     MnuConfiguracion.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
                     BtnCaja.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
+                    BtnMovCaja.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
+                    BtnResMensual.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
+
                 }
                 else
                 {
@@ -193,6 +196,10 @@ namespace PeluqueriaDesktop
             frmMovimientosCaja.ShowDialog();
         }
 
-
+        private void MnuResumenMensual_Click(object sender, EventArgs e)
+        {
+            var frmResumenMensual = new FrmResumenMensual();
+            frmResumenMensual.ShowDialog();
+        }
     }
 }
