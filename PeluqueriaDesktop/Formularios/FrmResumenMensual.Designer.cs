@@ -38,9 +38,15 @@ namespace PeluqueriaDesktop.Formularios
             this.numUpDownTotalEgresos = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numUpSaldo = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownTotalIngresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownTotalEgresos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpSaldo)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnSalir
@@ -111,9 +117,15 @@ namespace PeluqueriaDesktop.Formularios
             23,
             0,
             0});
+            this.numUpDownTotalIngresos.Minimum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            -2147483648});
             this.numUpDownTotalIngresos.Name = "numUpDownTotalIngresos";
             this.numUpDownTotalIngresos.Size = new System.Drawing.Size(120, 33);
             this.numUpDownTotalIngresos.TabIndex = 25;
+            this.numUpDownTotalIngresos.ThousandsSeparator = true;
             // 
             // numUpDownTotalEgresos
             // 
@@ -125,9 +137,15 @@ namespace PeluqueriaDesktop.Formularios
             23,
             0,
             0});
+            this.numUpDownTotalEgresos.Minimum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            -2147483648});
             this.numUpDownTotalEgresos.Name = "numUpDownTotalEgresos";
             this.numUpDownTotalEgresos.Size = new System.Drawing.Size(120, 33);
             this.numUpDownTotalEgresos.TabIndex = 29;
+            this.numUpDownTotalEgresos.ThousandsSeparator = true;
             // 
             // label3
             // 
@@ -149,12 +167,77 @@ namespace PeluqueriaDesktop.Formularios
             this.label4.TabIndex = 30;
             this.label4.Text = "Listado de Ingresos Mensuales";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(4, 363);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 25);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "$:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(189, 363);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 25);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "$:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(359, 363);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 25);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "$:";
+            // 
+            // numUpSaldo
+            // 
+            this.numUpSaldo.Enabled = false;
+            this.numUpSaldo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.numUpSaldo.Location = new System.Drawing.Point(386, 361);
+            this.numUpSaldo.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.numUpSaldo.Minimum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            -2147483648});
+            this.numUpSaldo.Name = "numUpSaldo";
+            this.numUpSaldo.Size = new System.Drawing.Size(120, 33);
+            this.numUpSaldo.TabIndex = 34;
+            this.numUpSaldo.ThousandsSeparator = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(387, 333);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 25);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Saldo";
+            // 
             // FrmResumenMensual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(813, 401);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.numUpSaldo);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numUpDownTotalEgresos);
             this.Controls.Add(this.label3);
@@ -172,6 +255,7 @@ namespace PeluqueriaDesktop.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownTotalIngresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownTotalEgresos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpSaldo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +271,10 @@ namespace PeluqueriaDesktop.Formularios
         private System.Windows.Forms.NumericUpDown numUpDownTotalEgresos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numUpSaldo;
+        private System.Windows.Forms.Label label8;
     }
 }

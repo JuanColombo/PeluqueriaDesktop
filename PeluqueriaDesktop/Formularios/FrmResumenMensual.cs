@@ -46,8 +46,8 @@ namespace PeluqueriaDesktop.Formularios
             }
 
             numUpDownTotalEgresos.Value = retiroTotal;
-
             numUpDownTotalIngresos.Value = sumaCaja;
+            numUpSaldo.Value = sumaCaja - retiroTotal;
 
         }
 
@@ -62,6 +62,7 @@ namespace PeluqueriaDesktop.Formularios
                                    {
                                        Fecha = detalle.Fecha.Date,
                                        FormaPago = detalle.FormaDePago,
+                                       Cliente = (detalle.cliente.Nombre + " " + detalle.cliente.Apellido).ToUpper(),
                                        Valor = "$" + detalle.Valor
                                     };
                     

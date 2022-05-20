@@ -35,6 +35,7 @@ namespace PeluqueriaDesktop.Formularios
             this.label1 = new System.Windows.Forms.Label();
             this.numUpDownTotalEgresos = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownTotalEgresos)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +98,11 @@ namespace PeluqueriaDesktop.Formularios
             23,
             0,
             0});
+            this.numUpDownTotalEgresos.Minimum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            -2147483648});
             this.numUpDownTotalEgresos.Name = "numUpDownTotalEgresos";
             this.numUpDownTotalEgresos.Size = new System.Drawing.Size(120, 33);
             this.numUpDownTotalEgresos.TabIndex = 27;
@@ -105,11 +111,21 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(345, 304);
+            this.label2.Location = new System.Drawing.Point(334, 304);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 25);
             this.label2.TabIndex = 26;
             this.label2.Text = "Total Egresos";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(450, 303);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 25);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "$:";
             // 
             // FrmMovimientosCaja
             // 
@@ -117,6 +133,7 @@ namespace PeluqueriaDesktop.Formularios
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(813, 346);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.numUpDownTotalEgresos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -142,5 +159,6 @@ namespace PeluqueriaDesktop.Formularios
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numUpDownTotalEgresos;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
     }
 }
