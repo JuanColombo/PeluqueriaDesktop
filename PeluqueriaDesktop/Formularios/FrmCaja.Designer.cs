@@ -48,7 +48,7 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnSalir.BackColor = System.Drawing.Color.DarkSlateGray;
             this.BtnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSalir.ForeColor = System.Drawing.Color.White;
-            this.BtnSalir.Location = new System.Drawing.Point(483, 299);
+            this.BtnSalir.Location = new System.Drawing.Point(483, 336);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(121, 40);
             this.BtnSalir.TabIndex = 3;
@@ -59,17 +59,17 @@ namespace PeluqueriaDesktop.Formularios
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.Location = new System.Drawing.Point(87, 64);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.Location = new System.Drawing.Point(137, 69);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(108, 50);
+            this.lblTitulo.Size = new System.Drawing.Size(66, 25);
             this.lblTitulo.TabIndex = 22;
             this.lblTitulo.Text = "Total:";
             // 
             // numUpDownTotal
             // 
             this.numUpDownTotal.Enabled = false;
-            this.numUpDownTotal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numUpDownTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numUpDownTotal.Location = new System.Drawing.Point(209, 66);
             this.numUpDownTotal.Maximum = new decimal(new int[] {
             1316134911,
@@ -77,12 +77,12 @@ namespace PeluqueriaDesktop.Formularios
             0,
             0});
             this.numUpDownTotal.Name = "numUpDownTotal";
-            this.numUpDownTotal.Size = new System.Drawing.Size(330, 50);
+            this.numUpDownTotal.Size = new System.Drawing.Size(330, 31);
             this.numUpDownTotal.TabIndex = 23;
             // 
             // numUpDownRetiro
             // 
-            this.numUpDownRetiro.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numUpDownRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numUpDownRetiro.Location = new System.Drawing.Point(209, 132);
             this.numUpDownRetiro.Maximum = new decimal(new int[] {
             -1530494977,
@@ -90,16 +90,16 @@ namespace PeluqueriaDesktop.Formularios
             0,
             0});
             this.numUpDownRetiro.Name = "numUpDownRetiro";
-            this.numUpDownRetiro.Size = new System.Drawing.Size(330, 50);
+            this.numUpDownRetiro.Size = new System.Drawing.Size(330, 31);
             this.numUpDownRetiro.TabIndex = 0;
             // 
             // lblRetiro
             // 
             this.lblRetiro.AutoSize = true;
-            this.lblRetiro.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRetiro.Location = new System.Drawing.Point(68, 132);
+            this.lblRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRetiro.Location = new System.Drawing.Point(128, 135);
             this.lblRetiro.Name = "lblRetiro";
-            this.lblRetiro.Size = new System.Drawing.Size(127, 50);
+            this.lblRetiro.Size = new System.Drawing.Size(75, 25);
             this.lblRetiro.TabIndex = 25;
             this.lblRetiro.Text = "Retiro:";
             // 
@@ -108,7 +108,7 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnGuardarCambios.BackColor = System.Drawing.Color.DarkCyan;
             this.BtnGuardarCambios.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnGuardarCambios.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardarCambios.Location = new System.Drawing.Point(322, 299);
+            this.BtnGuardarCambios.Location = new System.Drawing.Point(322, 336);
             this.BtnGuardarCambios.Name = "BtnGuardarCambios";
             this.BtnGuardarCambios.Size = new System.Drawing.Size(134, 40);
             this.BtnGuardarCambios.TabIndex = 2;
@@ -140,17 +140,17 @@ namespace PeluqueriaDesktop.Formularios
             // LblDescripcion
             // 
             this.LblDescripcion.AutoSize = true;
-            this.LblDescripcion.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblDescripcion.Location = new System.Drawing.Point(2, 194);
+            this.LblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblDescripcion.Location = new System.Drawing.Point(72, 218);
             this.LblDescripcion.Name = "LblDescripcion";
-            this.LblDescripcion.Size = new System.Drawing.Size(193, 45);
+            this.LblDescripcion.Size = new System.Drawing.Size(131, 25);
             this.LblDescripcion.TabIndex = 29;
             this.LblDescripcion.Text = "Descripcion:";
             // 
             // txtDescripcionRetiro
             // 
-            this.txtDescripcionRetiro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescripcionRetiro.Location = new System.Drawing.Point(209, 194);
+            this.txtDescripcionRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDescripcionRetiro.Location = new System.Drawing.Point(209, 188);
             this.txtDescripcionRetiro.Multiline = true;
             this.txtDescripcionRetiro.Name = "txtDescripcionRetiro";
             this.txtDescripcionRetiro.Size = new System.Drawing.Size(330, 85);
@@ -161,7 +161,7 @@ namespace PeluqueriaDesktop.Formularios
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(616, 351);
+            this.ClientSize = new System.Drawing.Size(616, 388);
             this.Controls.Add(this.txtDescripcionRetiro);
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.DtpFechaCaja);

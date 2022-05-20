@@ -14,5 +14,6 @@ namespace PeluqueriaDesktop.Modelos
         [Required]
         public double RetiroCaja { get; set; }
         public string DescripcionRetiro { get; set; }
+
     }
 }

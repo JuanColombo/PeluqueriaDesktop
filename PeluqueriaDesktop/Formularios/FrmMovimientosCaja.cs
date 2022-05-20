@@ -26,7 +26,10 @@ namespace PeluqueriaDesktop.Formularios
             ActualizarGrilla();
             AjustarColumna();
             CargarTotalRetiro();
+
         }
+
+
 
         private void CargarTotalRetiro()
         {
@@ -51,21 +54,45 @@ namespace PeluqueriaDesktop.Formularios
 
         private void ActualizarGrilla()
         {
-            using (var db = new PeluqueriaContext())
+            if (txtFiltro.Text == "")
             {
-                var cajasAListar = from cajas in db.Caja
-                                   where DtpFechaCaja.Value.Month == cajas.Fecha.Month
-                                   where DtpFechaCaja.Value.Year == cajas.Fecha.Year
-                                   select new
-                                   {
-                                       Fecha = cajas.Fecha.Date,
-                                       Total = "$" + cajas.TotalCaja,
-                                       Retiro = "$" + cajas.RetiroCaja,
-                                       Saldo = "$" + (cajas.TotalCaja - cajas.RetiroCaja),
-                                       Descripcion = cajas.DescripcionRetiro.ToUpper()
-                                    };
-                Grid.DataSource = cajasAListar.ToList();
+                using (var db = new PeluqueriaContext())
+                {
+                    var cajasAListar = from cajas in db.Caja
+                                       where DtpFechaCaja.Value.Month == cajas.Fecha.Month
+                                       where DtpFechaCaja.Value.Year == cajas.Fecha.Year 
+                                       select new
+                                       {
+                                           Fecha = cajas.Fecha.Date,
+                                           Total = "$" + cajas.TotalCaja,
+                                           Retiro = "$" + cajas.RetiroCaja,
+                                           Saldo = "$" + (cajas.TotalCaja - cajas.RetiroCaja),
+                                           Descripcion = cajas.DescripcionRetiro.ToUpper()
+                                       };
+                    Grid.DataSource = cajasAListar.ToList();
 
+                }
+
+            }
+            else
+            {
+                using (var db = new PeluqueriaContext())
+                {
+                    var cajasAListar = from cajas in db.Caja
+                                       where DtpFechaCaja.Value.Month == cajas.Fecha.Month
+                                       where DtpFechaCaja.Value.Year == cajas.Fecha.Year
+                                       where cajas.DescripcionRetiro.ToUpper().Contains(txtFiltro.Text.ToUpper())
+                                       select new
+                                       {
+                                           Fecha = cajas.Fecha.Date,
+                                           Total = "$" + cajas.TotalCaja,
+                                           Retiro = "$" + cajas.RetiroCaja,
+                                           Saldo = "$" + (cajas.TotalCaja - cajas.RetiroCaja),
+                                           Descripcion = cajas.DescripcionRetiro.ToUpper()
+                                        };
+                    Grid.DataSource = cajasAListar.ToList();
+
+                }
             }
         }
 
@@ -74,11 +101,34 @@ namespace PeluqueriaDesktop.Formularios
             ActualizarGrilla();
             AjustarColumna();
             CargarTotalRetiro();
+            CargarSubTotal(txtFiltro.Text);
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            CargarSubTotal(txtFiltro.Text);
+            ActualizarGrilla();
+        }
+
+        private void CargarSubTotal(string txtFiltro)
+        {
+
+            var retiroTotal = 0;
+            var fecha = DtpFechaCaja.Value;
+
+            var subTotal = dbAdmin.ObtenerTodosLosSubTotal(fecha,txtFiltro);
+            foreach (Caja i in subTotal)
+            {
+                retiroTotal += (int)i.RetiroCaja;
+
+            }
+
+            numUpDownSubTotal.Value = retiroTotal;
         }
     }
 }

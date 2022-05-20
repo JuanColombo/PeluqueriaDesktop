@@ -49,6 +49,11 @@ namespace PeluqueriaDesktop.AdminData
             using PeluqueriaContext db = new PeluqueriaContext();
             return db.Caja.Where(f => f.Fecha.Month == fecha.Month && f.Fecha.Year == fecha.Year).ToList();
         }
+        public IEnumerable<object> ObtenerTodosLosRetiros(string empleado)
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.Caja.Where(e => e.DescripcionRetiro.ToUpper().Trim() == empleado).ToList();
+        }
 
         public IEnumerable<object> ObtenerTodos(string cadenaBuscada)
         {
@@ -62,6 +67,11 @@ namespace PeluqueriaDesktop.AdminData
             using PeluqueriaContext db = new PeluqueriaContext();
             return db.Caja.ToList();
         }
+        public IEnumerable<object> ObtenerTodosLosSubTotal(DateTime fecha, string txtFiltro)
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.Caja.Where(d => d.DescripcionRetiro.Trim().ToUpper().Contains(txtFiltro.Trim().ToUpper())).Where(f => f.Fecha.Month == fecha.Month && f.Fecha.Year == fecha.Year).ToList();
+        }
         public object Obtener(int? idObtener)
         {
             throw new NotImplementedException();
@@ -71,6 +81,7 @@ namespace PeluqueriaDesktop.AdminData
         {
             throw new NotImplementedException();
         }
+
 
         public IEnumerable<object> ObtenerEliminados(string cadenaBuscada)
         {

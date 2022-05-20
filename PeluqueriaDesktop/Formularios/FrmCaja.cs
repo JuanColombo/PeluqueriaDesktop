@@ -21,7 +21,10 @@ namespace PeluqueriaDesktop.Formularios
             InitializeComponent();
             DtpFechaCaja.Value = DateTime.Now;
             CargarDtpTotal();
+
         }
+
+
 
         private void CargarDtpTotal()
         {
