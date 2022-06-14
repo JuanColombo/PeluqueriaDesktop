@@ -76,6 +76,11 @@ namespace PeluqueriaDesktop.Formularios
             2328,
             0,
             0});
+            this.numUpDownTotal.Minimum = new decimal(new int[] {
+            276447231,
+            23283,
+            0,
+            -2147483648});
             this.numUpDownTotal.Name = "numUpDownTotal";
             this.numUpDownTotal.Size = new System.Drawing.Size(330, 31);
             this.numUpDownTotal.TabIndex = 23;

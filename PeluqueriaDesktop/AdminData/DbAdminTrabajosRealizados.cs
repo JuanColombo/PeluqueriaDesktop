@@ -70,7 +70,12 @@ namespace PeluqueriaDesktop.AdminData
         public IEnumerable<object> ObtenerTodosLosSubTotal(DateTime fecha, string txtFiltro)
         {
             using PeluqueriaContext db = new PeluqueriaContext();
-            return db.Caja.Where(d => d.DescripcionRetiro.Trim().ToUpper().Contains(txtFiltro.Trim().ToUpper())).Where(f => f.Fecha.Month == fecha.Month && f.Fecha.Year == fecha.Year).ToList();
+            return db.Caja
+                .Where(d => d.DescripcionRetiro.Trim().ToUpper()
+                            .Contains(txtFiltro.Trim().ToUpper())
+                      )
+                .Where(f => f.Fecha.Month == fecha.Month && f.Fecha.Year == fecha.Year)
+                .ToList();
         }
         public object Obtener(int? idObtener)
         {

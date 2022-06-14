@@ -43,7 +43,6 @@ namespace PeluqueriaDesktop.Formularios
             this.label7 = new System.Windows.Forms.Label();
             this.numUpSaldo = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.BtnVerEgresos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownTotalIngresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownTotalEgresos)).BeginInit();
@@ -228,26 +227,12 @@ namespace PeluqueriaDesktop.Formularios
             this.label8.TabIndex = 33;
             this.label8.Text = "Saldo";
             // 
-            // BtnVerEgresos
-            // 
-            this.BtnVerEgresos.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.BtnVerEgresos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnVerEgresos.ForeColor = System.Drawing.Color.White;
-            this.BtnVerEgresos.Location = new System.Drawing.Point(557, 402);
-            this.BtnVerEgresos.Name = "BtnVerEgresos";
-            this.BtnVerEgresos.Size = new System.Drawing.Size(121, 40);
-            this.BtnVerEgresos.TabIndex = 36;
-            this.BtnVerEgresos.Text = "Egresos";
-            this.BtnVerEgresos.UseVisualStyleBackColor = false;
-            this.BtnVerEgresos.Click += new System.EventHandler(this.BtnVerEgresos_Click);
-            // 
             // FrmResumenMensual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(813, 443);
-            this.Controls.Add(this.BtnVerEgresos);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.numUpSaldo);
             this.Controls.Add(this.label8);
@@ -291,6 +276,5 @@ namespace PeluqueriaDesktop.Formularios
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numUpSaldo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button BtnVerEgresos;
     }
 }

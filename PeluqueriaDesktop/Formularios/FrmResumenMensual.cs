@@ -82,10 +82,6 @@ namespace PeluqueriaDesktop.Formularios
             this.Close();
         }
 
-        private void BtnVerEgresos_Click(object sender, EventArgs e)
-        {
-            var frmEgresos = new FrmEgresos();
-            frmEgresos.ShowDialog();
-        }
+       
     }
 }

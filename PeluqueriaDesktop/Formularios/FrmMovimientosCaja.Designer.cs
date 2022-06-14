@@ -51,7 +51,7 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnSalir.BackColor = System.Drawing.Color.DarkSlateGray;
             this.BtnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnSalir.ForeColor = System.Drawing.Color.White;
-            this.BtnSalir.Location = new System.Drawing.Point(680, 301);
+            this.BtnSalir.Location = new System.Drawing.Point(681, 378);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(121, 40);
             this.BtnSalir.TabIndex = 21;
@@ -78,7 +78,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.DtpFechaCaja.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.DtpFechaCaja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaCaja.Location = new System.Drawing.Point(140, 300);
+            this.DtpFechaCaja.Location = new System.Drawing.Point(111, 335);
             this.DtpFechaCaja.Name = "DtpFechaCaja";
             this.DtpFechaCaja.Size = new System.Drawing.Size(171, 33);
             this.DtpFechaCaja.TabIndex = 22;
@@ -88,7 +88,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(46, 304);
+            this.label1.Location = new System.Drawing.Point(17, 339);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 25);
             this.label1.TabIndex = 23;
@@ -98,7 +98,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.numUpDownTotalEgresos.Enabled = false;
             this.numUpDownTotalEgresos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.numUpDownTotalEgresos.Location = new System.Drawing.Point(675, 376);
+            this.numUpDownTotalEgresos.Location = new System.Drawing.Point(681, 339);
             this.numUpDownTotalEgresos.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -117,7 +117,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(675, 348);
+            this.label2.Location = new System.Drawing.Point(681, 311);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 25);
             this.label2.TabIndex = 26;
@@ -127,7 +127,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(648, 379);
+            this.label5.Location = new System.Drawing.Point(654, 342);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 25);
             this.label5.TabIndex = 32;
@@ -137,7 +137,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(456, 379);
+            this.label3.Location = new System.Drawing.Point(462, 342);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 25);
             this.label3.TabIndex = 35;
@@ -147,7 +147,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.numUpDownSubTotal.Enabled = false;
             this.numUpDownSubTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.numUpDownSubTotal.Location = new System.Drawing.Point(482, 376);
+            this.numUpDownSubTotal.Location = new System.Drawing.Point(488, 339);
             this.numUpDownSubTotal.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -166,7 +166,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(497, 348);
+            this.label4.Location = new System.Drawing.Point(503, 311);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 25);
             this.label4.TabIndex = 33;
