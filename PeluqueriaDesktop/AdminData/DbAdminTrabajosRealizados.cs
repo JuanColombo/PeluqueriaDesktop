@@ -44,6 +44,11 @@ namespace PeluqueriaDesktop.AdminData
             using PeluqueriaContext db = new PeluqueriaContext();
             return db.DetalleTrabajos.Include(u => u.Usuario).Where(c => c.FormaDePago == TipoDePagoEnum.Contado).ToList();
         }
+        public IEnumerable<object> ObtenerEntregas()
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.DetalleTrabajos.Include(u => u.Usuario).Where(c => c.FormaDePago == TipoDePagoEnum.CuentaCorriente).ToList();
+        }
         public IEnumerable<object> ObtenerTodosLosRetiros(DateTime fecha)
         {
             using PeluqueriaContext db = new PeluqueriaContext();

@@ -63,7 +63,7 @@ namespace PeluqueriaDesktop.Formularios
                                        Fecha = detalle.Fecha.Date,
                                        FormaPago = detalle.FormaDePago,
                                        Cliente = (detalle.cliente.Nombre + " " + detalle.cliente.Apellido).ToUpper(),
-                                       Valor = "$" + detalle.Valor
+                                       Valor = "$" + ((int)detalle.Valor + (int)detalle.Entrega)
                                     };
                     
                 Grid.DataSource = resumenMensual.ToList();

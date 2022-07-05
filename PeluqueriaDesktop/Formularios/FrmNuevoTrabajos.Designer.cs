@@ -42,7 +42,10 @@
             this.DtpFechaTrabajo = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.CboTipoPago = new System.Windows.Forms.ComboBox();
+            this.numEntrega = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownValor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEntrega)).BeginInit();
             this.SuspendLayout();
             // 
             // LblCantidad
@@ -73,7 +76,7 @@
             this.BtnGuardar.Location = new System.Drawing.Point(474, 353);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(121, 40);
-            this.BtnGuardar.TabIndex = 4;
+            this.BtnGuardar.TabIndex = 5;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -86,7 +89,7 @@
             this.BtnCancelar.Location = new System.Drawing.Point(610, 353);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(121, 40);
-            this.BtnCancelar.TabIndex = 5;
+            this.BtnCancelar.TabIndex = 6;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -141,11 +144,11 @@
             // 
             // TxtDescripcionBBDD
             // 
-            this.TxtDescripcionBBDD.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.TxtDescripcionBBDD.Location = new System.Drawing.Point(210, 156);
+            this.TxtDescripcionBBDD.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.TxtDescripcionBBDD.Location = new System.Drawing.Point(210, 139);
             this.TxtDescripcionBBDD.Multiline = true;
             this.TxtDescripcionBBDD.Name = "TxtDescripcionBBDD";
-            this.TxtDescripcionBBDD.Size = new System.Drawing.Size(396, 48);
+            this.TxtDescripcionBBDD.Size = new System.Drawing.Size(396, 65);
             this.TxtDescripcionBBDD.TabIndex = 1;
             // 
             // label1
@@ -184,7 +187,35 @@
             this.CboTipoPago.Location = new System.Drawing.Point(210, 291);
             this.CboTipoPago.Name = "CboTipoPago";
             this.CboTipoPago.Size = new System.Drawing.Size(160, 29);
-            this.CboTipoPago.TabIndex = 3;
+            this.CboTipoPago.TabIndex = 4;
+            // 
+            // numEntrega
+            // 
+            this.numEntrega.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numEntrega.Location = new System.Drawing.Point(479, 222);
+            this.numEntrega.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numEntrega.Minimum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            -2147483648});
+            this.numEntrega.Name = "numEntrega";
+            this.numEntrega.Size = new System.Drawing.Size(160, 33);
+            this.numEntrega.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(384, 220);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 30);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Entrega:";
             // 
             // FrmNuevoTrabajos
             // 
@@ -192,6 +223,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 405);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.numEntrega);
             this.Controls.Add(this.CboTipoPago);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DtpFechaTrabajo);
@@ -212,6 +245,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Trabajo";
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownValor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEntrega)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +266,7 @@
         private System.Windows.Forms.DateTimePicker DtpFechaTrabajo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox CboTipoPago;
+        private System.Windows.Forms.NumericUpDown numEntrega;
+        private System.Windows.Forms.Label label3;
     }
 }

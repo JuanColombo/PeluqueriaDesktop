@@ -30,11 +30,18 @@ namespace PeluqueriaDesktop.Formularios
         {
             var sumaCaja = 0;
             var retiroTotal = 0;
+            var sumaEntrega = 0;
 
             var detalle = dbAdmin.ObtenerTodosLosContados();
             foreach (DetalleTrabajos i in detalle)
             {
-                sumaCaja += (int)i.Valor;
+                sumaCaja += ((int)i.Valor + (int)i.Entrega);
+
+            }
+            var detalleEntrega = dbAdmin.ObtenerEntregas();
+            foreach (DetalleTrabajos i in detalleEntrega)
+            {
+                sumaEntrega += (int)i.Entrega;
 
             }
             var retiro = dbAdmin.ObtenerTodosLosRetiros();
@@ -44,7 +51,7 @@ namespace PeluqueriaDesktop.Formularios
 
             }
 
-            numUpDownTotal.Value = sumaCaja - retiroTotal;
+            numUpDownTotal.Value = (sumaCaja + sumaEntrega) - retiroTotal;
             
         }
 

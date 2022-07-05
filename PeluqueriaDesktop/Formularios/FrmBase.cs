@@ -219,9 +219,11 @@ namespace PeluqueriaDesktop
             var frmClienteTrabajos = new FrmClienteTrabajos(idSeleccionado);
             frmClienteTrabajos.ShowDialog();
 
-
+            TxtBusqueda.Text = "";
             //actualizamos la grilla
             ActualizarGrilla();
+            Grid.CurrentCell = Grid.Rows[filaAEditar].Cells[0];
         }
     }
 }
+

@@ -19,6 +19,8 @@ namespace PeluqueriaDesktop.Modelos
         public TipoDePagoEnum FormaDePago { get; set; }
         [Required]
         public double Valor { get; set; }
+        [Required]
+        public double Entrega { get; set; }
         public ICollection<Cliente> Clientes { get; set; }
     }
 }

@@ -39,6 +39,7 @@ namespace PeluqueriaDesktop.Formularios
             this.BtnModificarTrabajo = new System.Windows.Forms.Button();
             this.DtpFechaDetalle = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.chkVerTodos = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,12 +157,24 @@ namespace PeluqueriaDesktop.Formularios
             this.label1.TabIndex = 28;
             this.label1.Text = "Fecha:";
             // 
+            // chkVerTodos
+            // 
+            this.chkVerTodos.AutoSize = true;
+            this.chkVerTodos.Location = new System.Drawing.Point(64, 430);
+            this.chkVerTodos.Name = "chkVerTodos";
+            this.chkVerTodos.Size = new System.Drawing.Size(76, 19);
+            this.chkVerTodos.TabIndex = 29;
+            this.chkVerTodos.Text = "Ver Todos";
+            this.chkVerTodos.UseVisualStyleBackColor = true;
+            this.chkVerTodos.CheckedChanged += new System.EventHandler(this.chkVerTodos_CheckedChanged);
+            // 
             // FrmListadoTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkVerTodos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DtpFechaDetalle);
             this.Controls.Add(this.BtnModificarTrabajo);
@@ -194,5 +207,6 @@ namespace PeluqueriaDesktop.Formularios
         private System.Windows.Forms.Button BtnModificarTrabajo;
         private System.Windows.Forms.DateTimePicker DtpFechaDetalle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkVerTodos;
     }
 }

@@ -201,5 +201,11 @@ namespace PeluqueriaDesktop
             var frmResumenMensual = new FrmResumenMensual();
             frmResumenMensual.ShowDialog();
         }
+
+        private void BtnListadoClientes_Click(object sender, EventArgs e)
+        {
+            var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock);
+            frmCargarClientes.ShowDialog();
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace PeluqueriaDesktop.Formularios
             btnRegistrarPago.Visible = false;
             dbAdmin = objetoDbAdmin;
             DtpFechaDetalle.Value = DateTime.Now;
-            ActualizarGrilla();
+            ActualizarGrillaFecha();
             Grid.OcultarColumnas();
             AjustarAnchoColumaDetalle();
         }
@@ -33,6 +33,7 @@ namespace PeluqueriaDesktop.Formularios
         private void AjustarAnchoColumaDetalle()
         {
             this.Grid.Columns[2].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            this.Grid.Columns[3].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
 
         private void ActualizarGrilla()
@@ -249,6 +250,11 @@ namespace PeluqueriaDesktop.Formularios
                                       };
                 Grid.DataSource = trabajosAListar.ToList();
             }
+        }
+
+        private void chkVerTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            ActualizarGrilla();
         }
     }
 }

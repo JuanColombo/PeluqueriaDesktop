@@ -59,6 +59,7 @@ namespace PeluqueriaDesktop
             this.DtpFechaMnuPrincipal = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnNuevoTurno = new System.Windows.Forms.Button();
+            this.BtnListadoClientes = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbDesarrollo22)).BeginInit();
@@ -91,7 +92,7 @@ namespace PeluqueriaDesktop
             // subMnuNuevoCliente
             // 
             this.subMnuNuevoCliente.Name = "subMnuNuevoCliente";
-            this.subMnuNuevoCliente.Size = new System.Drawing.Size(175, 22);
+            this.subMnuNuevoCliente.Size = new System.Drawing.Size(180, 22);
             this.subMnuNuevoCliente.Text = "Gestion de Clientes";
             this.subMnuNuevoCliente.Click += new System.EventHandler(this.subMnuNuevoCliente_Click);
             // 
@@ -255,9 +256,8 @@ namespace PeluqueriaDesktop
             this.BtnClientes.Name = "BtnClientes";
             this.BtnClientes.Size = new System.Drawing.Size(124, 48);
             this.BtnClientes.TabIndex = 2;
-            this.BtnClientes.Text = "Nuevo Cliente";
+            this.BtnClientes.Text = "Listado Clientes";
             this.BtnClientes.UseVisualStyleBackColor = false;
-            this.BtnClientes.Click += new System.EventHandler(this.BtnClientes_Click);
             // 
             // PbDesarrollo22
             // 
@@ -371,6 +371,20 @@ namespace PeluqueriaDesktop
             this.BtnNuevoTurno.UseVisualStyleBackColor = false;
             this.BtnNuevoTurno.Click += new System.EventHandler(this.BtnNuevoTurno_Click);
             // 
+            // BtnListadoClientes
+            // 
+            this.BtnListadoClientes.BackColor = System.Drawing.Color.DarkCyan;
+            this.BtnListadoClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnListadoClientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnListadoClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnListadoClientes.Location = new System.Drawing.Point(0, 84);
+            this.BtnListadoClientes.Name = "BtnListadoClientes";
+            this.BtnListadoClientes.Size = new System.Drawing.Size(124, 48);
+            this.BtnListadoClientes.TabIndex = 12;
+            this.BtnListadoClientes.Text = "Listado Clientes";
+            this.BtnListadoClientes.UseVisualStyleBackColor = false;
+            this.BtnListadoClientes.Click += new System.EventHandler(this.BtnListadoClientes_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -378,6 +392,7 @@ namespace PeluqueriaDesktop
             this.BackColor = System.Drawing.Color.Khaki;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1136, 482);
+            this.Controls.Add(this.BtnListadoClientes);
             this.Controls.Add(this.BtnNuevoTurno);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DtpFechaMnuPrincipal);
@@ -438,6 +453,7 @@ namespace PeluqueriaDesktop
         private System.Windows.Forms.Button BtnNuevoTurno;
         private System.Windows.Forms.ToolStripButton BtnMovCaja;
         private System.Windows.Forms.ToolStripButton BtnResMensual;
+        private System.Windows.Forms.Button BtnListadoClientes;
     }
 }
 

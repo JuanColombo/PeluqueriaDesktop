@@ -20,6 +20,7 @@ namespace PeluqueriaDesktop.Formularios
         DetalleTrabajos detalleTrabajo = new DetalleTrabajos();
         public FrmNuevoTrabajos(int idSeleccionado)
         {
+            //Creando un nuevo registro de trabajo a partir del Id del cliente seleccionado en la grilla
             InitializeComponent();
             if (idSeleccionado != 0)
             {
@@ -34,6 +35,7 @@ namespace PeluqueriaDesktop.Formularios
             DtpFechaTrabajo.Enabled = true;
             TxtDescripcionBBDD.Enabled = true;
             NumUpDownValor.Enabled = true;
+            label2.Text = "Saldo";
             CargarComboPago();
             if (idTrabajoSeleccionado != 0)
             {
@@ -80,24 +82,34 @@ namespace PeluqueriaDesktop.Formularios
         {
             using (var db = new PeluqueriaContext())
             {
+                //codigo por si estamos editando un detalle de trabajo
                 detalleTrabajo.FormaDePago = (TipoDePagoEnum)CboTipoPago.SelectedValue;
                 detalleTrabajo.Fecha = DtpFechaTrabajo.Value.Date;
                 detalleTrabajo.DetalleTrabajo = TxtDescripcionBBDD.Text;
-                detalleTrabajo.Valor = (int)NumUpDownValor.Value;
-
+                detalleTrabajo.Valor = ((int)NumUpDownValor.Value - (int)numEntrega.Value);
+                detalleTrabajo.Entrega = detalleTrabajo.Entrega + (int)numEntrega.Value;
+                //codigo si estamos creando un nuevo registro de trabajo
                 if (IdEditar == null) { 
                     detalleTrabajo.ClienteId = cliente.Id;
                     detalleTrabajo.Fecha = DtpFechaTrabajo.Value.Date;
                     detalleTrabajo.DetalleTrabajo = TxtDescripcionBBDD.Text;
                     detalleTrabajo.Valor = (int)NumUpDownValor.Value;
-                    //agregamos el objeto Tutor al objeto DbContext
+                    detalleTrabajo.Entrega = (int)numEntrega.Value;
+
+                    //SI EL MEDIO DE PAGO ES CONTADO O TARJETA DE CREDITO IGUALAMOS LA ENTREGA 
+                    if (detalleTrabajo.FormaDePago == TipoDePagoEnum.Contado ||
+                        detalleTrabajo.FormaDePago == TipoDePagoEnum.TarjetaCredito)
+                        detalleTrabajo.Entrega = detalleTrabajo.Valor;
+
+
+                    //agregamos el objeto DetalleTrabajo al objeto DbContext
                     db.DetalleTrabajos.Add(detalleTrabajo);
                 }
                 else //configuramos el almacenamiento de la modificación
                 {
                     db.Entry(detalleTrabajo).State = EntityState.Modified;
                 }
-
+                //guardamos los cambios en la base de datos
                 db.SaveChanges();
 
                 MessageBox.Show("La operación fue realizada con exito");

@@ -26,6 +26,7 @@ namespace PeluqueriaDesktop.Formularios
             ActualizarGrilla();
             AjustarColumna();
             CargarTotalRetiro();
+            CargarSubTotal(txtFiltro.Text);
 
         }
 
