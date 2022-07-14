@@ -50,7 +50,7 @@ namespace PeluqueriaDesktop.Formularios
 
         private void AjustarColumna()
         {
-            this.Grid.Columns[4].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            this.Grid.Columns[2].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
 
         private void ActualizarGrilla()
@@ -61,11 +61,12 @@ namespace PeluqueriaDesktop.Formularios
                 {
                     var cajasAListar = from cajas in db.Caja
                                        where DtpFechaCaja.Value.Month == cajas.Fecha.Month
-                                       where DtpFechaCaja.Value.Year == cajas.Fecha.Year 
+                                       where DtpFechaCaja.Value.Year == cajas.Fecha.Year
+                                       orderby cajas.Fecha.Date descending
                                        select new
                                        {
                                            Fecha = cajas.Fecha.Date,
-                                           Total = "$" + cajas.TotalCaja,
+                                           TotalEnCaja = "$" + cajas.TotalCaja,
                                            Retiro = "$" + cajas.RetiroCaja,
                                            Saldo = "$" + (cajas.TotalCaja - cajas.RetiroCaja),
                                            Descripcion = cajas.DescripcionRetiro.ToUpper()
@@ -83,10 +84,11 @@ namespace PeluqueriaDesktop.Formularios
                                        where DtpFechaCaja.Value.Month == cajas.Fecha.Month
                                        where DtpFechaCaja.Value.Year == cajas.Fecha.Year
                                        where cajas.DescripcionRetiro.ToUpper().Contains(txtFiltro.Text.ToUpper())
+                                       orderby cajas.Fecha.Date descending
                                        select new
                                        {
                                            Fecha = cajas.Fecha.Date,
-                                           Total = "$" + cajas.TotalCaja,
+                                           TotalEnCaja = "$" + cajas.TotalCaja,
                                            Retiro = "$" + cajas.RetiroCaja,
                                            Saldo = "$" + (cajas.TotalCaja - cajas.RetiroCaja),
                                            Descripcion = cajas.DescripcionRetiro.ToUpper()

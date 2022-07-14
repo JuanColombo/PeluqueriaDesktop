@@ -35,7 +35,6 @@ namespace PeluqueriaDesktop.Formularios
             DtpFechaTrabajo.Enabled = true;
             TxtDescripcionBBDD.Enabled = true;
             NumUpDownValor.Enabled = true;
-            label2.Text = "Saldo";
             CargarComboPago();
             if (idTrabajoSeleccionado != 0)
             {
@@ -52,6 +51,10 @@ namespace PeluqueriaDesktop.Formularios
 
         private void CargarDatosPantallaTrabajo()
         {
+            lblMarca.Text = "Cliente ID: ";
+            numSaldo.Enabled = false;
+            CboTipoPago.Enabled = false;
+
             using (var db = new PeluqueriaContext())
             {
                 detalleTrabajo = db.DetalleTrabajos.Find(IdEditar);
@@ -60,17 +63,20 @@ namespace PeluqueriaDesktop.Formularios
                 TxtDescripcionBBDD.Text = detalleTrabajo.DetalleTrabajo;
                 NumUpDownValor.Value = (int)detalleTrabajo.Valor;
                 CboTipoPago.SelectedItem = detalleTrabajo.FormaDePago;
+                numSaldo.Value = (int)detalleTrabajo.Valor - (int)detalleTrabajo.Entrega;
             }
         }
 
         private void CargarDatosPantalla()
         {
+            numSaldo.Enabled = false;
             using (var db = new PeluqueriaContext())
             {
                 cliente = db.Cliente.Find(IdDatos);
                 lblClienteBBDD.Text = cliente.Apellido + " " + cliente.Nombre ;
                 CboTipoPago.DataSource = Enum.GetValues(typeof(TipoDePagoEnum));
             }
+            
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -86,8 +92,9 @@ namespace PeluqueriaDesktop.Formularios
                 detalleTrabajo.FormaDePago = (TipoDePagoEnum)CboTipoPago.SelectedValue;
                 detalleTrabajo.Fecha = DtpFechaTrabajo.Value.Date;
                 detalleTrabajo.DetalleTrabajo = TxtDescripcionBBDD.Text;
-                detalleTrabajo.Valor = ((int)NumUpDownValor.Value - (int)numEntrega.Value);
+                detalleTrabajo.Valor = (int)NumUpDownValor.Value;
                 detalleTrabajo.Entrega = detalleTrabajo.Entrega + (int)numEntrega.Value;
+
                 //codigo si estamos creando un nuevo registro de trabajo
                 if (IdEditar == null) { 
                     detalleTrabajo.ClienteId = cliente.Id;
@@ -99,7 +106,10 @@ namespace PeluqueriaDesktop.Formularios
                     //SI EL MEDIO DE PAGO ES CONTADO O TARJETA DE CREDITO IGUALAMOS LA ENTREGA 
                     if (detalleTrabajo.FormaDePago == TipoDePagoEnum.Contado ||
                         detalleTrabajo.FormaDePago == TipoDePagoEnum.TarjetaCredito)
+                    { 
                         detalleTrabajo.Entrega = detalleTrabajo.Valor;
+                    }
+
 
 
                     //agregamos el objeto DetalleTrabajo al objeto DbContext
@@ -116,6 +126,21 @@ namespace PeluqueriaDesktop.Formularios
             }
             this.Close();
         }
+
+        private void CboTipoPago_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if ((int)CboTipoPago.SelectedItem == (int)TipoDePagoEnum.Contado ||
+                (int)CboTipoPago.SelectedItem == (int)TipoDePagoEnum.TarjetaCredito)
+            {
+                numEntrega.Value = 0;
+                numEntrega.Enabled = false;
+               
+            }
+            else
+            {
+                numEntrega.Enabled = true;
+            }
         }
+    }
     }
 

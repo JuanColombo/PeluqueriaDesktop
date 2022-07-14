@@ -10,9 +10,11 @@ namespace PeluqueriaDesktop.AdminData
 {
     class DbAdminTrabajosRealizados : IDbAdmin
     {
-        public void Actualizar(object Modelo)
+        public void Actualizar(object detalle)
         {
-            throw new NotImplementedException();
+            using PeluqueriaContext db = new PeluqueriaContext();
+            db.Entry(detalle).State = EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void Agregar(object Modelo)
@@ -43,6 +45,11 @@ namespace PeluqueriaDesktop.AdminData
         {
             using PeluqueriaContext db = new PeluqueriaContext();
             return db.DetalleTrabajos.Include(u => u.Usuario).Where(c => c.FormaDePago == TipoDePagoEnum.Contado).ToList();
+        }
+        public IEnumerable<object> ObtenerContadosTarjetas()
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.DetalleTrabajos.Include(u => u.Usuario).Where(c => c.FormaDePago == TipoDePagoEnum.TarjetaCredito || c.FormaDePago == TipoDePagoEnum.Contado).ToList();
         }
         public IEnumerable<object> ObtenerEntregas()
         {

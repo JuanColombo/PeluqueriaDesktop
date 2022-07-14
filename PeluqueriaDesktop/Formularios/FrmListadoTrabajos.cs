@@ -32,6 +32,7 @@ namespace PeluqueriaDesktop.Formularios
 
         private void AjustarAnchoColumaDetalle()
         {
+            this.Grid.Columns[0].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             this.Grid.Columns[2].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             this.Grid.Columns[3].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
@@ -43,6 +44,7 @@ namespace PeluqueriaDesktop.Formularios
                 using (var db = new PeluqueriaContext())
                 {
                     var trabajosAListar = from detalleTrabajo in db.DetalleTrabajos
+                                          orderby detalleTrabajo.Fecha.Date descending
                                           select new
                                           {
                                               Id = detalleTrabajo.Id,
@@ -50,7 +52,7 @@ namespace PeluqueriaDesktop.Formularios
                                               Detalle = detalleTrabajo.DetalleTrabajo,
                                               Cliente = detalleTrabajo.cliente.Nombre + " " + detalleTrabajo.cliente.Apellido,
                                               FormaPago = detalleTrabajo.FormaDePago,
-                                              Precio = detalleTrabajo.Valor
+                                              Precio = "$" + detalleTrabajo.Valor
                                           };
                     Grid.DataSource = trabajosAListar.ToList();
                 }
@@ -62,6 +64,7 @@ namespace PeluqueriaDesktop.Formularios
                 {
                     var trabajosAListar = from detalleTrabajo in db.DetalleTrabajos 
                                           where detalleTrabajo.FormaDePago==TipoDePagoEnum.CuentaCorriente
+                                          orderby detalleTrabajo.Fecha descending
                                           select new
                                           {
                                               Id = detalleTrabajo.Id,
@@ -69,9 +72,11 @@ namespace PeluqueriaDesktop.Formularios
                                               Detalle = detalleTrabajo.DetalleTrabajo,
                                               Cliente = detalleTrabajo.cliente.Nombre + " " + detalleTrabajo.cliente.Apellido,
                                               FormaPago = detalleTrabajo.FormaDePago,
-                                              Precio = detalleTrabajo.Valor
+                                              Precio = "$" + detalleTrabajo.Valor,
+                                              Saldo = "$" + (detalleTrabajo.Valor - detalleTrabajo.Entrega)
                                           };
                     Grid.DataSource = trabajosAListar.ToList();
+
                 }
             }
 
@@ -104,7 +109,7 @@ namespace PeluqueriaDesktop.Formularios
                                               Detalle = detalleTrabajo.DetalleTrabajo,
                                               Cliente = detalleTrabajo.cliente.Nombre + " " + detalleTrabajo.cliente.Apellido,
                                               FormaPago = detalleTrabajo.FormaDePago,
-                                              Precio = detalleTrabajo.Valor
+                                              Precio = "$" + detalleTrabajo.Valor
                                           };
 
                     Grid.DataSource = trabajosAListar.IgnoreQueryFilters().Where(c => c.Cliente.Contains(textoABuscar)).ToList();
@@ -124,7 +129,7 @@ namespace PeluqueriaDesktop.Formularios
                                                   Detalle = detalleTrabajo.DetalleTrabajo,
                                                   Cliente = detalleTrabajo.cliente.Nombre + " " + detalleTrabajo.cliente.Apellido,
                                                   FormaPago = detalleTrabajo.FormaDePago,
-                                                  Precio = detalleTrabajo.Valor
+                                                  Precio = "$" + detalleTrabajo.Valor
                                               };
                     Grid.DataSource = trabajosAListar.IgnoreQueryFilters().Where(c => c.Cliente.Contains(textoABuscar)).ToList();
                 }
@@ -143,7 +148,7 @@ namespace PeluqueriaDesktop.Formularios
                                               Detalle = detalleTrabajo.DetalleTrabajo,
                                               Cliente = detalleTrabajo.cliente.Nombre + " " + detalleTrabajo.cliente.Apellido,
                                               FormaPago = detalleTrabajo.FormaDePago,
-                                              Precio = detalleTrabajo.Valor
+                                              Precio = "$" + detalleTrabajo.Valor
                                           };
                     Grid.DataSource = trabajosAListar.IgnoreQueryFilters().Where(c => c.Cliente.Contains(textoABuscar)).ToList();
                 }
@@ -153,7 +158,17 @@ namespace PeluqueriaDesktop.Formularios
 
         private void chkCuentaCorriente_CheckedChanged(object sender, EventArgs e)
         {
-            ActualizarGrilla();
+            if (chkCuentaCorriente.Checked == true)
+            {
+                chkVerTodos.Visible = false;
+                ActualizarGrilla();
+            }
+            else
+            {
+                btnRegistrarPago.Visible = false;
+                chkVerTodos.Visible = true;
+                ActualizarGrillaFecha();
+            }
         }
 
         private void btnRegistrarPago_Click(object sender, EventArgs e)
@@ -173,7 +188,18 @@ namespace PeluqueriaDesktop.Formularios
 
         private void ChkTarjetas_CheckedChanged(object sender, EventArgs e)
         {
-            ActualizarGrillaTarjetas();
+           // ActualizarGrillaTarjetas();
+
+            if (ChkTarjetas.Checked == true)
+            {
+                chkVerTodos.Visible = false;
+                ActualizarGrillaTarjetas();
+            }
+            else 
+            { 
+                chkVerTodos.Visible = true;
+                ActualizarGrillaFecha();
+            }
         }
 
         private void ActualizarGrillaTarjetas()
@@ -183,6 +209,7 @@ namespace PeluqueriaDesktop.Formularios
             {
                 var trabajosAListar = from detalleTrabajo in db.DetalleTrabajos
                                       where detalleTrabajo.FormaDePago == TipoDePagoEnum.TarjetaCredito
+                                      orderby detalleTrabajo.Fecha descending
                                       select new
                                       {
                                           Id = detalleTrabajo.Id,
@@ -190,7 +217,7 @@ namespace PeluqueriaDesktop.Formularios
                                           Detalle = detalleTrabajo.DetalleTrabajo,
                                           Cliente = detalleTrabajo.cliente.Nombre + " " + detalleTrabajo.cliente.Apellido,
                                           FormaPago = detalleTrabajo.FormaDePago,
-                                          Precio = detalleTrabajo.Valor
+                                          Precio = "$" + detalleTrabajo.Valor
                                       };
                 Grid.DataSource = trabajosAListar.ToList();
             }
@@ -205,7 +232,7 @@ namespace PeluqueriaDesktop.Formularios
                                               Detalle = detalleTrabajo.DetalleTrabajo,
                                               Cliente = detalleTrabajo.cliente.Nombre + " " + detalleTrabajo.cliente.Apellido,
                                               FormaPago = detalleTrabajo.FormaDePago,
-                                              Precio = detalleTrabajo.Valor
+                                              Precio = "$" + detalleTrabajo.Valor
                                           };
                     Grid.DataSource = trabajosAListar.ToList();
                 }
@@ -246,7 +273,7 @@ namespace PeluqueriaDesktop.Formularios
                                           Detalle = detalleTrabajo.DetalleTrabajo,
                                           Cliente = detalleTrabajo.cliente.Nombre + " " + detalleTrabajo.cliente.Apellido,
                                           FormaPago = detalleTrabajo.FormaDePago,
-                                          Precio = detalleTrabajo.Valor
+                                          Precio = "$" + detalleTrabajo.Valor
                                       };
                 Grid.DataSource = trabajosAListar.ToList();
             }
@@ -254,7 +281,12 @@ namespace PeluqueriaDesktop.Formularios
 
         private void chkVerTodos_CheckedChanged(object sender, EventArgs e)
         {
-            ActualizarGrilla();
+            if (chkVerTodos.Checked == true)
+            {
+                ActualizarGrilla();
+            }
+            else
+                ActualizarGrillaFecha();
         }
     }
 }

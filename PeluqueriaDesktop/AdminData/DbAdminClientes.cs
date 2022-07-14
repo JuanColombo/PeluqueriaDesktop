@@ -63,6 +63,11 @@ namespace PeluqueriaDesktop.AdminData
             using PeluqueriaContext db = new PeluqueriaContext();
             return db.Cliente.Include(u => u.Usuario).IgnoreQueryFilters().Where(c => c.Eliminado == false).ToList();
         }
+        public IEnumerable<object> ObtenerTodosyEliminados()
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.Cliente.Include(u => u.Usuario).ToList();
+        }
 
         public IEnumerable<object> ObtenerTodos(string cadenaBuscada)
         {

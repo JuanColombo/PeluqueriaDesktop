@@ -100,7 +100,7 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.LblFichaCliente.AutoSize = true;
             this.LblFichaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblFichaCliente.Location = new System.Drawing.Point(119, 9);
+            this.LblFichaCliente.Location = new System.Drawing.Point(105, 9);
             this.LblFichaCliente.Name = "LblFichaCliente";
             this.LblFichaCliente.Size = new System.Drawing.Size(18, 25);
             this.LblFichaCliente.TabIndex = 25;

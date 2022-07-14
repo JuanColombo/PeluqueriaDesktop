@@ -24,7 +24,7 @@ namespace PeluqueriaDesktop
             InitializeComponent();
             ActualizarGrilla();
             Grid.OcultarColumnas();
-            BackgroundImage = HelperPeluqueria.RecuperarImagenDeArchivoDeRecursos("fondoSistema"); 
+            BackgroundImage = HelperPeluqueria.RecuperarImagenDeArchivoDeRecursos("fondoSistema.jpg"); 
 
         }
 
@@ -98,6 +98,8 @@ namespace PeluqueriaDesktop
                     BtnCaja.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
                     BtnMovCaja.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
                     BtnResMensual.Enabled = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador || Usuario.TipoUsuario == TipoUsuarioEnum.Dueño ? true : false;
+
+                    MnuAdministrador.Visible = Usuario.TipoUsuario == TipoUsuarioEnum.Administrador ? true : false;
 
                 }
                 else
@@ -206,6 +208,18 @@ namespace PeluqueriaDesktop
         {
             var frmCargarClientes = new FrmBase(new DbAdminClientes(), new FrmCargarCliente(), BotonStock);
             frmCargarClientes.ShowDialog();
+        }
+
+        private void BtnClientes_Click_1(object sender, EventArgs e)
+        {
+            var frmCargarClientes = new FrmCargarCliente();
+            frmCargarClientes.ShowDialog();
+        }
+
+        private void MnuAdministrador_Click(object sender, EventArgs e)
+        {
+            var frmBaseDeDatos = new FrmBaseDeDatos();
+            frmBaseDeDatos.ShowDialog();
         }
     }
 }

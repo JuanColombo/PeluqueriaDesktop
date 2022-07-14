@@ -21,6 +21,8 @@ namespace PeluqueriaDesktop.Formularios
             InitializeComponent();
             DtpFechaCaja.Value = DateTime.Now;
             CargarDtpTotal();
+            DtpFechaCaja.Visible = false;
+            lblFecha.Visible = false;
 
         }
 
@@ -32,10 +34,11 @@ namespace PeluqueriaDesktop.Formularios
             var retiroTotal = 0;
             var sumaEntrega = 0;
 
+            //SI EL TRABAJO FUE DE CONTADO, QUE LA CAJA SUME SOLO EL VALOR Y NO LA ENTREGA
             var detalle = dbAdmin.ObtenerTodosLosContados();
             foreach (DetalleTrabajos i in detalle)
             {
-                sumaCaja += ((int)i.Valor + (int)i.Entrega);
+                sumaCaja += (int)i.Valor;
 
             }
             var detalleEntrega = dbAdmin.ObtenerEntregas();
@@ -70,6 +73,7 @@ namespace PeluqueriaDesktop.Formularios
                 caja.Fecha = DtpFechaCaja.Value;
                 db.Caja.Add(caja);
                 db.SaveChanges();
+                MessageBox.Show("Retiro realizado");
                 Close();
             }
         }

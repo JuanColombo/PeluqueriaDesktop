@@ -44,15 +44,18 @@
             this.CboTipoPago = new System.Windows.Forms.ComboBox();
             this.numEntrega = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numSaldo = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEntrega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaldo)).BeginInit();
             this.SuspendLayout();
             // 
             // LblCantidad
             // 
             this.LblCantidad.AutoSize = true;
             this.LblCantidad.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblCantidad.Location = new System.Drawing.Point(15, 285);
+            this.LblCantidad.Location = new System.Drawing.Point(15, 322);
             this.LblCantidad.Name = "LblCantidad";
             this.LblCantidad.Size = new System.Drawing.Size(140, 30);
             this.LblCantidad.TabIndex = 0;
@@ -61,10 +64,10 @@
             // LblTituloPrincipal
             // 
             this.LblTituloPrincipal.AutoSize = true;
-            this.LblTituloPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblTituloPrincipal.Location = new System.Drawing.Point(12, 9);
+            this.LblTituloPrincipal.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.LblTituloPrincipal.Location = new System.Drawing.Point(475, 9);
             this.LblTituloPrincipal.Name = "LblTituloPrincipal";
-            this.LblTituloPrincipal.Size = new System.Drawing.Size(391, 46);
+            this.LblTituloPrincipal.Size = new System.Drawing.Size(256, 36);
             this.LblTituloPrincipal.TabIndex = 12;
             this.LblTituloPrincipal.Text = "Registro de Trabajos";
             // 
@@ -115,10 +118,10 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMarca.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMarca.Location = new System.Drawing.Point(12, 55);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(82, 30);
+            this.lblMarca.Size = new System.Drawing.Size(75, 25);
             this.lblMarca.TabIndex = 19;
             this.lblMarca.Text = "Cliente:";
             // 
@@ -126,7 +129,7 @@
             // 
             this.lblClienteBBDD.AutoSize = true;
             this.lblClienteBBDD.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblClienteBBDD.Location = new System.Drawing.Point(94, 55);
+            this.lblClienteBBDD.Location = new System.Drawing.Point(119, 52);
             this.lblClienteBBDD.Name = "lblClienteBBDD";
             this.lblClienteBBDD.Size = new System.Drawing.Size(103, 30);
             this.lblClienteBBDD.TabIndex = 20;
@@ -136,7 +139,7 @@
             // 
             this.LblDescripcion.AutoSize = true;
             this.LblDescripcion.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblDescripcion.Location = new System.Drawing.Point(12, 174);
+            this.LblDescripcion.Location = new System.Drawing.Point(15, 158);
             this.LblDescripcion.Name = "LblDescripcion";
             this.LblDescripcion.Size = new System.Drawing.Size(188, 30);
             this.LblDescripcion.TabIndex = 21;
@@ -145,7 +148,7 @@
             // TxtDescripcionBBDD
             // 
             this.TxtDescripcionBBDD.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.TxtDescripcionBBDD.Location = new System.Drawing.Point(210, 139);
+            this.TxtDescripcionBBDD.Location = new System.Drawing.Point(210, 141);
             this.TxtDescripcionBBDD.Multiline = true;
             this.TxtDescripcionBBDD.Name = "TxtDescripcionBBDD";
             this.TxtDescripcionBBDD.Size = new System.Drawing.Size(396, 65);
@@ -184,15 +187,16 @@
             // 
             this.CboTipoPago.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CboTipoPago.FormattingEnabled = true;
-            this.CboTipoPago.Location = new System.Drawing.Point(210, 291);
+            this.CboTipoPago.Location = new System.Drawing.Point(210, 328);
             this.CboTipoPago.Name = "CboTipoPago";
             this.CboTipoPago.Size = new System.Drawing.Size(160, 29);
             this.CboTipoPago.TabIndex = 4;
+            this.CboTipoPago.SelectedValueChanged += new System.EventHandler(this.CboTipoPago_SelectedValueChanged);
             // 
             // numEntrega
             // 
             this.numEntrega.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numEntrega.Location = new System.Drawing.Point(479, 222);
+            this.numEntrega.Location = new System.Drawing.Point(210, 271);
             this.numEntrega.Maximum = new decimal(new int[] {
             1410065407,
             2,
@@ -211,11 +215,39 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(384, 220);
+            this.label3.Location = new System.Drawing.Point(15, 269);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 30);
             this.label3.TabIndex = 27;
             this.label3.Text = "Entrega:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(413, 226);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 30);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Saldo:";
+            // 
+            // numSaldo
+            // 
+            this.numSaldo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numSaldo.Location = new System.Drawing.Point(499, 222);
+            this.numSaldo.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numSaldo.Minimum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            -2147483648});
+            this.numSaldo.Name = "numSaldo";
+            this.numSaldo.Size = new System.Drawing.Size(160, 33);
+            this.numSaldo.TabIndex = 28;
             // 
             // FrmNuevoTrabajos
             // 
@@ -223,6 +255,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 405);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.numSaldo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numEntrega);
             this.Controls.Add(this.CboTipoPago);
@@ -246,6 +280,7 @@
             this.Text = "Registrar Trabajo";
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEntrega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaldo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +303,7 @@
         private System.Windows.Forms.ComboBox CboTipoPago;
         private System.Windows.Forms.NumericUpDown numEntrega;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numSaldo;
     }
 }

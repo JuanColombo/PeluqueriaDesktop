@@ -24,10 +24,7 @@ namespace PeluqueriaDesktop.Formularios
             IdDatos = idSeleccionado;
             CargarFichaCliente();
             ActualizarGrilla();
-            AjustarColumnaDetalle();
-           
-
-
+            AjustarColumnaDetalle();  
         }
 
         private void CargarFichaCliente()
@@ -54,7 +51,7 @@ namespace PeluqueriaDesktop.Formularios
                                        Valor = "$" + detalleTrabajos.Valor,
                                        Entregas = "$" + detalleTrabajos.Entrega,
                                        Saldo = "$" + (detalleTrabajos.Valor - detalleTrabajos.Entrega),
-                                       Forma_De_Pago =detalleTrabajos.FormaDePago,
+                                       Forma_De_Pago = detalleTrabajos.FormaDePago,
                                        Detalle = detalleTrabajos.DetalleTrabajo
                                    };
                 Grid.DataSource = fichaAListar.ToList();

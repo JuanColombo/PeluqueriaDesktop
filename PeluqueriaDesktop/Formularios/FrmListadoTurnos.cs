@@ -29,7 +29,7 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 var turnosAListar = from turnos in db.Turnos
-                                    orderby turnos.Fecha.Date
+                                    orderby turnos.Fecha.Date ascending
                                     
                                     where turnos.Eliminado == false
                                     select new
@@ -38,7 +38,7 @@ namespace PeluqueriaDesktop.Formularios
                                         Fecha = turnos.Fecha,
                                         Hora = turnos.Hora.ToShortTimeString(),
                                         Trabajo = turnos.TrabajoARealizar.ToUpper(),
-                                        Cliente = (turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido).ToUpper()
+                                        Cliente = (turnos.Cliente.Nombre + " " + turnos.Cliente.Apellido)
                                       };
                 Grid.DataSource = turnosAListar.ToList();
 

@@ -140,18 +140,18 @@ namespace PeluqueriaDesktop.Formularios
             // 
             // DtpFechaDetalle
             // 
-            this.DtpFechaDetalle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.DtpFechaDetalle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.DtpFechaDetalle.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpFechaDetalle.Location = new System.Drawing.Point(64, 357);
+            this.DtpFechaDetalle.Location = new System.Drawing.Point(64, 356);
             this.DtpFechaDetalle.Name = "DtpFechaDetalle";
-            this.DtpFechaDetalle.Size = new System.Drawing.Size(101, 27);
+            this.DtpFechaDetalle.Size = new System.Drawing.Size(127, 29);
             this.DtpFechaDetalle.TabIndex = 27;
             this.DtpFechaDetalle.ValueChanged += new System.EventHandler(this.DtpFechaDetalle_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 366);
+            this.label1.Location = new System.Drawing.Point(13, 362);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 15);
             this.label1.TabIndex = 28;
@@ -160,9 +160,10 @@ namespace PeluqueriaDesktop.Formularios
             // chkVerTodos
             // 
             this.chkVerTodos.AutoSize = true;
-            this.chkVerTodos.Location = new System.Drawing.Point(64, 430);
+            this.chkVerTodos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chkVerTodos.Location = new System.Drawing.Point(197, 357);
             this.chkVerTodos.Name = "chkVerTodos";
-            this.chkVerTodos.Size = new System.Drawing.Size(76, 19);
+            this.chkVerTodos.Size = new System.Drawing.Size(93, 24);
             this.chkVerTodos.TabIndex = 29;
             this.chkVerTodos.Text = "Ver Todos";
             this.chkVerTodos.UseVisualStyleBackColor = true;

@@ -36,7 +36,7 @@ namespace PeluqueriaDesktop.Formularios
 
             foreach (DetalleTrabajos i in detalle)
             {
-                sumaCaja += (int)i.Valor;
+                sumaCaja += (int)i.Entrega;
             }
             var retiro = dbAdmin.ObtenerTodosLosRetiros(fecha);
             foreach (Caja i in retiro)
@@ -58,12 +58,13 @@ namespace PeluqueriaDesktop.Formularios
                 var resumenMensual = from detalle in db.DetalleTrabajos
                                    where DtpFechaCaja.Value.Month == detalle.Fecha.Month
                                    where DtpFechaCaja.Value.Year == detalle.Fecha.Year
+                                   orderby detalle.Fecha descending
                                    select new
                                    {
                                        Fecha = detalle.Fecha.Date,
                                        FormaPago = detalle.FormaDePago,
                                        Cliente = (detalle.cliente.Nombre + " " + detalle.cliente.Apellido).ToUpper(),
-                                       Valor = "$" + ((int)detalle.Valor + (int)detalle.Entrega)
+                                       Valor = "$" + ((int)detalle.Entrega)
                                     };
                     
                 Grid.DataSource = resumenMensual.ToList();

@@ -20,10 +20,13 @@ namespace PeluqueriaDesktop.Formularios
         Cliente cliente = new Cliente();
         
         public FrmCargarCliente(int? idSeleccionado = null)
+
         {
             InitializeComponent();
+
             if (idSeleccionado != null)
             {
+                
                 IdEditar = idSeleccionado;
                 //llamamos al metodo de carga datos
                 CargarDatosDelCliente();
@@ -89,6 +92,7 @@ namespace PeluqueriaDesktop.Formularios
 
         public void CargarDatosEnPantalla()
         {
+            LblTituloPrincipal.Text = "Editar Cliente";
             cliente = (Cliente)dbAdmin.Obtener(IdEditar);
             TxtNombre.Text = cliente.Nombre;
             TxtApellido.Text = cliente.Apellido;
@@ -97,6 +101,7 @@ namespace PeluqueriaDesktop.Formularios
 
         public void LimpiarDatosDeLaPantalla()
         {
+            LblTituloPrincipal.Text = "Nuevo Cliente";
             cliente = new Cliente();
             TxtNombre.Text = "";
             TxtApellido.Text = "";

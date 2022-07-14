@@ -27,9 +27,13 @@ namespace PeluqueriaDesktop
             dbAdmin = objetoDbAdmin;
             FrmNuevoEditar = frmNuevoEditar;
             ActualizarGrilla();
+            AjustarColumnaDetalle();
         }
 
-        
+        private void AjustarColumnaDetalle()
+        {
+            this.Grid.Columns[4].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+        }
 
         public FrmBase(IDbAdmin objetoDbAdmin, IFormBase frmNuevoEditar, object botonStock) 
         {
@@ -180,7 +184,7 @@ namespace PeluqueriaDesktop
                 var frmNuevoTrabajos = new FrmNuevoTrabajos(idSeleccionado);
                 frmNuevoTrabajos.ShowDialog();
 
-
+                TxtBusqueda.Text = "";
                 //actualizamos la grilla
                 ActualizarGrilla();
 
@@ -196,7 +200,7 @@ namespace PeluqueriaDesktop
                 var frmNuevoTurno = new FrmCargarTurno(idSeleccionado);
                 frmNuevoTurno.ShowDialog();
 
-
+                
                 //actualizamos la grilla
                 ActualizarGrilla();
 
