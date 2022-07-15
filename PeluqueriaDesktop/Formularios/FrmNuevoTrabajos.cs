@@ -64,6 +64,7 @@ namespace PeluqueriaDesktop.Formularios
                 NumUpDownValor.Value = (int)detalleTrabajo.Valor;
                 CboTipoPago.SelectedItem = detalleTrabajo.FormaDePago;
                 numSaldo.Value = (int)detalleTrabajo.Valor - (int)detalleTrabajo.Entrega;
+                
             }
         }
 

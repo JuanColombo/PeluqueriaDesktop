@@ -149,8 +149,8 @@ namespace PeluqueriaDesktop.Formularios
             // 
             this.numUpDownCodigo.Location = new System.Drawing.Point(172, 110);
             this.numUpDownCodigo.Maximum = new decimal(new int[] {
-            1410065407,
-            2,
+            -1486618625,
+            232830643,
             0,
             0});
             this.numUpDownCodigo.Name = "numUpDownCodigo";

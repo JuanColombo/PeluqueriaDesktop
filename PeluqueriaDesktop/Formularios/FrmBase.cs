@@ -24,6 +24,7 @@ namespace PeluqueriaDesktop
             lblTituloFormulario.Text = "Productos";
             lblEliminados.Text = "Productos Eliminados";
             lblEliminados.Visible = false;
+            BtnVerFicha.Visible = false;
             dbAdmin = objetoDbAdmin;
             FrmNuevoEditar = frmNuevoEditar;
             ActualizarGrilla();
