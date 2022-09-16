@@ -58,14 +58,30 @@ namespace PeluqueriaDesktop.Formularios
             using (var db = new PeluqueriaContext())
             {
                 detalleTrabajo = db.DetalleTrabajos.Find(IdEditar);
-                lblClienteBBDD.Text = detalleTrabajo.ClienteId.ToString();
+                //lblClienteBBDD.Text = detalleTrabajo.ClienteId.ToString();
+                
+
                 DtpFechaTrabajo.Value = detalleTrabajo.Fecha;
                 TxtDescripcionBBDD.Text = detalleTrabajo.DetalleTrabajo;
                 NumUpDownValor.Value = (int)detalleTrabajo.Valor;
                 CboTipoPago.SelectedItem = detalleTrabajo.FormaDePago;
                 numSaldo.Value = (int)detalleTrabajo.Valor - (int)detalleTrabajo.Entrega;
-                
+
+
+
+                var clienteBBDD = from cliente in db.Cliente
+                              join detalle in db.DetalleTrabajos
+                              on cliente.Id equals detalle.ClienteId
+                              select new
+                              {
+
+                                  Nombre = cliente.Nombre
+                                 
+                              };
+                lblClienteBBDD.Text = clienteBBDD.ToString();
             }
+
+            
         }
 
         private void CargarDatosPantalla()

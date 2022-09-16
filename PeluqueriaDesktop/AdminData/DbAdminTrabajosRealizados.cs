@@ -40,6 +40,16 @@ namespace PeluqueriaDesktop.AdminData
             using PeluqueriaContext db = new PeluqueriaContext();
             return db.DetalleTrabajos.Include(a => a.Usuario).Where(f => f.Fecha.Month == fecha.Month && f.Fecha.Year == fecha.Year).ToList();
         }
+        public IEnumerable<object> ObtenerEfectivo(DateTime fecha)
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.DetalleTrabajos.Include(a => a.Usuario).Where(f => f.Fecha.Month == fecha.Month && f.Fecha.Year == fecha.Year).Where(t => t.FormaDePago == TipoDePagoEnum.Contado || t.FormaDePago == TipoDePagoEnum.CuentaCorriente).ToList();
+        }
+        public IEnumerable<object> ObtenerTarjetas(DateTime fecha)
+        {
+            using PeluqueriaContext db = new PeluqueriaContext();
+            return db.DetalleTrabajos.Include(a => a.Usuario).Where(f => f.Fecha.Month == fecha.Month && f.Fecha.Year == fecha.Year).Where(t => t.FormaDePago == TipoDePagoEnum.TarjetaCredito).ToList();
+        }
 
         public IEnumerable<object> ObtenerTodosLosContados()
         {

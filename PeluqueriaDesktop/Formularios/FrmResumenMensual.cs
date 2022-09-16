@@ -31,13 +31,15 @@ namespace PeluqueriaDesktop.Formularios
             var retiroTotal = 0;
             var sumaCaja = 0;
             var fecha = DtpFechaCaja.Value;
+            var efectivoCaja = 0;
+            var tarjetasCaja = 0;
 
             var detalle = dbAdmin.ObtenerIngresos(fecha);
-
             foreach (DetalleTrabajos i in detalle)
             {
                 sumaCaja += (int)i.Entrega;
             }
+
             var retiro = dbAdmin.ObtenerTodosLosRetiros(fecha);
             foreach (Caja i in retiro)
             {
@@ -45,10 +47,33 @@ namespace PeluqueriaDesktop.Formularios
 
             }
 
+            var efectivo = dbAdmin.ObtenerEfectivo(fecha);
+            foreach (DetalleTrabajos i in efectivo)
+            {
+                efectivoCaja += (int)i.Entrega;
+
+            }
+
+            var tarjetas = dbAdmin.ObtenerTarjetas(fecha);
+            foreach (DetalleTrabajos i in tarjetas)
+            {
+                tarjetasCaja += (int)i.Entrega;
+
+            }
+
             numUpDownTotalEgresos.Value = retiroTotal;
             numUpDownTotalIngresos.Value = sumaCaja;
             numUpSaldo.Value = sumaCaja - retiroTotal;
-
+            NumEfectivo.Value = efectivoCaja;
+            NumTarjetas.Value = tarjetasCaja;
+            if (numUpSaldo.Value < 0)
+            {
+                numUpSaldo.BackColor = Color.LightCoral;
+            }
+            else if (numUpSaldo.Value > 0)
+            {
+                numUpSaldo.BackColor = Color.SpringGreen;
+            }
         }
 
         private void ActualizarGrilla()
